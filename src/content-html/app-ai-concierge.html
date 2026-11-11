@@ -1,0 +1,455 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{--red:#D7263D;--red-d:#B4192E;--ink:#121216;--text:#3B3B43;--muted:#6E6E77;--paper:#FAF9F6;--line:#E4E1DA;--tint:#FCF1F2;--green:#1F8A5B;--slack:#4A154B}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--paper);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;color:var(--ink);font-weight:500;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:14px 24px;border-radius:999px;font-size:15px;transition:background .15s;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--red-d)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.hero{padding:72px 0 28px;text-align:center}
+.hero h1{font-size:clamp(44px,6.2vw,82px);line-height:.98;margin:16px auto 20px;max-width:980px}
+.hero h1 em{color:var(--red)}
+.hero p{font-size:19px;max-width:700px;margin:0 auto}
+.stats{display:flex;justify-content:center;gap:44px;margin-top:30px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.stats b{display:block;font-family:Fraunces,serif;font-size:30px;color:var(--ink);font-weight:500}
+section{padding:92px 0}
+section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section.dark{background:var(--ink);color:#C9C7C2}
+section.dark h2,section.dark h3{color:#fff}
+.head{max-width:780px;margin-bottom:46px}
+.head.c{margin-left:auto;margin-right:auto;text-align:center}
+.head h2{font-size:clamp(34px,4.2vw,52px);line-height:1.05;margin:14px 0 16px}
+.head p{font-size:18px}
+.illus{font-size:11px;letter-spacing:.04em;color:var(--muted);font-weight:500;background:#F1EFEA;padding:3px 9px;border-radius:99px;white-space:nowrap}
+
+/* ===== live demo ===== */
+#demo{padding:30px 0 90px}
+.scen{display:flex;justify-content:center;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.scen button{font:600 14px Inter,sans-serif;border:1.5px solid var(--line);background:#fff;color:var(--text);padding:10px 18px;border-radius:99px;cursor:pointer;transition:all .15s}
+.scen button:hover{border-color:var(--ink)}
+.scen button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.scen button small{font-weight:400;opacity:.7;margin-left:6px}
+.stage{display:grid;grid-template-columns:330px 1fr 360px;gap:26px;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 40px 80px -50px rgba(18,18,22,.35)}
+.colh{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+/* phone */
+.phone{background:var(--ink);border-radius:38px;padding:12px;height:600px;position:relative}
+.phone .scr{background:#F6F5F2;border-radius:28px;height:100%;display:flex;flex-direction:column;overflow:hidden}
+.ph-top{background:#fff;border-bottom:1px solid var(--line);padding:16px 14px 10px;text-align:center}
+.ph-top .notch{width:90px;height:22px;background:var(--ink);border-radius:0 0 14px 14px;margin:-16px auto 8px}
+.ph-top .avc{width:38px;height:38px;border-radius:50%;background:var(--red);margin:0 auto 4px;display:grid;place-items:center;color:#fff;font:600 15px Fraunces,serif}
+.ph-top b{display:block;font-size:13.5px;color:var(--ink)}
+.ph-top small{font-size:11px;color:var(--muted)}
+.chat{flex:1;overflow:hidden;padding:12px 12px 16px;display:flex;flex-direction:column;justify-content:flex-end;gap:7px}
+.src{align-self:center;font-size:10.5px;color:var(--muted);background:#ECEAE5;border-radius:99px;padding:3px 10px;margin-bottom:4px}
+.b{max-width:82%;padding:9px 12px;border-radius:18px;font-size:13.5px;line-height:1.38;animation:bin .35s both}
+.b.in{align-self:flex-start;background:#fff;color:var(--ink);border:1px solid #E7E4DE;border-bottom-left-radius:6px}
+.b.out{align-self:flex-end;background:var(--red);color:#fff;border-bottom-right-radius:6px}
+.b.card{padding:0;overflow:hidden;background:#fff;border:1px solid #E7E4DE;color:var(--ink)}
+.b.card .img{height:84px;background:linear-gradient(135deg,#d9cbb5,#a68a64 60%,#6d5a43);position:relative}
+.b.card .img:after{content:"";position:absolute;left:18%;bottom:0;width:64%;height:58%;background:linear-gradient(#f4efe6,#e7dccb);clip-path:polygon(0 35%,50% 0,100% 35%,100% 100%,0 100%)}
+.b.card .ci{padding:8px 11px;font-size:12.5px}
+.b.card .ci b{display:block;font-size:13.5px}
+.tm{font-size:10.5px;color:var(--muted);align-self:center;margin:2px 0}
+.dots{align-self:flex-start;background:#fff;border:1px solid #E7E4DE;border-radius:18px;padding:11px 14px;display:flex;gap:4px;animation:bin .3s both}
+.dots.me{align-self:flex-end;background:#f3c9cf;border-color:#f3c9cf}
+.dots span{width:6px;height:6px;border-radius:50%;background:#B9B6AE;animation:blink 1s infinite}
+.dots.me span{background:#fff}
+.dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+@keyframes bin{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+/* hub */
+.hubcol{display:flex;flex-direction:column}
+.hub{flex:1;display:flex;align-items:center;justify-content:center;position:relative;padding-top:26px}
+.hub svg{width:100%;max-width:470px;height:auto;overflow:visible}
+.hub .ln{stroke:#E4E1DA;stroke-width:2;fill:none;transition:stroke .3s}
+.hub .ln.on{stroke:var(--red);stroke-dasharray:6 7;animation:dash .6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-26}}
+.hub .nd circle{fill:#fff;stroke:#D9D6CF;stroke-width:2;transition:all .3s}
+.hub .nd path,.hub .nd rect.ic{stroke:var(--ink);fill:none;stroke-width:1.8;transition:stroke .3s}
+.hub .nd text{font:600 16px Inter,sans-serif;fill:var(--ink);text-anchor:middle}
+.hub .nd text.s{font:400 13px Inter,sans-serif;fill:var(--muted)}
+.hub .nd.on circle{fill:var(--red);stroke:var(--red)}
+.hub .nd.on path,.hub .nd.on rect.ic{stroke:#fff}
+.hub .nd .pulse{fill:var(--red);opacity:0;transform-box:fill-box;transform-origin:center}
+.hub .nd.on .pulse{animation:pulse 1.2s ease-out infinite}
+@keyframes pulse{0%{opacity:.35;transform:scale(1)}100%{opacity:0;transform:scale(1.9)}}
+.hub .core circle.c1{fill:var(--ink)}
+.hub .core circle.c2{fill:none;stroke:var(--red);stroke-width:2;stroke-dasharray:4 8;transform-box:fill-box;transform-origin:center;animation:spin 14s linear infinite}
+.hub .core.think circle.c2{animation-duration:2.5s;stroke-width:3}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hub .core text{fill:#fff;text-anchor:middle;font:500 17px Fraunces,serif}
+.hub .core text.s{font:600 10px Inter,sans-serif;letter-spacing:.14em;fill:#FF8A98}
+.packet{fill:var(--red)}
+.status{margin-top:10px;text-align:center;font-size:13.5px;color:var(--muted);min-height:22px}
+.status b{color:var(--ink)}
+/* log */
+.logcol{display:flex;flex-direction:column;min-width:0}
+.log{flex:1;background:#FBFAF8;border:1px solid var(--line);border-radius:14px;padding:12px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:7px;height:520px}
+.le{display:grid;grid-template-columns:52px 1fr;gap:8px;font-size:12.5px;line-height:1.4;background:#fff;border:1px solid #EEEBE5;border-radius:10px;padding:8px 10px;animation:bin .35s both}
+.le .t{font-variant-numeric:tabular-nums;color:var(--muted);font-size:11px;padding-top:2px}
+.le .sys{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:1px 6px;border-radius:4px;background:#F1EFEA;color:var(--text);margin-bottom:2px}
+.le.hot{border-color:#F3C3CA;background:var(--tint)}
+.le.hot .sys{background:var(--red);color:#fff}
+.le.win .sys{background:#E6F4EC;color:var(--green)}
+.le b{color:var(--ink)}
+.slk{border-left:3px solid var(--slack)}
+.result{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.result div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:11px;color:var(--muted);transition:all .4s}
+.result b{display:block;font-family:Fraunces,serif;font-size:21px;color:var(--ink);font-weight:500;line-height:1.15}
+.result.done div{border-color:var(--red);background:var(--tint)}
+.ctrl{display:flex;justify-content:center;gap:10px;margin-top:18px;align-items:center;font-size:13px;color:var(--muted)}
+.ctrl button{font:600 13px Inter,sans-serif;background:none;border:1.5px solid var(--line);border-radius:99px;padding:8px 16px;cursor:pointer;color:var(--ink)}
+.ctrl button:hover{border-color:var(--ink)}
+.prog{width:180px;height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--red);transition:width .4s}
+
+/* coordinates grid */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cap{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
+.cap .ico{width:42px;height:42px;border-radius:12px;background:var(--tint);display:grid;place-items:center;margin-bottom:14px}
+.cap .ico svg{width:22px;height:22px;stroke:var(--red);fill:none;stroke-width:1.8}
+.cap h3{font-size:22px;margin-bottom:8px}
+.cap p{font-size:15px}
+.cap .with{margin-top:14px;font-size:12px;color:var(--muted)}
+/* before / after */
+.ba{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+.ba .col{padding:32px}
+.ba .col.b4{background:#F4F2EE}
+.ba h3{font-size:24px;margin-bottom:18px}
+.ba .b4 h3{color:var(--muted)}
+.ba .af h3{color:var(--red)}
+.tline{position:relative;padding-left:22px}
+.tline:before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tline div{position:relative;padding:0 0 16px;font-size:15px}
+.tline div:before{content:"";position:absolute;left:-21px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid #B9B6AE}
+.af .tline div:before{border-color:var(--red);background:var(--red)}
+.tline div b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.af .tline div b{color:var(--red)}
+.b4 .tline div{color:var(--muted)}
+.af .tline div{color:var(--ink);font-weight:500}
+/* loop band */
+.band{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.band h2{font-size:clamp(32px,4vw,48px);line-height:1.05;margin:14px 0 16px}
+.band p{font-size:17px}
+.chain{display:flex;flex-direction:column;gap:10px}
+.lk{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;border:1px solid #2c2c33;border-radius:14px;padding:14px 18px;position:relative;overflow:hidden}
+.lk .n{font:600 18px Fraunces,serif;color:#FF5468}
+.lk b{color:#fff;display:block;font-size:15.5px}
+.lk span{font-size:13.5px}
+.lk em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8d8b86}
+.lk:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(215,38,61,.22),transparent);transform:translateX(-100%);animation:sweep 6s infinite}
+.lk:nth-child(2):after{animation-delay:1.2s}.lk:nth-child(3):after{animation-delay:2.4s}.lk:nth-child(4):after{animation-delay:3.6s}.lk:nth-child(5):after{animation-delay:4.8s}
+@keyframes sweep{0%{transform:translateX(-100%)}20%,100%{transform:translateX(100%)}}
+/* guardrails */
+.guard{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.g{border-top:2px solid var(--ink);padding-top:16px}
+.g h3{font-size:19px;margin-bottom:6px}
+.g p{font-size:14.5px}
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.wk{padding:24px;border-left:1px solid var(--line)}
+.wk:first-child{border-left:0}
+.wk .w{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.wk h3{font-size:21px;margin:8px 0 8px}
+.wk p{font-size:14.5px}
+.cta{text-align:center;padding:110px 0}
+.cta h2{font-size:clamp(40px,5.5vw,70px);line-height:1;margin:16px auto 20px;max-width:900px}
+.cta h2 em{color:var(--red)}
+.cta p{font-size:18px;max-width:620px;margin:0 auto 30px}
+.cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.pgnote{border-top:1px solid var(--line);padding:30px 0 60px;font-size:13px;color:var(--muted)}
+.pgnote .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:1100px){
+  .stage{grid-template-columns:300px 1fr;}
+  .logcol{grid-column:1 / -1}
+  .log{height:300px}
+}
+@media (max-width:900px){
+  nav .links{display:none}
+  .grid3,.guard{grid-template-columns:1fr 1fr}
+  .ba,.band{grid-template-columns:1fr}
+  .weeks{grid-template-columns:1fr 1fr}
+  .wk:nth-child(3){border-left:0}.wk:nth-child(n+3){border-top:1px solid var(--line)}
+  section{padding:66px 0}
+}
+@media (max-width:700px){
+  .wrap{padding:0 16px}
+  .stage{grid-template-columns:1fr;padding:14px;gap:18px}
+  .phone{height:540px;max-width:340px;margin:0 auto;width:100%}
+  .hubcol{order:-1}
+  .hub svg{max-width:360px}
+  .grid3,.guard,.weeks{grid-template-columns:1fr}
+  .wk{border-left:0!important;border-top:1px solid var(--line)}.wk:first-child{border-top:0}
+  .ba .col{padding:24px}
+  .stats{gap:26px}
+}
+.pgnote{padding:24px 0 28px}
+.vmore{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;color:var(--red);text-decoration:none}.vmore:hover{text-decoration:underline}
+</style>
+<header class="hero"><div class="wrap">
+  <span class="label">AI concierge for real estate</span>
+  <h1>Your best agent <em>never sleeps.</em></h1>
+  <p>Leads text at 9:47 PM and agents call back two days later. The FrogFish concierge answers in seconds, qualifies the lead, books the showing on your agent's calendar, updates your CRM and pings your team in Slack. Then it tells your ads which leads became closings.</p>
+  <div class="stats">
+    <div><b>&lt; 10 sec</b>first reply, 24/7</div>
+    <div><b>6 systems</b>coordinated per lead</div>
+    <div><b>0 min</b>agent time to book a showing</div>
+  </div>
+</div></header>
+
+<!-- LIVE DEMO -->
+<section id="demo"><div class="wrap">
+  <div class="scen" role="tablist">
+    <button class="on" data-s="buyer">Buyer <small>9:47 PM · Instagram ad</small></button>
+    <button data-s="seller">Seller <small>7:12 AM · Google search</small></button>
+    <button data-s="open">Open house <small>Sunday · QR sign-in</small></button>
+  </div>
+  <div class="stage">
+    <div>
+      <div class="colh"><span>What the lead sees</span></div>
+      <div class="phone"><div class="scr">
+        <div class="ph-top"><div class="notch"></div><div class="avc">D</div><b>Dana Reyes Homes</b><small>Text message</small></div>
+        <div class="chat" id="chat"></div>
+      </div></div>
+    </div>
+    <div class="hubcol">
+      <div class="colh"><span>What the concierge coordinates</span><span class="illus">Illustrative demo</span></div>
+      <div class="hub"><svg id="hub" viewBox="0 0 480 480" role="img" aria-label="The concierge connects ads, CRM, MLS, calendar, Slack, lender and email">
+        <g id="lines"></g><g id="packets"></g><g id="nodes"></g>
+        <g class="core" id="core"><circle class="c2" cx="240" cy="240" r="74"/><circle class="c1" cx="240" cy="240" r="62"/>
+          <text class="s" x="240" y="226">FROGFISH</text><text x="240" y="248">Concierge</text><text class="s" x="240" y="266" id="coreState">LISTENING</text></g>
+      </svg></div>
+      <div class="status" id="status">&nbsp;</div>
+    </div>
+    <div class="logcol">
+      <div class="colh"><span>What happens behind the scenes</span></div>
+      <div class="log" id="log"></div>
+      <div class="result" id="result">
+        <div><b id="r1">–</b>first reply</div>
+        <div><b id="r2">–</b>outcome</div>
+        <div><b id="r3">–</b>agent time</div>
+      </div>
+    </div>
+  </div>
+  <div class="ctrl"><button id="replay">↻ Replay</button><div class="prog"><i id="prog"></i></div><span id="pl">Playing</span></div>
+</div></section>
+
+<!-- WHAT IT COORDINATES -->
+<section class="alt" id="coordinates"><div class="wrap">
+  <div class="head"><span class="label">One concierge, every system</span><h2>It doesn't just chat. It does the work.</h2>
+  <p>Most "AI chatbots" answer questions and hand you a transcript. The concierge is wired into the tools your team already uses, so the conversation turns into booked showings, clean CRM records and smarter ads.</p></div>
+  <div class="grid3">
+    <div class="cap"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg></div><h3>Answers instantly</h3><p>Text, web chat, Instagram and Facebook DMs, and portal inquiries, 24/7, in your brand's voice. English and Spanish.</p><div class="with">SMS · web chat · Meta DMs · Zillow and portal leads</div></div>
+    <div class="cap"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div><h3>Knows the inventory</h3><p>Pulls live status, price and details from your MLS/IDX feed. When a home is gone, it suggests similar ones instead of losing the lead.</p><div class="with">MLS / IDX · your listings · past sales comps</div></div>
+    <div class="cap"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div><h3>Qualifies and scores</h3><p>Asks the questions your best agent would: timeline, pre-approval, budget, must-haves. Every lead gets a score your team can trust.</p><div class="with">Lead score · timeline · financing status</div></div>
+    <div class="cap"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3>Books the showing</h3><p>Checks the right agent's real calendar, books the slot, sends invites and reminders, and fills an open-house route with similar homes.</p><div class="with">Google / Outlook calendar · ShowingTime</div></div>
+    <div class="cap"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/></svg></div><h3>Keeps the CRM clean</h3><p>Creates or updates the contact, tags the ad that drove it, logs the conversation and moves the deal stage. No more "who talked to this lead?"</p><div class="with">Follow Up Boss · kvCORE · Lofty · Salesforce · HubSpot</div></div>
+    <div class="cap"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 12h4l2-5 3 10 2-5h3"/></svg></div><h3>Alerts and hands off</h3><p>Hot leads go to the right agent in Slack or by text, with a summary, in seconds. Lenders get warm intros. Humans can take over any thread.</p><div class="with">Slack · SMS · partner lenders</div></div>
+  </div>
+</div></section>
+
+<!-- BEFORE / AFTER -->
+<section><div class="wrap">
+  <div class="head"><span class="label">Speed to lead</span><h2>The same lead, two different weekends.</h2></div>
+  <div class="ba">
+    <div class="col b4"><h3>Without a concierge</h3><div class="tline">
+      <div><b>Fri 9:47 PM</b>Sarah asks about the Silver Lake listing. No reply.</div>
+      <div><b>Sat 8:00 AM</b>She inquires on 3 other listings with 3 other agents.</div>
+      <div><b>Sat 11:30 AM</b>Another agent calls first and books her tour.</div>
+      <div><b>Mon 10:15 AM</b>Your agent calls back. Voicemail.</div>
+      <div><b>Result</b>The ad got the lead. A competitor got the client.</div>
+    </div></div>
+    <div class="col af"><h3>With the FrogFish concierge</h3><div class="tline">
+      <div><b>Fri 9:47 PM</b>Replied in 6 seconds with details and photos.</div>
+      <div><b>Fri 9:49 PM</b>Pre-approval confirmed; showing booked Sat 11:00 with Dana.</div>
+      <div><b>Fri 9:50 PM</b>3 similar homes added to the tour. CRM and Slack updated.</div>
+      <div><b>Sat 11:00 AM</b>Dana meets Sarah with a full brief.</div>
+      <div><b>Later</b>The closing goes back to Meta and Google so they find more Sarahs.</div>
+    </div></div>
+  </div>
+</div></section>
+
+<!-- LOOP -->
+<section class="dark" id="loop"><div class="wrap band">
+  <div>
+    <span class="label">It's a loop, not a funnel</span>
+    <h2>Every closing makes the next ad smarter.</h2>
+    <p>Most brokerages judge ads on cost per lead, so platforms keep finding people who fill out forms. We send back what happened offline, like showings, offers and closings with commission value. Then Meta and Google bid on future clients, not just future clicks.</p>
+  </div>
+  <div class="chain">
+    <div class="lk"><span class="n">01</span><div><b>Ad drives an inquiry</b><span>Instagram, Google, portals, YouTube</span></div><em>Online</em></div>
+    <div class="lk"><span class="n">02</span><div><b>Concierge qualifies and books</b><span>Score, timeline, financing, showing</span></div><em>Online</em></div>
+    <div class="lk"><span class="n">03</span><div><b>Agent shows the home</b><span>Brief in hand, notes logged to CRM</span></div><em>Offline</em></div>
+    <div class="lk"><span class="n">04</span><div><b>Offer, escrow, closing</b><span>Deal stage and GCI from your CRM</span></div><em>Offline</em></div>
+    <div class="lk"><span class="n">05</span><div><b>Outcome feeds the ads</b><span>Value-based bidding, lookalikes, budget by neighborhood</span></div><em>Back online</em></div>
+  </div>
+</div></section>
+
+<!-- GUARDRAILS -->
+<section id="guardrails"><div class="wrap">
+  <div class="head"><span class="label">Guardrails</span><h2>Built for a regulated, relationship business.</h2></div>
+  <div class="guard">
+    <div class="g"><h3>Humans in control</h3><p>Agents can take over any conversation with one tap. The concierge hands off when a question needs a licensed pro.</p></div>
+    <div class="g"><h3>Fair housing by design</h3><p>No steering. It answers about homes and logistics, never about neighborhoods' demographics or "good schools for families like yours."</p></div>
+    <div class="g"><h3>Consent and compliance</h3><p>TCPA-friendly opt-ins, clear opt-out on every thread, quiet hours you set, and a full log of every message.</p></div>
+    <div class="g"><h3>Your voice, your rules</h3><p>We train it on your listings, scripts and tone. You approve the playbook before it talks to a single lead.</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="label">Getting started</span><h2>Live in 30 days.</h2></div>
+  <div class="weeks">
+    <div class="wk"><div class="w">Week 1</div><h3>Connect</h3><p>CRM, MLS/IDX feed, calendars, Slack, ad accounts and lead sources.</p></div>
+    <div class="wk"><div class="w">Week 2</div><h3>Train</h3><p>Your listings, scripts, FAQs, routing rules and voice. You approve the playbook.</p></div>
+    <div class="wk"><div class="w">Week 3</div><h3>Pilot</h3><p>One team or one lead source first, with an agent reviewing every conversation.</p></div>
+    <div class="wk"><div class="w">Week 4</div><h3>Close the loop</h3><p>Showings and closings flow back to the ad platforms. Budgets shift to what closes.</p></div>
+  </div>
+</div></section>
+
+<section class="cta"><div class="wrap">
+  <span class="label">Not another agency</span>
+  <h2>Stop losing leads <em>after 6 PM.</em></h2>
+  <p>We'll map your lead flow, show you how many inquiries wait more than an hour for a reply, and build a concierge around your team.</p>
+  <div class="row"><a class="btn" href="https://calendly.com/frogfishconsulting/discovery">Book a discovery call</a><a class="btn ghost" href="/">See how FrogFish works</a></div>
+</div></section>
+
+<div class="pgnote"><div class="wrap"><span>The demo is an illustrative example. Names, addresses and listings are fictional.</span></div></div>
+
+<script>
+(function(){
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const NS='http://www.w3.org/2000/svg';
+const NODES={
+  ads:{x:240,y:52,l:'Ad platforms',s:'Meta · Google',ic:'<path d="M-8 4V-4l12-5v18L-8 4zM-8-3h-3v6h3"/>'},
+  crm:{x:403,y:146,l:'CRM',s:'Follow Up Boss',ic:'<rect class="ic" x="-9" y="-8" width="18" height="16" rx="2"/><path d="M-5-3h10M-5 1h10M-5 5h6"/>'},
+  mls:{x:403,y:334,l:'MLS / IDX',s:'live listings',ic:'<path d="M-9 0l9-8 9 8v9H-9z"/><path d="M-3 9V3h6v6"/>'},
+  cal:{x:240,y:428,l:'Calendar',s:"agent's real slots",ic:'<rect class="ic" x="-9" y="-8" width="18" height="17" rx="2"/><path d="M-9-2h18M-4-11v5M4-11v5"/>'},
+  slack:{x:77,y:334,l:'Slack',s:'#hot-leads',ic:'<path d="M-3-9v18M3-9v18M-9-3h18M-9 3h18"/>'},
+  mail:{x:77,y:146,l:'Email & SMS',s:'nurture · reminders',ic:'<rect class="ic" x="-9" y="-7" width="18" height="14" rx="2"/><path d="M-9-6l9 7 9-7"/>'}
+};
+const gL=document.getElementById('lines'),gN=document.getElementById('nodes'),gP=document.getElementById('packets');
+const els={};
+for(const [k,n] of Object.entries(NODES)){
+  const ln=document.createElementNS(NS,'line');ln.setAttribute('x1',240);ln.setAttribute('y1',240);ln.setAttribute('x2',n.x);ln.setAttribute('y2',n.y);ln.setAttribute('class','ln');gL.appendChild(ln);
+  const g=document.createElementNS(NS,'g');g.setAttribute('class','nd');g.setAttribute('transform',`translate(${n.x},${n.y})`);
+  const below = n.y>240 || n.y===240;
+  const ty = n.y<100 ? -50 : 52, ts = n.y<100 ? -34 : 68;
+  g.innerHTML=`<circle class="pulse" r="30"/><circle r="30"/><g>${n.ic}</g><text y="${ty}">${n.l}</text><text class="s" y="${ts}">${n.s}</text>`;
+  gN.appendChild(g);els[k]={ln,g};
+}
+const chat=document.getElementById('chat'),log=document.getElementById('log'),status=document.getElementById('status'),
+      core=document.getElementById('core'),coreState=document.getElementById('coreState'),prog=document.getElementById('prog'),
+      pl=document.getElementById('pl'),result=document.getElementById('result');
+
+const S={
+buyer:{src:'Lead from Instagram ad · "Silver Lake 3BR, open Sat"',res:['6 sec','Showing','0 min'],steps:[
+ {in:"Hi! Saw your ad for the Silver Lake house. Is it still available?",t:'9:47 PM'},
+ {sys:'ads',log:'New lead from Instagram ad <b>"Silver Lake 3BR, open Sat"</b>. Source and campaign captured.',k:'Meta Ads',st:'Lead captured from <b>Meta</b>'},
+ {sys:'crm',log:'Contact <b>Sarah K.</b> created. Tagged buyer · Silver Lake · Meta.',k:'CRM',st:'Creating contact in <b>CRM</b>'},
+ {sys:'mls',log:'Listing <b>2418 Laurel Ridge Dr</b> checked: Active, $1.195M, 3 bd / 2 ba.',k:'MLS',st:'Checking <b>MLS</b> status'},
+ {out:"Hi Sarah! Yes, it's still available.",card:{b:'2418 Laurel Ridge Dr',s:'$1,195,000 · 3 bd · 2 ba · 1,780 sqft'}},
+ {out:"Are you hoping to see it in person? And are you working with a lender yet?"},
+ {in:"Yes! Is this weekend possible? We're pre-approved up to about $1.2M"},
+ {sys:'crm',log:'Lead score <b>92/100</b>: pre-approved ~$1.2M, wants to tour within 72 hrs.',k:'CRM',st:'Scoring the lead: <b>92/100</b>',hot:1},
+ {sys:'cal',log:"Dana's calendar: <b>Sat 11:00</b> and <b>Sat 2:30</b> open.",k:'Calendar',st:"Reading <b>Dana's calendar</b>"},
+ {out:"Perfect. Dana, the listing agent, has Saturday at 11:00 AM or 2:30 PM. Which works better?"},
+ {in:"11 works!"},
+ {sys:'cal',log:'Showing booked <b>Sat 11:00 AM</b>. Invites sent to Sarah and Dana.',k:'Calendar',st:'Booking the showing',win:1},
+ {sys:'mls',log:'<b>3 similar homes</b> matched in Silver Lake and Echo Park under $1.2M.',k:'MLS',st:'Finding similar homes'},
+ {out:"You're booked: Saturday 11:00 AM with Dana ✓ I found 3 similar homes nearby under $1.2M. Want me to add them to your tour?"},
+ {in:"Yes please 🙌"},
+ {sys:'slack',log:'<b>#hot-leads</b> → Dana: "Sarah K., pre-approved $1.2M, tour Sat 11 + 3 add-ons. Brief attached."',k:'Slack',st:'Alerting Dana in <b>Slack</b>',hot:1,slk:1},
+ {sys:'mail',log:'Tour route and listing sheets emailed. Reminder text set for Sat 9:00 AM.',k:'Email',st:'Sending tour details'},
+ {out:"Done! Tour route and listing details are in your inbox. See you Saturday 🏡"},
+ {sys:'ads',log:'<b>Showing booked</b> conversion sent to Meta and Google with value.',k:'Meta + Google',st:'Teaching the ads what <b>worked</b>',win:1},
+]},
+seller:{src:'Lead from Google search · "what is my home worth pasadena"',res:['5 sec','Listing appt','0 min'],steps:[
+ {in:"What's my house worth? 1140 Oakmere Ln, Pasadena",t:'7:12 AM'},
+ {sys:'ads',log:'New lead from Google Search · <b>"home value Pasadena"</b>. Keyword and click ID captured.',k:'Google Ads',st:'Lead captured from <b>Google</b>'},
+ {sys:'crm',log:'Contact <b>Mark T.</b> created as <b>seller lead</b>. Owner since 2011 (public record).',k:'CRM',st:'Creating seller record'},
+ {out:"Good morning Mark! Pulling recent sales near you now…"},
+ {sys:'mls',log:'<b>12 comparable sales</b> within 0.5 mi in the last 90 days. Range $1.38M to $1.52M.',k:'MLS',st:'Pulling <b>comps</b> from MLS'},
+ {out:"Homes like yours within half a mile sold for $1.38M to $1.52M in the last 90 days. Dana can give you an exact number after a quick walkthrough. Are you thinking about selling soon?"},
+ {in:"Probably in the spring. Mostly want to know what to fix first"},
+ {sys:'crm',log:'Lead score <b>78/100</b>: spring timeline, wants prep advice. Stage: <b>Listing prospect</b>.',k:'CRM',st:'Scoring: <b>78/100</b>',hot:1},
+ {sys:'cal',log:"Dana's calendar: <b>Thu 5:30 PM</b> open near Pasadena.",k:'Calendar',st:"Reading <b>Dana's calendar</b>"},
+ {out:"Smart timing. Dana has Thursday at 5:30 PM for a 30-minute walkthrough, and she'll bring a prep checklist. Want it?"},
+ {in:"Sure, Thursday works"},
+ {sys:'cal',log:'Listing appointment booked <b>Thu 5:30 PM</b>. CMA prep task created for Dana.',k:'Calendar',st:'Booking the walkthrough',win:1},
+ {sys:'slack',log:'<b>#listings</b> → Dana: "Seller lead, Pasadena, est. $1.4–1.5M, spring listing. Walkthrough Thu 5:30."',k:'Slack',st:'Alerting Dana in <b>Slack</b>',hot:1,slk:1},
+ {sys:'mail',log:'Added to <b>"Spring sellers"</b> nurture: prep guide now, market update every 2 weeks.',k:'Email',st:'Starting the <b>seller nurture</b>'},
+ {out:"Booked ✓ Thursday 5:30 PM. I'll text you a reminder the day before, and I just emailed you our spring prep guide."},
+ {sys:'ads',log:'<b>Listing appointment</b> sent to Google as an offline conversion.',k:'Google Ads',st:'Teaching the ads what <b>worked</b>',win:1},
+]},
+open:{src:'Signed in at open house · 518 Vista Grande · QR code',res:['Instant','2 tours','0 min'],steps:[
+ {sys:'crm',log:'<b>Open house sign-in</b>: Priya M. at 518 Vista Grande. Contact created and tied to the listing.',k:'CRM',st:'Logging the <b>sign-in</b>',t:'Sun 2:14 PM'},
+ {out:"Thanks for stopping by 518 Vista Grande today, Priya! Anything you loved, or anything that was a dealbreaker?"},
+ {in:"Loved the kitchen. Yard was too small for our dog though"},
+ {sys:'crm',log:'Preferences saved: <b>chef\'s kitchen</b>, <b>larger yard</b>, has a dog.',k:'CRM',st:'Saving preferences'},
+ {sys:'mls',log:'<b>2 matching listings</b>: big yards, updated kitchens, under budget.',k:'MLS',st:'Searching <b>MLS</b> for matches'},
+ {out:"Totally fair. Here are 2 nearby homes with bigger yards and updated kitchens:",card:{b:'1207 Arden Way  ·  +1 more',s:'$1,089,000 · 0.3 acre lot · new kitchen'}},
+ {in:"Ooh the Arden one. Can we see both this week?"},
+ {sys:'cal',log:"Agent calendar: <b>Wed 6:00 PM</b> fits both showings back to back.",k:'Calendar',st:'Finding a slot for <b>two tours</b>'},
+ {out:"Dana can show both Wednesday starting at 6:00 PM. Book it?"},
+ {in:"Yes!"},
+ {sys:'cal',log:'2 showings booked <b>Wed 6:00 and 6:40 PM</b>. Route sent.',k:'Calendar',st:'Booking both tours',win:1},
+ {sys:'slack',log:'<b>#hot-leads</b> → Dana: "Open-house lead now touring 2 homes Wed. Wants yard + kitchen, has a dog."',k:'Slack',st:'Alerting Dana in <b>Slack</b>',hot:1,slk:1},
+ {sys:'ads',log:'Sign-in and tours added to a <b>lookalike audience</b> of engaged local buyers.',k:'Meta + Google',st:'Feeding <b>audiences</b>',win:1},
+]}
+};
+
+let token=0,cur='buyer';
+const wait=(ms,tk)=>new Promise((r,j)=>setTimeout(()=>tk===token?r():j('x'),ms));
+function nowStr(base,i){const m=base.match(/(\d+):(\d+)\s*(AM|PM)/);if(!m)return base;let mm=+m[2]+Math.floor(i/4),hh=+m[1];return `${hh}:${String(mm).padStart(2,'0')} ${m[3]}`;}
+function clear(){chat.innerHTML='';log.innerHTML='';status.innerHTML='&nbsp;';result.classList.remove('done');['r1','r2','r3'].forEach(i=>document.getElementById(i).textContent='–');
+  Object.values(els).forEach(e=>{e.g.classList.remove('on');e.ln.classList.remove('on')});core.classList.remove('think');coreState.textContent='LISTENING';prog.style.width='0';}
+function trim(box,max){while(box.children.length>max)box.removeChild(box.firstChild);}
+function bubble(cls,html){const d=document.createElement('div');d.className=cls;d.innerHTML=html;chat.appendChild(d);trim(chat,9);return d;}
+function packet(k){const n=NODES[k],c=document.createElementNS(NS,'circle');c.setAttribute('r',6);c.setAttribute('class','packet');
+  c.innerHTML=`<animate attributeName="cx" from="240" to="${n.x}" dur=".55s" fill="freeze"/><animate attributeName="cy" from="240" to="${n.y}" dur=".55s" fill="freeze"/><animate attributeName="opacity" values="1;1;0" dur=".7s" fill="freeze"/>`;
+  gP.appendChild(c);setTimeout(()=>c.remove(),800);}
+function light(k){Object.entries(els).forEach(([kk,e])=>{const on=kk===k;e.g.classList.toggle('on',on);e.ln.classList.toggle('on',on)});}
+let base='9:47 PM',clock=0;
+function addLog(st,i){const d=document.createElement('div');d.className='le'+(st.hot?' hot':'')+(st.win?' win':'')+(st.slk?' slk':'');
+  const sec=String(12+i*7%48).padStart(2,'0');d.innerHTML=`<span class="t">${nowStr(base,i)}</span><div><span class="sys">${st.k}</span><br>${st.log}</div>`;log.appendChild(d);trim(log,7);}
+async function play(name){
+  const tk=++token;cur=name;clear();const sc=S[name];base=sc.steps[0].t||'9:47 PM';
+  pl.textContent='Playing';
+  const s=document.createElement('div');s.className='src';s.textContent=sc.src;chat.appendChild(s);
+  try{
+    await wait(700,tk);
+    for(let i=0;i<sc.steps.length;i++){
+      const st=sc.steps[i];prog.style.width=((i+1)/sc.steps.length*100)+'%';
+      if(st.in){const d=bubble('dots','<span></span><span></span><span></span>');await wait(900,tk);d.remove();
+        bubble('b in',st.in);core.classList.add('think');coreState.textContent='THINKING';await wait(700,tk);}
+      else if(st.sys){core.classList.add('think');coreState.textContent='WORKING';light(st.sys);packet(st.sys);status.innerHTML=st.st;await wait(450,tk);addLog(st,i);await wait(1050,tk);}
+      else if(st.out){light(null);const d=bubble('dots me','<span></span><span></span><span></span>');status.innerHTML='Replying to the lead';await wait(Math.min(1500,500+st.out.length*9),tk);d.remove();
+        bubble('b out',st.out);if(st.card)bubble('b card',`<div class="img"></div><div class="ci"><b>${st.card.b}</b>${st.card.s}</div>`);
+        if(document.getElementById('r1').textContent==='–')document.getElementById('r1').textContent=sc.res[0];await wait(1100,tk);}
+    }
+    light(null);core.classList.remove('think');coreState.textContent='DONE';status.innerHTML='Lead handled end to end. <b>No agent time spent.</b>';
+    document.getElementById('r2').textContent=sc.res[1];document.getElementById('r3').textContent=sc.res[2];result.classList.add('done');
+    pl.textContent='Next scenario in a few seconds';
+    await wait(5500,tk);
+    const order=Object.keys(S);const nx=order[(order.indexOf(name)+1)%order.length];select(nx);
+  }catch(e){}
+}
+function renderStatic(name){token++;clear();const sc=S[name];base=sc.steps[0].t||'9:47 PM';
+  const s=document.createElement('div');s.className='src';s.textContent=sc.src;chat.appendChild(s);
+  sc.steps.forEach((st,i)=>{if(st.in)bubble('b in',st.in);else if(st.out){bubble('b out',st.out);if(st.card)bubble('b card',`<div class="img"></div><div class="ci"><b>${st.card.b}</b>${st.card.s}</div>`)}else addLog(st,i)});
+  ['r1','r2','r3'].forEach((id,i)=>document.getElementById(id).textContent=sc.res[i]);result.classList.add('done');prog.style.width='100%';pl.textContent='';}
+function select(name){document.querySelectorAll('.scen button').forEach(b=>b.classList.toggle('on',b.dataset.s===name));reduce?renderStatic(name):play(name);}
+document.querySelectorAll('.scen button').forEach(b=>b.addEventListener('click',()=>select(b.dataset.s)));
+document.getElementById('replay').addEventListener('click',()=>select(cur));
+let started=false;
+const io=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!started){started=true;select('buyer');}},{threshold:.25});
+io.observe(document.getElementById('demo'));
+if(location.hash==='#static'){renderStatic('buyer');started=true;}
+})();
+</script>

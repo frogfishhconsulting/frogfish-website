@@ -25,8 +25,15 @@ const crumbs = e.kind === 'post' ? [['Insights', '/blog/']] : e.kind === 'landin
 ---
 <Base title={e.title} description={e.description} path={e.path} noindex={e.noindex} schema={pageGraph(e)}
       ogImage={e.image} ogType={e.kind === 'post' ? 'article' : 'website'} bodyClass={e.kind === 'raw' ? `page-id-${e.id}` : `page-${e.kind}`}>
+  {e.kind === 'app' && (
+    <>
+      <div class="ff-frame"><style is:inline set:html={homeCss.replace(/@import url\([^)]*\);/, '')}></style><FFNav /></div>
+      <Fragment set:html={body} />
+      <div class="ff-frame"><FFFooter /></div>
+    </>
+  )}
   {e.kind === 'raw' && <><style is:inline set:html={kadenceCss}></style><div class="entry-content single-content" style="margin:0"><Fragment set:html={body} /></div></>}
-  {e.kind !== 'raw' && (
+  {e.kind !== 'raw' && e.kind !== 'app' && (
     <div class="ff-frame">
       <style is:inline set:html={homeCss.replace(/@import url\([^)]*\);/, '') + articleCss}></style>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" />
