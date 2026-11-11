@@ -154,17 +154,6 @@
   "h1": "Contact Us"
  },
  {
-  "id": 18,
-  "path": "/testimonials/",
-  "kind": "raw",
-  "file": "page-18",
-  "title": "Client Results | What Sunrun, Le Vian & More Say About FrogFish",
-  "description": "See how FrogFish helped Sunrun, Le Vian, and 20+ growing brands move beyond vanity metrics to results-driven funnels and accountable revenue systems.",
-  "noindex": false,
-  "modified": "2023-07-28",
-  "h1": "Testimonials"
- },
- {
   "id": 15,
   "path": "/services/",
   "kind": "raw",

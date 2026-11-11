@@ -4,6 +4,11 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/testimonials/",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
       "source": "/home-2/",
       "destination": "/",
       "permanent": true
