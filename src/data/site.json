@@ -24,12 +24,12 @@
  {
   "id": 481,
   "path": "/industries/real-estate/",
-  "kind": "raw",
-  "file": "page-481",
+  "kind": "app",
+  "file": "app-ind-real-estate",
   "title": "Real Estate Digital Marketing: AEO, Paid Media & Lead Scoring | FrogFish",
   "description": "Digital growth for real estate brands: AI search visibility, paid media and lead scoring tied to booked appointments and closed deals.",
   "noindex": false,
-  "modified": "2026-10-26",
+  "modified": "2026-11-11",
   "h1": "Real Estate"
  },
  {
@@ -79,34 +79,34 @@
  {
   "id": 413,
   "path": "/industries/lead-gen/",
-  "kind": "raw",
-  "file": "page-413",
+  "kind": "app",
+  "file": "app-ind-lead-gen",
   "title": "Lead Generation Marketing for Solar & Home Services | FrogFish",
   "description": "Lead-gen programs for solar, home services and financial services: paid media, AEO and lead scoring optimized to signed contracts, not cheap leads.",
   "noindex": false,
-  "modified": "2026-10-26",
+  "modified": "2026-11-11",
   "h1": "Lead-Gen"
  },
  {
   "id": 406,
   "path": "/industries/legal/",
-  "kind": "raw",
-  "file": "page-406",
+  "kind": "app",
+  "file": "app-ind-legal",
   "title": "Law Firm Marketing: AEO, Paid Media & Intake Attribution | FrogFish",
   "description": "Marketing for personal injury, mass tort and asset-protection firms: get cited in AI answers, run paid media to signed cases, and track every lead to revenue.",
   "noindex": false,
-  "modified": "2026-10-26",
+  "modified": "2026-11-11",
   "h1": "Legal"
  },
  {
   "id": 404,
   "path": "/industries/clinical-trials/",
-  "kind": "raw",
-  "file": "page-404",
+  "kind": "app",
+  "file": "app-ind-clinical-trials",
   "title": "Clinical Trial Patient Recruitment Marketing | FrogFish Consulting",
   "description": "HIPAA-compliant patient recruitment for sponsors, CROs and site networks: paid media, AI search visibility and screening-to-enrollment attribution.",
   "noindex": false,
-  "modified": "2026-10-26",
+  "modified": "2026-11-11",
   "h1": "Clinical Trials"
  },
  {
