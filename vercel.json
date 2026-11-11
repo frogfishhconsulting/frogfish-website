@@ -3,19 +3,90 @@
   "framework": "astro",
   "trailingSlash": true,
   "redirects": [
-    { "source": "/home-2/", "destination": "/", "permanent": true },
-    { "source": "/wp-sitemap.xml", "destination": "/sitemap.xml", "permanent": true },
-    { "source": "/wp-sitemap-:rest*", "destination": "/sitemap.xml", "permanent": true },
-    { "source": "/sitemap_index.xml", "destination": "/sitemap.xml", "permanent": true },
-    { "source": "/feed/", "destination": "/rss.xml", "permanent": true },
-    { "source": "/author/:name*", "destination": "/about-us/", "permanent": true },
-    { "source": "/category/:name*", "destination": "/blog/", "permanent": true },
-    { "source": "/services", "destination": "/services/", "permanent": true },
-    { "source": "/wp-admin/:path*", "destination": "/", "permanent": false },
-    { "source": "/wp-login.php", "destination": "/", "permanent": false }
+    {
+      "source": "/home-2/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/wp-sitemap-:rest*",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/rss.xml",
+      "permanent": true
+    },
+    {
+      "source": "/author/:name*",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:name*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": false
+    }
   ],
   "headers": [
-    { "source": "/llms.txt", "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }] },
-    { "source": "/wp-content/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] }
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/wp-content/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?<sub>.*)\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
   ]
 }
