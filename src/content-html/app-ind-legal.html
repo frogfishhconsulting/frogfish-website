@@ -1,0 +1,461 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{--red:#D7263D;--red-d:#B4192E;--ink:#121216;--text:#3B3B43;--muted:#6E6E77;--paper:#FAF9F6;--line:#E4E1DA;--tint:#FCF1F2;--white:#fff;--green:#1F8A5B;--amber:#B7791F;--slack:#4A154B}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--paper);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:Fraunces,Georgia,serif;color:var(--ink);font-weight:500;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:14px 24px;border-radius:999px;font-size:15px;transition:background .15s}
+.btn:hover{background:var(--red-d)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+/* nav */
+/* hero */
+.hero{padding:80px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(46px,6.4vw,84px);line-height:.98;margin:18px 0 22px}
+.hero h1 em{font-style:italic;color:var(--red)}
+.hero p.sub{font-size:19px;max-width:540px;color:var(--text)}
+.hero .ctas{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.hero .proof{margin-top:34px;display:flex;gap:28px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.hero .proof b{display:block;font-family:Fraunces,serif;font-size:28px;color:var(--ink);font-weight:500}
+/* slack mock */
+.slack{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 60px -30px rgba(18,18,22,.28);overflow:hidden;font-size:14px}
+.slack .bar{background:var(--slack);color:#fff;padding:10px 16px;font-weight:600;font-size:13px;display:flex;justify-content:space-between}
+.slack .bar span{opacity:.7;font-weight:400}
+.msg{display:flex;gap:12px;padding:16px 18px;border-bottom:1px solid #F0EEE9}
+.msg:last-child{border-bottom:0}
+.msg>div{min-width:0}
+.av{width:36px;height:36px;border-radius:8px;flex:none;background:var(--red);display:grid;place-items:center}
+.av svg{width:20px;height:20px}
+.msg .who{font-weight:700;color:var(--ink);font-size:14px}
+.msg .who small{font-weight:400;color:var(--muted);margin-left:6px;font-size:12px}
+.msg .body{color:#1d1c1d;margin-top:3px;font-size:14px;line-height:1.5}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.04em;margin-right:6px;vertical-align:1px}
+.tag.alert{background:#FDECEE;color:var(--red)}
+.tag.win{background:#E6F4EC;color:var(--green)}
+.tag.info{background:#F1EFEA;color:var(--text)}
+.acts{display:flex;gap:8px;margin-top:10px}
+.acts span{border:1px solid #D9D6CF;border-radius:6px;padding:5px 12px;font-size:13px;font-weight:600;color:#1d1c1d}
+.acts span.ok{background:#007a5a;color:#fff;border-color:#007a5a}
+.kv{display:grid;grid-template-columns:auto auto;gap:2px 16px;margin-top:8px;font-size:13px;background:#F8F8F8;border-left:3px solid var(--red);padding:8px 12px;border-radius:4px;width:max-content;max-width:100%}
+.kv b{color:var(--ink)}
+/* sections */
+section{padding:96px 0}
+section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section.dark{background:var(--ink);color:#C9C7C2}
+section.dark h2,section.dark h3{color:#fff}
+.head{max-width:760px;margin-bottom:52px}
+.head h2{font-size:clamp(34px,4.2vw,52px);line-height:1.05;margin:14px 0 16px}
+.head p{font-size:18px}
+/* compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.compare .col{padding:34px 34px 30px}
+.compare .col.them{background:#F4F2EE}
+.compare .col.us{background:#fff;border-left:1px solid var(--line)}
+.compare h3{font-size:24px;margin-bottom:6px}
+.compare .col.them h3{color:var(--muted)}
+.compare .col.us h3{color:var(--red)}
+.compare ul{list-style:none;margin-top:18px}
+.compare li{padding:13px 0;border-top:1px solid var(--line);display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+.compare li svg{flex:none;margin-top:3px}
+.compare .them li{color:var(--muted)}
+.compare .us li{color:var(--ink);font-weight:500}
+/* system modules */
+.mod{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;padding:56px 0;border-top:1px solid var(--line)}
+.mod:first-of-type{border-top:0}
+.mod.flip .copy{order:2}
+.mod .num{font-family:Fraunces,serif;font-size:15px;color:var(--red);font-weight:600}
+.mod h3{font-size:34px;line-height:1.1;margin:8px 0 14px}
+.mod p{font-size:16.5px}
+.mod ul.ticks{list-style:none;margin-top:18px}
+.mod ul.ticks li{padding:7px 0 7px 26px;position:relative;font-size:15px}
+.mod ul.ticks li:before{content:"";position:absolute;left:0;top:13px;width:12px;height:2px;background:var(--red)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 50px -32px rgba(18,18,22,.3);padding:22px;position:relative}
+.panel .ptitle{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.illus{font-size:11px;letter-spacing:.06em;color:var(--muted);text-transform:none;font-weight:500;background:#F4F2EE;padding:3px 8px;border-radius:99px}
+/* pipeline */
+.pipe{display:flex;flex-direction:column;gap:8px}
+.stage{display:grid;grid-template-columns:150px 1fr 74px 82px;align-items:center;gap:12px;font-size:13.5px}
+.stage .nm{font-weight:600;color:var(--ink)}
+.stage .barw{background:#F4F2EE;height:26px;border-radius:5px;overflow:hidden}
+.stage .bar{height:100%;background:var(--ink);border-radius:5px}
+.stage.hl .bar{background:var(--red)}
+.stage .ct{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600}
+.stage .cp{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.stage.hl .cp{color:var(--red);font-weight:700}
+.stage.hd{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.loop{margin-top:16px;padding:12px 14px;background:var(--tint);border-radius:10px;font-size:13.5px;color:var(--ink);display:flex;gap:10px;align-items:center}
+.srcs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:99px;padding:4px 10px;background:var(--paper);color:var(--text);font-weight:500}
+/* nurture flow */
+.flow{position:relative;padding-left:22px}
+.flow:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.step{position:relative;padding:8px 0 12px}
+.step:before{content:"";position:absolute;left:-20px;top:13px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--ink)}
+.step.r:before{border-color:var(--red);background:var(--red)}
+.step .t{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.step .d{font-size:14.5px;color:var(--ink);font-weight:500}
+.step .d small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 10px}
+.split div{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px}
+.split div b{display:block;color:var(--ink);font-size:13.5px}
+.split .hot{border-color:var(--red);background:var(--tint)}
+/* dashboard */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.tile{border:1px solid var(--line);border-radius:10px;padding:12px}
+.tile .k{font-size:11.5px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.tile .v{font-family:Fraunces,serif;font-size:28px;color:var(--ink);line-height:1.1;margin-top:4px}
+.tile .dl{font-size:12px;font-weight:600}
+.dn{color:var(--green)}.up{color:var(--red)}
+.geo{display:flex;flex-direction:column;gap:7px}
+.geo .row{display:grid;grid-template-columns:44px 1fr 92px;gap:10px;align-items:center;font-size:13px}
+.geo .row .b{height:16px;border-radius:4px;background:#CFCBC3}
+.geo .row.bad .b{background:var(--red)}
+.geo .row .n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+.tgt{font-size:12px;color:var(--muted);margin-top:8px}
+/* creative */
+.ads{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ad{border-radius:10px;aspect-ratio:9/14;padding:14px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;font-family:Fraunces,serif;font-size:17px;line-height:1.15;position:relative;overflow:hidden}
+.ad small{font-family:Inter,sans-serif;font-size:11px;opacity:.85;letter-spacing:.06em;text-transform:uppercase}
+.ad .m{font-family:Inter,sans-serif;font-size:11.5px;background:rgba(255,255,255,.16);padding:6px 8px;border-radius:6px}
+.ad.a{background:linear-gradient(160deg,#121216,#3B3B43)}
+.ad.b{background:linear-gradient(160deg,#D7263D,#7d1020)}
+.ad.c{background:linear-gradient(160deg,#2b3a35,#121216)}
+.ad.win:after{content:"WINNER";position:absolute;top:12px;right:-30px;transform:rotate(35deg);background:#fff;color:var(--red);font:700 10px Inter,sans-serif;letter-spacing:.1em;padding:4px 34px}
+/* industries */
+.inds{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ind{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.ind svg{width:30px;height:30px;color:var(--red)}
+.ind h3{font-size:22px;margin:14px 0 6px}
+.ind p{font-size:14px}
+.ind .opt{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.ind .opt b{display:block;color:var(--ink);font-size:14px;margin-top:2px}
+/* pedigree */
+.ped{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
+.ped h2{font-size:clamp(34px,4vw,50px);line-height:1.05;margin:14px 0 18px}
+.ped p{font-size:17px}
+.logos{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+.logos span{border:1px solid #3a3a42;border-radius:99px;padding:6px 12px;font-size:13px;color:#E8E6E1}
+.res{display:flex;flex-direction:column;gap:14px}
+.re{border:1px solid #2c2c33;border-radius:14px;padding:22px 24px;display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center}
+.re b{font-family:Fraunces,serif;font-size:44px;color:#fff;font-weight:500;line-height:1}
+.re b.r{color:#FF5468}
+.re span{font-size:15px}
+/* 30 days */
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.wk{padding:26px 24px;border-left:1px solid var(--line)}
+.wk:first-child{border-left:0}
+.wk .w{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.wk h3{font-size:22px;margin:8px 0 10px}
+.wk p{font-size:14.5px}
+/* cta */
+.cta{text-align:center;padding:110px 0}
+.cta h2{font-size:clamp(40px,5.5vw,72px);line-height:1;margin:16px auto 20px;max-width:900px}
+.cta h2 em{color:var(--red)}
+.cta p{font-size:18px;max-width:600px;margin:0 auto 30px}
+.pgnote{border-top:1px solid var(--line);padding:30px 0 80px;font-size:13px;color:var(--muted)}
+.pgnote .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.note{font-size:12.5px;color:var(--muted);margin-top:14px}
+
+/* ---- v2: loop ---- */
+.loopgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.loopsvg{width:100%;height:auto;display:block;overflow:visible}
+.loopsvg .lt{font:600 20px Inter,sans-serif;fill:#121216}
+.loopsvg .ls{font:400 16px Inter,sans-serif;fill:#6E6E77}
+.loopsvg .ct1{font:500 28px Fraunces,Georgia,serif;fill:#121216}
+.loopsvg .ct1.r{fill:#D7263D;font-style:italic}
+.loopsvg .dot{fill:#121216}
+.loopsvg .node.hot .dot{fill:#D7263D}
+.loopsvg .nn{font:600 19px Fraunces,serif;fill:#fff}
+.loopsvg .halo{fill:#D7263D;opacity:0;transform-box:fill-box;transform-origin:center}
+.loopsvg .node{animation:none}
+.loopsvg .node .halo{animation:halo 4s infinite;animation-delay:inherit}
+@keyframes halo{0%{opacity:.4;transform:scale(1)}25%{opacity:0;transform:scale(1.8)}100%{opacity:0;transform:scale(1.7)}}
+.flowring{animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-30}}
+.teach h3{font-size:24px;margin-bottom:10px}
+.tl{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:13px 0;border-top:1px solid var(--line)}
+.tl .ti{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);padding-top:3px}
+.tl p{font-size:15px}
+/* ---- v2: hero feed ---- */
+#heroFeed{min-height:440px;display:flex;flex-direction:column}
+.typing{padding:14px 18px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:4px;opacity:0;transition:opacity .3s}
+.typing.on{opacity:1}
+.typing span{width:6px;height:6px;border-radius:50%;background:#B9B6AE;animation:blink 1s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s;margin-right:6px}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.js #heroFeed .msg{opacity:0;transform:translateY(10px);transition:opacity .45s,transform .45s;max-height:0;overflow:hidden;padding-top:0;padding-bottom:0;border-bottom-width:0}
+.js #heroFeed .msg.show{opacity:1;transform:none;max-height:400px;padding-top:16px;padding-bottom:16px;border-bottom-width:1px}
+.acts span{transition:transform .15s,box-shadow .15s}
+.acts span.pressed{transform:scale(.94);box-shadow:0 0 0 4px rgba(0,122,90,.25)}
+.reply{display:flex;gap:8px;align-items:flex-start;margin-top:10px;font-size:13px;color:#1d1c1d;background:#E6F4EC;border-radius:6px;padding:8px 10px}
+.reply svg{flex:none;margin-top:2px}
+.js .reply{opacity:0;max-height:0;margin-top:0;padding:0 10px;overflow:hidden;transition:all .4s}
+.js .reply.show{opacity:1;max-height:80px;margin-top:10px;padding:8px 10px}
+/* ---- v2: reveal animations ---- */
+.js [data-anim] .bar{width:0!important;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.js [data-anim].in .bar{width:var(--w)!important}
+.js .seq.in .msg{animation:pop .5s both}
+.js .seq .msg{opacity:0}
+.js .seq.in .msg:nth-of-type(2){animation-delay:.2s}
+.js .seq.in .msg:nth-of-type(3){animation-delay:1.1s}
+.js .seq.in .msg:nth-of-type(4){animation-delay:2s}
+@keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.js .tiles .tile{opacity:0}
+.js .tiles.in .tile{animation:pop .5s both}
+.js .tiles.in .tile:nth-child(2){animation-delay:.15s}.js .tiles.in .tile:nth-child(3){animation-delay:.3s}
+.js .geo .b{width:0!important;transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.js .geo.in .b{width:var(--w)!important}
+.geo .row.bad .b{animation:kc 1.6s ease-in-out infinite}
+@keyframes kc{0%,100%{opacity:1}50%{opacity:.45}}
+.js .ads .ad .m{opacity:0;transition:opacity .5s}
+.js .ads.in .ad .m{opacity:1}
+.js .ads.in .ad:nth-child(2) .m{transition-delay:.5s}.js .ads.in .ad:nth-child(3) .m{transition-delay:1s}
+.js .ads .ad{transition:transform .5s,opacity .5s}
+.js .ads.in .ad:not(.win){transition-delay:2s;opacity:.55;transform:scale(.96)}
+.js .ads.in .ad.win{transition-delay:2s;transform:scale(1.04);box-shadow:0 18px 30px -16px rgba(215,38,61,.7)}
+.js .ad.win:after{opacity:0;transition:opacity .4s 2.3s}
+.js .ads.in .ad.win:after{opacity:1}
+/* nurture: active step travels */
+.step{transition:opacity .3s}
+.step .d{transition:color .3s}
+.step.act:before{background:var(--red)!important;border-color:var(--red)!important;box-shadow:0 0 0 6px rgba(215,38,61,.18)}
+.step.act .d{color:var(--red)}
+.split div{transition:box-shadow .3s}
+.split div.act{box-shadow:0 0 0 3px rgba(215,38,61,.25)}
+
+/* ---- v3: industry tabs ---- */
+.vtabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.vtabs button{display:flex;align-items:center;gap:8px;font:600 14.5px Inter,sans-serif;border:1.5px solid var(--line);background:var(--paper);color:var(--text);padding:10px 18px;border-radius:99px;cursor:pointer;position:relative;overflow:hidden;transition:all .15s}
+.vtabs button svg{width:18px;height:18px;color:var(--red)}
+.vtabs button:hover{border-color:var(--ink)}
+.vtabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.vtabs button.on svg{color:#FF5468}
+.vtabs button.on:after{content:"";position:absolute;left:0;bottom:0;height:3px;background:var(--red);width:0;animation:vt 9s linear forwards}
+.vtabs.stop button.on:after{display:none}
+@keyframes vt{to{width:100%}}
+.vp{display:none;grid-template-columns:1fr 1fr;gap:48px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:36px}
+.vp.on{display:grid;animation:pop .45s both}
+.vh{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.vprob{font-family:Fraunces,serif;font-size:23px;line-height:1.3;color:var(--ink);margin:10px 0 18px}
+.vrow{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+.vrow span{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--red);padding-top:3px}
+.vrow p{font-size:15px}
+.vopt{margin-top:14px;font-size:13px;color:var(--muted)}
+.vopt b{display:inline-block;margin-left:6px;background:var(--tint);color:var(--red);padding:4px 10px;border-radius:99px;font-size:13.5px}
+.vproof{margin-top:14px;font-size:14px;border-left:3px solid var(--red);padding:6px 12px;color:var(--ink)}
+.vproof b{font-family:Fraunces,serif;font-size:18px;color:var(--red)}
+.vcta{margin-top:18px}
+.vfun{display:flex;flex-direction:column;gap:9px;margin-bottom:16px}
+.fr{display:grid;grid-template-columns:140px 1fr 56px;gap:10px;align-items:center;font-size:13.5px}
+.fr span{font-weight:600;color:var(--ink)}
+.fb{height:24px;background:#F4F2EE;border-radius:5px;overflow:hidden}
+.fb i{display:block;height:100%;background:var(--ink);border-radius:5px;width:var(--w)}
+.fr.hl .fb i{background:var(--red)}
+.fr b{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+.fr.hl b{color:var(--red)}
+.valert{border:1px solid var(--line);border-radius:12px;background:#fff;padding:14px}
+.vrec{margin-top:8px;font-size:13px;font-weight:600;color:var(--ink);background:#F8F8F8;border-left:3px solid var(--red);padding:6px 10px;border-radius:4px}
+.js .vp.on .fb i{animation:grow 1s cubic-bezier(.2,.7,.2,1) both}
+.js .vp.on .fr:nth-child(2) .fb i{animation-delay:.12s}.js .vp.on .fr:nth-child(3) .fb i{animation-delay:.24s}.js .vp.on .fr:nth-child(4) .fb i{animation-delay:.36s}
+@keyframes grow{from{width:0}to{width:var(--w)}}
+.js .vp.on .valert{animation:pop .5s 1.3s both}
+@media (max-width:900px){.vp{grid-template-columns:1fr;padding:24px;gap:28px}}
+@media (max-width:560px){.vrow{grid-template-columns:1fr;gap:4px}.fr{grid-template-columns:104px 1fr 46px;font-size:12px}.vtabs button{padding:8px 13px;font-size:13.5px}.vprob{font-size:20px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:900px){.loopgrid{grid-template-columns:1fr}#heroFeed{min-height:0}}
+.loopkey{display:none}
+@media (max-width:560px){.tl{grid-template-columns:1fr;gap:4px}.loopsvg .lt,.loopsvg .ls{display:none}
+ .loopkey{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin:18px 0 8px;padding-left:20px;font-size:13px;color:var(--muted)}
+ .loopkey li::marker{color:var(--red);font-weight:700}.loopkey b{display:block;color:var(--ink);font-size:13.5px}}
+
+@media (max-width:900px){
+  nav .links{display:none}
+  .hero .wrap,.mod,.ped,.compare{grid-template-columns:1fr}
+  .mod.flip .copy{order:0}
+  .compare .col.us{border-left:0;border-top:1px solid var(--line)}
+  .inds{grid-template-columns:1fr 1fr}
+  .weeks{grid-template-columns:1fr 1fr}
+  .wk:nth-child(3){border-left:0}
+  .wk:nth-child(n+3){border-top:1px solid var(--line)}
+  section{padding:68px 0}
+  .hero{padding:48px 0}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  .inds,.weeks,.tiles,.split{grid-template-columns:1fr}
+  .wk{border-left:0;border-top:1px solid var(--line)}
+  .wk:first-child{border-top:0}
+  .stage{grid-template-columns:96px 1fr 50px 64px;gap:8px;font-size:12px}
+  .ads{grid-template-columns:1fr 1fr}
+  .ads .ad:nth-child(3){display:none}
+  .re{grid-template-columns:1fr;gap:6px}
+  .compare .col{padding:26px 22px}
+  .kv{width:auto;grid-template-columns:1fr auto}
+}
+.pgnote{padding:24px 0 28px}
+
+.ihero{padding:64px 0 80px}
+.ihero .valert{border:1px solid var(--line)}
+.ihero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:18px}.crumbs a{text-decoration:none}.crumbs a:hover{color:var(--red)}
+.ihero h1{font-size:clamp(40px,5.2vw,68px);line-height:1.02;margin:16px 0 22px}
+.ihero h1 em{font-style:italic;color:var(--red)}
+.ihero p.sub{font-size:18.5px;max-width:560px}
+.ihero .ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chips span{font-size:12.5px;border:1px solid var(--line);background:#fff;border-radius:99px;padding:5px 12px;color:var(--text)}
+.io .fb i{width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.io.in .fb i{width:var(--w)}
+.io .fr:nth-child(2) .fb i{transition-delay:.15s}.io .fr:nth-child(3) .fb i{transition-delay:.3s}.io .fr:nth-child(4) .fb i{transition-delay:.45s}
+.pop{opacity:0;transform:translateY(10px) scale(.98);transition:opacity .45s,transform .45s}
+.in .pop,.pop.show{opacity:1;transform:none}
+.in .pop{transition-delay:1.2s}
+.probs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.prob{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+.prob .n{font-family:Fraunces,serif;font-style:italic;color:var(--red);font-size:28px}
+.prob h3{font-size:22px;margin:10px 0 10px;line-height:1.2}
+.prob p{font-size:15px}
+.loopv{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.lv{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 28px;position:relative}
+.lv .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.lv p{margin-top:10px;font-size:15.5px}
+.lv.opt{grid-column:1/-1;display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--tint);border-color:#F3CDD3}
+.lv.opt b{font-family:Fraunces,serif;font-size:26px;color:var(--ink);font-weight:500}
+.chain{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:c}
+.st{border:1px solid #2c2c33;border-radius:14px;padding:22px 20px;transition:border-color .4s,background .4s,transform .4s}
+.st .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8d8b93}
+.st h3{font-size:21px;margin:10px 0 8px;color:#fff}
+.st p{font-size:14px;color:#B9B7B2}
+.st.on{border-color:var(--red);background:rgba(215,38,61,.08);transform:translateY(-4px)}
+.st.on .k{color:#FF5468}
+.track{height:3px;background:#2c2c33;border-radius:3px;margin:0 0 26px;overflow:hidden}
+.track i{display:block;height:100%;width:20%;background:var(--red);transition:transform .5s}
+.sysg{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.feed .msg{display:none}
+.feed .msg.show{display:flex;animation:pop .45s both}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ul{list-style:none;margin-top:18px}
+.ul li{padding:10px 0 10px 26px;border-top:1px solid var(--line);position:relative;font-size:15.5px}
+.ul li:before{content:'';position:absolute;left:2px;top:19px;width:12px;height:2px;background:var(--red)}
+.sp{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.spc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px}
+.spc .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.spc h3{font-size:25px;margin:10px 0 10px;line-height:1.15}
+.spc.dk{background:var(--ink);border-color:var(--ink)}.spc.dk h3{color:#fff}.spc.dk p,.spc.dk li{color:#C9C7C2}.spc.dk .ul li{border-color:#2c2c33}
+.quote{margin-top:22px;border-left:3px solid var(--red);padding:6px 0 6px 18px;font-family:Fraunces,serif;font-size:21px;line-height:1.35;color:#fff}
+.quote small{display:block;font-family:Inter,sans-serif;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#8d8b93;margin-top:10px}
+.cc{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px;margin-top:22px}
+.cc h3{font-size:28px;line-height:1.15;margin:8px 0 10px}
+.faq{max-width:860px}
+.faq details{border-top:1px solid var(--line);padding:20px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;font-family:Fraunces,serif;font-size:22px;color:var(--ink);display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';color:var(--red);font-family:Inter,sans-serif;font-size:24px;line-height:1}
+.faq details[open] summary:after{content:'–'}
+.faq details p{margin-top:12px;font-size:16px;max-width:760px}
+.others{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+.others a{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:8px 14px;text-decoration:none;background:#fff}
+.others a:hover{border-color:var(--red);color:var(--red)}
+@media (max-width:980px){.ihero .wrap,.sysg,.cc{grid-template-columns:1fr}.chain{grid-template-columns:1fr 1fr}.probs{grid-template-columns:1fr}}
+@media (max-width:640px){.loopv,.sp,.chain{grid-template-columns:1fr}.lv.opt b{font-size:22px}.track{display:none}.ihero{padding:40px 0 56px}}
+@media (prefers-reduced-motion:reduce){.io .fb i{width:var(--w)}.pop{opacity:1;transform:none}.feed .msg{display:flex}}
+</style>
+
+<header class="ihero"><div class="wrap">
+  <div>
+    <div class="crumbs"><a href="/industries/">Industries</a> / Legal</div>
+    <span class="label">Law firms · PI, mass tort, asset protection</span>
+    <h1>Stop paying for form fills. <em>Start paying for signed cases.</em></h1>
+    <p class="sub">Can you say which campaigns drive signed cases and which ones drive wasted intake calls? Most firms can't, because the data lives in three systems that don't talk to each other. We connect your case management platform to your ad platforms, so the only number on the board is cost per signed case.</p>
+    <div class="ctas"><a class="btn" href="https://calendly.com/frogfishconsulting/discovery" target="_blank" rel="noopener">Book a funnel review →</a><a class="btn ghost" href="#system">See the system</a></div>
+    <div class="chips"><span>Filevine</span><span>Clio</span><span>Litify</span><span>MyCase</span><span>Google Ads</span><span>Meta</span><span>Microsoft Ads</span></div>
+  </div>
+  <div class="panel io">
+    <div class="ptitle"><span>Law firm pipeline · last 30 days</span><span class="illus">Illustrative example</span></div>
+    <div class="vfun"><div class="fr"><span>Leads</span><div class="fb"><i style="--w:100%"></i></div><b data-n="860">860</b></div><div class="fr"><span>Real (no spam)</span><div class="fb"><i style="--w:60%"></i></div><b data-n="512">512</b></div><div class="fr"><span>Consultations</span><div class="fb"><i style="--w:22%"></i></div><b data-n="188">188</b></div><div class="fr hl"><span>Signed cases</span><div class="fb"><i style="--w:5%"></i></div><b data-n="46">46</b></div></div>
+    <div class="msg valert pop"><div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><div><div class="who">FrogFish Signal <small>now</small></div><div class="body"><span class="tag alert">ACTION</span><b>23 calls</b> after 6 PM went to voicemail this week. 4 matched your signed-case profile.<div class="vrec">→ Callback list sent to intake · after-hours text-back turned on</div></div></div></div>
+  </div>
+</div></header>
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="label">The problem</span><h2>The ad platforms think a form fill is a client.</h2><p>So they keep finding more form fills. Your intake team pays for it.</p></div>
+  <div class="probs"><div class="prob"><div class="n">01</div><h3>Spam and junk eat intake.</h3><p>Bots, wrong practice areas and out-of-state callers look exactly like real leads to Google and Meta.</p></div><div class="prob"><div class="n">02</div><h3>The signed case is invisible.</h3><p>It closes in Filevine or Clio weeks later. The campaign that drove it never gets the credit, so budget goes to the wrong places.</p></div><div class="prob"><div class="n">03</div><h3>Your past leads are sitting idle.</h3><p>Unsigned consultations, old clients and referrals sit in the CRM. Most firms never contact them again.</p></div></div>
+</div></section>
+<section><div class="wrap">
+  <div class="head"><span class="label">Offline informs online</span><h2>The loop, for law firms.</h2><p>What happens after the lead, in calls, consults and contracts, goes back into how we bid, target and create. Every turn makes the next signed case cheaper.</p></div>
+  <div class="loopv">
+    <div class="lv"><span class="k">Offline data we pull</span><p>Signed and rejected cases, case type, case value and intake outcomes from your case management system and call tracking.</p></div>
+    <div class="lv"><span class="k">What changes online</span><p>Google, Meta and Microsoft bid on signed cases, not form fills. Lookalikes built from your actual client roster. Spam and wrong-practice-area queries cut.</p></div>
+    <div class="lv"><span class="k">What your team gets</span><p>Instant routing of qualified leads to intake, after-hours text-back, and Slack alerts when a high-value case comes in.</p></div>
+    <div class="lv"><span class="k">Systems we connect</span><p>Filevine, Clio, Litify, MyCase, CallRail, Google Ads, Meta, Microsoft Advertising.</p></div>
+    <div class="lv opt"><span class="k">We optimize to</span><b>Cost per signed case</b></div>
+  </div>
+</div></section>
+<section class="dark"><div class="wrap chainwrap">
+  <div class="head"><span class="label">How we operate</span><h2>Five layers. <em style="color:#FF5468">One operating system.</em></h2><p style="color:#C9C7C2">Every engagement runs on the same five layers. We diagnose which layer needs the most work first.</p></div>
+  <div class="track"><i></i></div>
+  <div class="chain"><div class="st"><span class="k">01 · Discovery</span><h3>Paid, AEO &amp; SEO</h3><p>Show up on the high-intent searches and AI answers that turn into consultations.</p></div><div class="st"><span class="k">02 · Intelligence</span><h3>The data layer</h3><p>Case management tied to campaigns, so you know which ad drove the case that signed six weeks later.</p></div><div class="st"><span class="k">03 · Targeting</span><h3>The platform layer</h3><p>Signed-case signal fed back to the ad platforms, with lookalikes built on real clients.</p></div><div class="st"><span class="k">04 · Intake</span><h3>The conversion layer</h3><p>Leads scored on arrival, qualified ones routed to intake instantly, noise filtered out.</p></div><div class="st"><span class="k">05 · Nurture</span><h3>The CRM layer</h3><p>Re-engagement flows that turn past consultations and referrals into signed cases.</p></div></div>
+</div></section>
+<section id="system"><div class="wrap sysg">
+  <div>
+    <span class="label">The system, running</span>
+    <div class="head" style="margin-bottom:0"><h2>Your intake team hears about it in minutes.</h2><p>Our AI watches spend, lead quality and intake every day. When something breaks or a case worth fighting for comes in, you get a plain-English alert with a fix ready to approve.</p></div>
+    <ul class="ul"><li>Spam spikes and junk-query alerts with one-click fixes</li><li>High-value case alerts routed to the right attorney</li><li>Weekly cost per signed case by channel and practice area</li></ul>
+  </div>
+  <div class="slack feed"><div class="bar"># intake-alerts<span>Illustrative example</span></div><div class="msg "><div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><div><div class="who">FrogFish Signal <small>9:12 AM</small></div><div class="body"><span class="tag win">HIGH VALUE</span><b>Truck accident, 2 injured</b>, scored 94/100. Called back in 48 seconds.<div class="vrec">→ Assigned to senior PI attorney · consult booked 11:30</div></div></div></div><div class="msg "><div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><div><div class="who">FrogFish Signal <small>11:40 AM</small></div><div class="body"><span class="tag alert">SPAM</span><b>31% of yesterday's leads</b> came from 2 placements on Google display.<div class="vrec">→ Placements excluded · $140/day moved to search</div></div></div></div><div class="msg "><div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><div><div class="who">FrogFish Signal <small>Mon 8:00 AM</small></div><div class="body"><span class="tag info">WEEKLY</span><b>14 signed cases</b> at $2,310 each (−11% vs last week). Best: Google search, Worst: Meta prospecting.</div></div></div></div>
+</div></section>
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="label">Where firms come to us</span><h2>You're here for one of <em style="color:var(--red)">two reasons.</em></h2><p>Something is leaking and you can feel it but can't see it, or things are working and you want to scale without breaking them. Both start with the same diagnosis.</p></div>
+  <div class="sp">
+    <div class="spc"><span class="k">Door 01 · The leaky bucket</span><h3>You're spending, but signed cases aren't tracking.</h3><p>Cost per lead is climbing, intake is drowning and half the leads never sign.</p>
+      <ul class="ul"><li>Intake quality audit and lead scoring</li><li>CRM-to-campaign attribution rebuild</li><li>Cost per signed case by channel</li><li>Disqualification analysis</li></ul></div>
+    <div class="spc dk"><span class="k">Door 02 · Supercharge growth</span><h3>The funnel works. Now you want it to compound.</h3><p>You want more spend without cost per signed case exploding.</p>
+      <ul class="ul"><li>Closed-case data sent to Meta, Google and programmatic</li><li>Lookalikes built on signed clients</li><li>Geographic and practice-area expansion modeling</li><li>Creative testing tied to case value</li></ul></div>
+  </div>
+</div></section>
+<section class="dark" id="proof"><div class="wrap ped">
+  <div>
+    <span class="label">Proof</span>
+    <h2>Numbers from real law firm engagements.</h2>
+    <p>Founder Alex Fleshner spent 13 years at Google, including leading the Google Ads lead-gen vertical, Head of Media Strategy at Verily and AI Transformation Lead at Google Cloud AI. Senior people run every account.</p>
+    <div class="quote">“His reliability and his availability. Called at all hours of the day, and he's there for me and my team.”<small>Blake Harris · Founder, Blake Harris Law</small></div>
+  </div>
+  <div class="res"><div class="re"><b class="r">−42%</b><span>Cost per signed case after restructuring attribution around closed-case data, four months in</span></div><div class="re"><b class="r">−56%</b><span>Spam leads after taking over a consumer law firm's Google Ads and rebuilding conversion tracking</span></div><div class="re"><b class="">+40%</b><span>Closed cases from that same account once it optimized to real outcomes</span></div></div>
+</div></section>
+<section><div class="wrap">
+  <div class="head"><span class="label">FAQ</span><h2>Questions law firms ask us.</h2></div>
+  <div class="faq"><details><summary>How do you track which ads produce signed cases?</summary><p>We connect your case management system (Filevine, Clio, Litify, MyCase and others) and call tracking to your ad accounts. Each signed case is matched back to the click or call that started it and sent to Google, Meta and Microsoft as an offline conversion.</p></details><details><summary>Is case data safe to send to ad platforms?</summary><p>We send only hashed identifiers and the conversion event, never case details. You decide which case types and values are shared.</p></details><details><summary>Do you work with personal injury and mass tort firms?</summary><p>Yes. We work with personal injury, mass tort, asset protection and other consumer law firms that spend $10K or more a month on ads.</p></details><details><summary>How fast will we see results?</summary><p>Tracking and spam cleanup usually show up in the first month. In one engagement, cost per signed case fell 42% within four months.</p></details></div>
+</div></section>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do you track which ads produce signed cases?", "acceptedAnswer": {"@type": "Answer", "text": "We connect your case management system (Filevine, Clio, Litify, MyCase and others) and call tracking to your ad accounts. Each signed case is matched back to the click or call that started it and sent to Google, Meta and Microsoft as an offline conversion."}}, {"@type": "Question", "name": "Is case data safe to send to ad platforms?", "acceptedAnswer": {"@type": "Answer", "text": "We send only hashed identifiers and the conversion event, never case details. You decide which case types and values are shared."}}, {"@type": "Question", "name": "Do you work with personal injury and mass tort firms?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We work with personal injury, mass tort, asset protection and other consumer law firms that spend $10K or more a month on ads."}}, {"@type": "Question", "name": "How fast will we see results?", "acceptedAnswer": {"@type": "Answer", "text": "Tracking and spam cleanup usually show up in the first month. In one engagement, cost per signed case fell 42% within four months."}}]}</script>
+<section class="alt cta"><div class="wrap">
+  <span class="label">Not another agency</span>
+  <h2>30 minutes. <em>One honest answer.</em></h2>
+  <p>We'll review your funnel, tell you whether you're a Door 01 or Door 02 firm, and name the highest-leverage move, whether we work together or not.</p>
+  <a class="btn" href="https://calendly.com/frogfishconsulting/discovery" target="_blank" rel="noopener">Book a funnel review →</a>
+  <div class="others"><a href="/">How FrogFish works</a><a href="/industries/lead-gen/">Solar, home &amp; financial</a><a href="/industries/real-estate/">Real estate</a><a href="/industries/clinical-trials/">Clinical trials</a></div>
+</div></section>
+<div class="pgnote"><div class="wrap"><span>Product screens show illustrative examples, not client data. Results shown are from FrogFish client engagements.</span></div></div>
+<script>
+(function(){
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el){var n=+el.dataset.n,s=performance.now();(function f(t){var p=Math.min(1,(t-s)/1100);el.textContent=Math.round(n*(1-Math.pow(1-p,3))).toLocaleString();if(p<1)requestAnimationFrame(f)})(s)}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;e.target.classList.add('in');if(!rm)e.target.querySelectorAll('b[data-n]').forEach(count);io.unobserve(e.target)})},{threshold:.3});
+  document.querySelectorAll('.io').forEach(function(el){io.observe(el)});
+  // system feed: reveal messages one by one, then loop
+  document.querySelectorAll('.feed').forEach(function(f){
+    var ms=[].slice.call(f.querySelectorAll('.msg'));if(rm){ms.forEach(function(m){m.classList.add('show')});return}
+    var i=0,started=false;function step(){if(i>=ms.length){setTimeout(function(){ms.forEach(function(m){m.classList.remove('show')});i=0;step()},4200);return}ms[i++].classList.add('show');setTimeout(step,1900)}
+    new IntersectionObserver(function(es,o){if(es[0].isIntersecting&&!started){started=true;step();o.disconnect()}},{threshold:.3}).observe(f);
+  });
+  // operating chain: highlight steps in turn
+  document.querySelectorAll('.chainwrap').forEach(function(w){
+    var st=w.querySelectorAll('.st'),tr=w.querySelector('.track i'),k=0;if(!st.length)return;
+    function on(){st.forEach(function(s,j){s.classList.toggle('on',j===k)});if(tr)tr.style.transform='translateX('+(k*100)+'%)';k=(k+1)%st.length}
+    on();if(!rm)setInterval(on,2200);
+  });
+})();
+</script>
