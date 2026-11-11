@@ -1,6 +1,7 @@
 ---
 // Site-wide shell: SEO head, JSON-LD, tracking (GTM + Google tag), mobile menu, floating audit CTA.
 import globalCss from '../styles/wp-global.css?raw';
+import lightCss from '../styles/light-theme.css?raw';
 import { SITE, orgGraph } from '../lib/schema.js';
 
 const { title, description, path, noindex = false, schema = [], ogImage, bodyClass = '', ogType = 'website' } = Astro.props;
@@ -90,6 +91,7 @@ const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': [...orgG
     <a href="/contact-us/">Contact</a>
     <a href="https://calendly.com/frogfishconsulting/discovery" target="_blank" class="ff-mobile-cta">Book a call &rarr;</a>
   </div>
+  {!bodyClass.includes('page-id-390') && <style is:inline set:html={lightCss}></style>}
   <script is:inline src="/js/site.js"></script>
 </body>
 </html>

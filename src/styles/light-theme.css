@@ -1,0 +1,86 @@
+/* Light theme, site-wide (2026-11): matches the "Not another agency" homepage.
+   Turns the legacy dark nav / hero / CTA / footer bands from the WordPress port into
+   paper-white bands with ink text. Loaded last from Base.astro so it wins over page CSS. */
+:root { --lt-paper:#FAF9F6; --lt-white:#fff; --lt-ink:#121216; --lt-text:#3B3B43; --lt-muted:#6E6E77; --lt-line:#E4E1DA; --lt-red:#D7263D; --lt-red-d:#B4192E; }
+
+/* ---------- bands that used to be dark ---------- */
+html body :is(.ff-nav-wrap,.re-nav-wrap,.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-wrap section.ff-ind-hero,.ffa-hero,
+  .ff-cta-band-wrap,.re-cta-band,.ff-ind-wrap section.ff-ind-cta,.ff-footer-wrap,.re-footer-wrap) {
+  background: var(--lt-paper) !important; color: var(--lt-text) !important;
+}
+html body :is(.ff-cta-band-wrap,.re-cta-band,.ff-ind-wrap section.ff-ind-cta) { background: var(--lt-white) !important; border-top: 1px solid var(--lt-line) !important; border-bottom: 1px solid var(--lt-line) !important; }
+html body :is(.ff-footer-wrap,.re-footer-wrap) { border-top: 1px solid var(--lt-line) !important; }
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-wrap section.ff-ind-hero,.ffa-hero) { border-bottom: 1px solid var(--lt-line) !important; }
+
+/* glows and grid textures were drawn for a black background */
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero,.ffa-hero,.ff-cta-band-wrap,.re-cta-band,.ff-ind-cta,.ff-cta-band)::before,
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero,.ffa-hero,.ff-cta-band-wrap,.re-cta-band,.ff-ind-cta,.ff-cta-band)::after,
+html body :is(.ff-grid-bg,.re-grid-bg,.ff-hero-glow,.ff-glow) { display: none !important; }
+
+/* text inside those bands */
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero,.ffa-hero,.ff-cta-band-wrap,.re-cta-band,.ff-ind-cta,.ff-footer-wrap,.re-footer-wrap)
+  :is(h1,h2,h3,h4,strong,b) { color: var(--lt-ink) !important; -webkit-text-fill-color: currentColor; }
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero,.ffa-hero,.ff-cta-band-wrap,.re-cta-band,.ff-ind-cta,.ff-footer-wrap,.re-footer-wrap)
+  :is(p,li,span,div,small,a):not([class*="cta-primary"]):not([class*="cta-red"]):not([class*="nav-cta"]):not([class*="btn"]):not([class*="eyebrow"]):not(.ff-pill):not(.ff-group-pill):not(.is-on):not(.active):not([class*="pill"] *) { color: var(--lt-text) !important; }
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero,.ffa-hero,.ff-cta-band-wrap,.re-cta-band,.ff-ind-cta) :is(h1,h2) em,
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero,.ffa-hero,.ff-cta-band-wrap,.re-cta-band,.ff-ind-cta) :is(h1,h2) em * {
+  color: var(--lt-red) !important; -webkit-text-fill-color: var(--lt-red) !important; background: none !important;
+}
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero,.ffa-hero,.ff-cta-band-wrap,.re-cta-band,.ff-ind-cta) [class*="eyebrow"] { color: var(--lt-red) !important; }
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero,.ffa-hero) a:not([class]):not([class*="cta"]) ,
+html body :is(.ffa-crumbs,.ff-ind-crumb) a { color: var(--lt-muted) !important; }
+
+/* buttons: primary stays red; secondary/ghost becomes an ink outline */
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero,.ff-cta-band-wrap,.re-cta-band,.ff-ind-cta) :is([class*="cta-primary"],[class*="cta-red"],.ff-btn-primary) { color: #fff !important; background: var(--lt-red) !important; border-color: var(--lt-red) !important; }
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero,.ff-cta-band-wrap,.re-cta-band,.ff-ind-cta) :is([class*="cta-secondary"],[class*="btn-ghost"],[class*="cta-ghost"],.ff-btn-secondary) {
+  color: var(--lt-ink) !important; border-color: var(--lt-ink) !important; background: transparent !important;
+}
+
+/* cards that sat on dark bands */
+html body .ff-ind-card { background: var(--lt-white) !important; border-color: var(--lt-line) !important; }
+html body .ff-ind-card:hover { border-color: var(--lt-red) !important; box-shadow: 0 18px 40px -24px rgba(18,18,22,.25) !important; }
+html body .ff-ind-card :is(h3) { color: var(--lt-ink) !important; }
+html body .ff-ind-card :is(p,.ff-ind-tags,.ff-ind-tags *) { color: var(--lt-text) !important; }
+html body :is(.ff-ind-tags span,.ff-ind-hero [class*="tag"]) { border-color: var(--lt-line) !important; background: var(--lt-paper) !important; }
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero) :is([class*="stat"],[class*="card"],[class*="tab"]):not([class*="tab"].is-on) { border-color: var(--lt-line) !important; }
+html body .ff-hero-tab { background: var(--lt-white) !important; color: var(--lt-text) !important; border-color: var(--lt-line) !important; }
+html body .ff-hero-tab.is-on { background: var(--lt-ink) !important; color: #fff !important; }
+
+/* ---------- nav: sticky paper bar, mark + wordmark ---------- */
+html body :is(.ff-nav-wrap,.re-nav-wrap) { position: sticky !important; top: 0; z-index: 50 !important; background: rgba(250,249,246,.94) !important; backdrop-filter: blur(8px); border-bottom: 1px solid var(--lt-line) !important; }
+html body :is(.ff-nav,.re-nav) { padding: 14px 0 !important; }
+html body :is(.ff-nav-links,.re-nav-links) a { color: var(--lt-text) !important; }
+html body :is(.ff-nav-links,.re-nav-links) a:hover { color: var(--lt-red) !important; }
+html body :is(.ff-nav-cta,.re-nav-cta) { color: #fff !important; border-radius: 999px !important; }
+html body :is(.ff-logo,.re-logo,.ff-footer-logo,.re-footer-logo) {
+  width: auto !important; min-width: 150px; height: 44px !important; padding-left: 52px; display: flex !important; align-items: center;
+  background-image: url('/wp-content/uploads/2026/05/frogfish-mark-transparent.png') !important; background-size: 44px auto !important;
+  background-position: left center !important; background-repeat: no-repeat !important; text-decoration: none !important;
+}
+html body :is(.ff-logo,.re-logo,.ff-footer-logo,.re-footer-logo)::before { display: none !important; }
+html body :is(.ff-logo,.re-logo,.ff-footer-logo,.re-footer-logo)::after {
+  content: 'FrogFish'; position: static !important; font-family: Fraunces, Georgia, serif; font-size: 21px; font-weight: 600; color: var(--lt-ink); letter-spacing: -.01em;
+  background: none !important; width: auto !important; height: auto !important; filter: none !important;
+}
+
+/* footer */
+html body :is(.ff-footer,.re-footer), html body :is(.ff-footer,.re-footer) * { color: var(--lt-muted) !important; }
+html body :is(.ff-footer-links,.re-footer-links) a:hover { color: var(--lt-red) !important; }
+
+/* mobile menu button on a light bar */
+@media (max-width: 900px) {
+  html body .ff-mobile-btn { background: var(--lt-white) !important; border: 1px solid var(--lt-line) !important; top: 14px !important; }
+  html body .ff-mobile-btn span { background: var(--lt-ink) !important; }
+  html body .ff-mobile-btn.is-open { background: var(--lt-white) !important; }
+  html body :is(.ff-nav-cta,.re-nav-cta) { display: none !important; }
+}
+
+/* WordPress h1 top margin left a gap under the eyebrow */
+html body :is(.ff-hero-wrap,.re-hero-wrap,.ff-hero,.ff-ind-hero) h1 { margin-top: 10px !important; }
+
+/* industry pages: their own rules are more specific */
+html body .ff-ind :is(.ff-ind-cta,.ff-ind-hero) :is(h1,h2) { color: var(--lt-ink) !important; }
+html body .ff-ind :is(.ff-ind-cta,.ff-ind-hero) :is(h1,h2) em { color: var(--lt-red) !important; }
+html body .ff-ind :is(.ff-ind-cta,.ff-ind-hero) p { color: var(--lt-text) !important; }
+html body .ff-ind :is(.ff-ind-cta,.ff-ind-hero) .btn-primary { background: var(--lt-red) !important; color: #fff !important; }
+html body .ff-ind :is(.ff-ind-cta,.ff-ind-hero) .eyebrow { color: var(--lt-red) !important; }
