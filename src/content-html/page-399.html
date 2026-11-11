@@ -1,0 +1,206 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap');
+.ff-frame { all: initial; display: block; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #3B3B43; line-height: 1.6; -webkit-font-smoothing: antialiased; background: #FAF9F6; }
+.ff-frame *, .ff-frame *::before, .ff-frame *::after { box-sizing: border-box; }
+.ff-frame a { color: inherit; text-decoration: none; }
+.ff-container { max-width: 1240px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+.ff-nav-wrap { background: #0E0E11; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 10; }
+.ff-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+.ff-logo { display: block; width: 190px; height: 52px; position: relative; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-nav-links { display: flex; gap: 40px; font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 500; }
+.ff-nav-links a:hover { color: #fff; }
+.ff-nav-cta { background: #D7263D; color: #fff !important; padding: 13px 22px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+
+/* Bands: section 1 = dark hero, section 2 = light, CTA = dark */
+.ff-ind { position: relative; overflow: hidden; background: #FAF9F6; }
+.ff-ind-wrap { position: relative; z-index: 2; padding: 0; }
+.ff-ind-wrap section { position: relative; overflow: hidden; max-width: none; margin: 0; padding: 104px max(40px, calc((100% - 1160px) / 2)); background: #FAF9F6; border-top: 1px solid #E4E1DA; }
+.ff-ind-wrap section > * { position: relative; z-index: 2; }
+.ff-ind-wrap section.ff-ind-hero { background: #0E0E11; border-top: 0; padding-top: 112px; padding-bottom: 96px; }
+.ff-ind-hero::before { content: ''; position: absolute; top: -260px; right: -180px; width: 720px; height: 720px; background: radial-gradient(circle, rgba(215,38,61,0.28) 0%, transparent 62%); filter: blur(60px); pointer-events: none; z-index: 1; }
+
+.ff-ind .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #B4192E; margin-bottom: 20px; }
+.ff-ind .eyebrow::before { content: ''; width: 28px; height: 2px; background: #D7263D; }
+.ff-ind .ff-ind-hero .eyebrow, .ff-ind .ff-ind-cta .eyebrow { color: #FF6B7D; }
+.ff-ind h1 { font-family: 'Fraunces', Georgia, serif; font-size: 76px; font-weight: 500; line-height: 1.02; letter-spacing: -0.035em; margin: 0; max-width: 20ch; color: #FFFFFF !important; text-wrap: balance; }
+.ff-ind h1 em { font-style: italic; color: #FF6B7D; }
+.ff-ind h2 { font-family: 'Fraunces', Georgia, serif; font-size: 54px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; margin: 0; color: #121216 !important; text-wrap: balance; }
+.ff-ind h2 em { font-style: italic; color: #B4192E; }
+.ff-ind .lead { font-size: 19px; line-height: 1.65; color: #3B3B43; margin: 0; }
+.ff-ind .ff-ind-hero .lead { font-size: 21px; line-height: 1.6; color: rgba(255,255,255,0.88); }
+
+/* Industry cards sit inside the dark hero band */
+.ff-ind-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 56px; }
+.ff-ind-card { position: relative; padding: 36px 34px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; transition: border-color 0.2s, box-shadow 0.2s, background 0.2s; display: block; overflow: hidden; }
+.ff-ind-card:hover { border-color: #D7263D; background: rgba(255,255,255,0.06); box-shadow: 0 10px 30px -18px rgba(0,0,0,0.6); }
+.ff-ind-num { display: block; font-size: 12px; color: #FF6B7D; font-weight: 700; letter-spacing: 0.14em; margin-bottom: 18px; text-transform: uppercase; }
+.ff-ind-arrow { position: absolute; top: 36px; right: 34px; color: rgba(255,255,255,0.62); font-size: 20px; transition: transform 0.2s, color 0.2s; }
+.ff-ind-card:hover .ff-ind-arrow { color: #FF6B7D; transform: translateX(4px); }
+.ff-ind-card h3 { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 12px; color: #FFFFFF; }
+.ff-ind-card p { font-size: 15px; color: rgba(255,255,255,0.88); line-height: 1.6; margin: 0 0 20px; }
+.ff-ind-tags { font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.62); font-weight: 600; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); }
+
+/* Stats, light band */
+.ff-ind-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border: 1px solid #E4E1DA; border-radius: 14px; overflow: hidden; background: #fff; }
+.ff-ind-stat { padding: 36px 32px; border-right: 1px solid #ECE9E3; }
+.ff-ind-stat:last-child { border-right: 0; }
+.ff-ind-statnum { font-family: 'Fraunces', Georgia, serif; font-size: 64px; font-weight: 500; letter-spacing: -0.035em; margin: 0 0 12px; color: #121216; line-height: 1; font-variant-numeric: tabular-nums; }
+.ff-ind-statnum em { font-style: italic; color: #B4192E; }
+.ff-ind-statlabel { font-size: 15px; color: #3B3B43; line-height: 1.5; max-width: 30ch; }
+
+/* Final CTA, dark band */
+.ff-ind-wrap section.ff-ind-cta { text-align: center; padding: 112px 40px !important; background: #0E0E11; border-top: 0; }
+.ff-ind-cta::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 760px; height: 380px; background: radial-gradient(ellipse, rgba(215,38,61,0.22) 0%, transparent 70%); filter: blur(70px); pointer-events: none; z-index: 1; }
+.ff-ind .ff-ind-cta h2 { font-size: 60px; letter-spacing: -0.035em; line-height: 1.06; max-width: 22ch; margin: 0 auto 24px; color: #ffffff !important; }
+.ff-ind .ff-ind-cta h2 em { color: #FF6B7D; }
+.ff-ind-cta p { font-size: 19px; color: rgba(255,255,255,0.88); margin: 0 auto 36px; max-width: 56ch; line-height: 1.6; }
+.ff-ind-cta .btn { display: inline-flex; align-items: center; gap: 10px; padding: 18px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; }
+.ff-ind-cta .btn-primary { background: #fff; color: #121216 !important; transition: box-shadow 0.2s; }
+.ff-ind-cta .btn-primary:hover { box-shadow: 0 10px 30px -12px rgba(215,38,61,0.6); }
+
+.ff-footer-wrap { background: #0E0E11; border-top: 1px solid rgba(255,255,255,0.08); padding: 48px 0; }
+.ff-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 14px; color: rgba(255,255,255,0.62); }
+.ff-footer-links { display: flex; gap: 28px; font-size: 14px; }
+.ff-frame .ff-footer-links a { color: rgba(255,255,255,0.62); transition: color 0.2s; }
+.ff-frame .ff-footer-links a:hover { color: #fff; }
+.ff-footer-logo { display: block; width: 150px; height: 42px; position: relative; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-frame a:focus-visible { outline: 2px solid #D7263D; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { .ff-ind-card, .ff-ind-arrow { transition: none; } }
+
+@media (max-width: 900px) {
+  .ff-container { padding: 0 20px; }
+  .ff-nav { flex-wrap: wrap; row-gap: 14px; } .ff-nav-links { display: flex; order: 3; width: 100%; gap: 24px; font-size: 14px; overflow-x: auto; white-space: nowrap; padding-bottom: 2px; } .ff-logo { width: 140px; height: 40px; } .ff-nav-cta { padding: 10px 15px; font-size: 13px; }
+  .ff-ind-wrap section { padding: 64px 20px; }
+  .ff-ind-wrap section.ff-ind-hero { padding: 64px 20px 56px; }
+  .ff-ind h1 { font-size: 40px; }
+  .ff-ind h2 { font-size: 34px; }
+  .ff-ind .lead, .ff-ind .ff-ind-hero .lead { font-size: 17px; }
+  .ff-ind-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
+  .ff-ind-card { padding: 28px 22px; }
+  .ff-ind-arrow { top: 28px; right: 22px; }
+  .ff-ind-stats { grid-template-columns: 1fr; margin-top: 40px; }
+  .ff-ind-stat { border-right: 0; border-bottom: 1px solid #ECE9E3; padding: 28px 22px; }
+  .ff-ind-stat:last-child { border-bottom: 0; }
+  .ff-ind-statnum { font-size: 50px; }
+  .ff-ind-wrap section.ff-ind-cta { padding: 72px 20px !important; }
+  .ff-ind .ff-ind-cta h2 { font-size: 34px; }
+  .ff-ind-cta p { font-size: 17px; }
+}
+</style>
+
+<div class="ff-frame">
+  <div class="ff-nav-wrap"><div class="ff-container"><nav class="ff-nav">
+    <a href="/" class="ff-logo" aria-label="FrogFish Consulting"></a>
+    <div class="ff-nav-links"><a href="/services/">Services</a><a href="/industries/">Industries</a><a href="/about-us/">About</a><a href="/contact-us/">Contact</a></div>
+    <a href="https://calendly.com/frogfishconsulting/discovery" class="ff-nav-cta" target="_blank" rel="noopener">Book a call →</a>
+  </nav></div></div>
+
+  <div class="ff-ind">
+    <div class="ff-ind-wrap">
+
+      <section class="ff-ind-hero">
+        <div class="eyebrow">Industries we serve</div>
+        <h1>Built for the verticals where <em>marketing math is broken.</em></h1>
+        <p class="lead" style="max-width: 760px; margin-top: 32px;">
+          We work with industries that share one trait: leads start online but close offline.
+          That gap is where most marketing dollars die. We close it.
+        </p>
+
+        <div class="ff-ind-grid">
+
+          <a href="/industries/real-estate/" class="ff-ind-card">
+            <span class="ff-ind-arrow">→</span>
+            <span class="ff-ind-num">01 — Real Estate</span>
+            <h3>Commercial &amp; residential</h3>
+            <p>
+              Sales and leasing for brokerages, developers, and property managers. We connect
+              portal traffic, tour requests, and CRM deal data so bids follow signed contracts,
+              not form fills.
+            </p>
+            <div class="ff-ind-tags">CRE · RESIDENTIAL · DEVELOPERS · MULTIFAMILY · LUXURY</div>
+          </a>
+
+          <a href="/industries/clinical-trials/" class="ff-ind-card">
+            <span class="ff-ind-arrow">→</span>
+            <span class="ff-ind-num">02 — Healthcare</span>
+            <h3>Clinical trials</h3>
+            <p>
+              HIPAA-compliant recruitment that learns. We turn enrollment data into the
+              signal your ad platforms need to find more qualified patients, faster.
+            </p>
+            <div class="ff-ind-tags">MEASUREMENT · TARGETING · QUALIFICATION</div>
+          </a>
+
+          <a href="/industries/legal/" class="ff-ind-card">
+            <span class="ff-ind-arrow">→</span>
+            <span class="ff-ind-num">03 — Legal</span>
+            <h3>Law firms</h3>
+            <p>
+              Stop optimizing for form fills. We connect your case management system back
+              to your campaigns so you spend on the leads that actually sign.
+            </p>
+            <div class="ff-ind-tags">INTAKE · ATTRIBUTION · LEAD SCORING</div>
+          </a>
+
+          <a href="/industries/lead-gen/" class="ff-ind-card">
+            <span class="ff-ind-arrow">→</span>
+            <span class="ff-ind-num">04 — Lead-gen businesses</span>
+            <h3>Online-to-offline</h3>
+            <p>
+              Solar, home services, financial, insurance. Heavy spend, long sales cycles,
+              and no view into which campaigns drive closed revenue. We build that view.
+            </p>
+            <div class="ff-ind-tags">SOLAR · HOME SERVICES · FINANCIAL · INSURANCE</div>
+          </a>
+
+        </div>
+      </section>
+
+      <section>
+        <div class="eyebrow">The common thread</div>
+        <h2>Why these industries, <em>specifically.</em></h2>
+        <p class="lead" style="max-width: 780px; margin-top: 24px;">
+          They share the same fundamental problem: a long, offline-heavy conversion path
+          that disconnects ad spend from revenue. Standard agency reporting stops at the
+          form fill. Real revenue happens weeks later, in a CRM, an intake call, a signed
+          lease, or an enrollment screening. We engineer that connection back into the campaign.
+        </p>
+        <div class="ff-ind-stats">
+          <div class="ff-ind-stat">
+            <div class="ff-ind-statnum">+<em>32</em>%</div>
+            <div class="ff-ind-statlabel">Efficiency in cost per sale from lead scoring for a publicly traded solar energy company</div>
+          </div>
+          <div class="ff-ind-stat">
+            <div class="ff-ind-statnum">&minus;<em>42</em>%</div>
+            <div class="ff-ind-statlabel">Cost per signed case for an asset protection law firm after rebuilding attribution around closed cases</div>
+          </div>
+          <div class="ff-ind-stat">
+            <div class="ff-ind-statnum"><em>$250</em>K</div>
+            <div class="ff-ind-statlabel">Closed revenue from AI-attributed leads for a B2C law firm in four months</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ff-ind-cta">
+        <div class="eyebrow" style="justify-content: center;">Ready to talk?</div>
+        <h2>Get a <em>free funnel audit.</em></h2>
+        <p>
+          30 minutes. We&#8217;ll review your funnel end-to-end, pinpoint where revenue is
+          leaking, and send you a tailored plan. Whether we end up working together
+          or not.
+        </p>
+        <a href="https://calendly.com/frogfishconsulting/discovery" class="btn btn-primary" target="_blank" rel="noopener">
+          Book your free audit →
+        </a>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="ff-footer-wrap"><div class="ff-container"><div class="ff-footer">
+    <div class="ff-footer-logo" aria-label="FrogFish Consulting"></div>
+    <div>© 2026 FrogFish Consulting · All rights reserved</div>
+  </div></div></div>
+</div>
+<style id="ff-sitewide-light">body.page, body.page .site, body.page .site-container, body.page #content, body.page #primary, body.page .content-area, body.page .entry-content { background: #FAF9F6 !important; color: #3B3B43 !important; } body .ff-audit-float { background: #D7263D !important; border: 0 !important; backdrop-filter: none !important; } body .ff-audit-float:hover { background: #B4192E !important; transform: none !important; } body .ff-audit-float-dot { background: #FFFFFF !important; box-shadow: none !important; } body.page-id-452 .entry-content, body.page-id-456 .entry-content { max-width: 760px; margin-left: auto; margin-right: auto; padding-top: 80px !important; padding-bottom: 80px !important; font-size: 16px; line-height: 1.7; } body.page-id-452 .entry-content h1, body.page-id-452 .entry-content h2, body.page-id-452 .entry-content h3, body.page-id-456 .entry-content h1, body.page-id-456 .entry-content h2, body.page-id-456 .entry-content h3 { color: #121216 !important; font-weight: 500; } body.page-id-452 .entry-content a, body.page-id-456 .entry-content a { color: #B4192E !important; } @media (max-width: 900px) { body .ff-mobile-btn { background: #0E0E11 !important; backdrop-filter: none !important; } body .ff-mobile-btn.is-open { background: #121216 !important; } body .ff-mobile-overlay { background: #FAF9F6 !important; backdrop-filter: none !important; } body .ff-mobile-overlay a { color: #121216 !important; font-weight: 500 !important; } body .ff-mobile-overlay .ff-mobile-cta { background: #D7263D !important; color: #FFFFFF !important; } }</style>

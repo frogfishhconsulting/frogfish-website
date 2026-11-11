@@ -1,0 +1,370 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap');
+.ff-frame { all: initial; display: block; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #3B3B43; line-height: 1.6; -webkit-font-smoothing: antialiased; background: #FAF9F6; min-height: 100vh; }
+.ff-frame *, .ff-frame *::before, .ff-frame *::after { box-sizing: border-box; }
+.ff-frame a { color: inherit; text-decoration: none; }
+.ff-container { max-width: 1240px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+.ff-nav-wrap { background: #0E0E11; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 10; }
+.ff-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; position: relative; }
+.ff-logo { display: block; width: 190px; height: 52px; position: relative; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-frame .ff-nav-back { color: rgba(255,255,255,0.62); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.ff-frame .ff-nav-back:hover { color: #fff; }
+.ff-assess-wrap { position: relative; padding: 80px 0 120px; overflow: hidden; min-height: calc(100vh - 100px); background: #FAF9F6; }
+.ff-grid-bg { display: none; }
+.ff-assess-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
+.ff-pill { display: inline-flex; align-items: center; gap: 12px; padding: 9px 16px; background: #121216; border-radius: 999px; font-size: 12px; color: #fff; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 28px; font-weight: 700; }
+.ff-pill-dot { width: 8px; height: 8px; border-radius: 50%; background: #D7263D; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.ff-assess-h1 { font-family: 'Fraunces', Georgia, serif; font-size: 56px; font-weight: 500; line-height: 1.04; letter-spacing: -0.035em; margin: 0 0 20px; color: #121216; text-wrap: balance; }
+.ff-assess-h1 em { font-style: italic; color: #B4192E; }
+.ff-assess-sub { font-size: 19px; line-height: 1.6; color: #3B3B43; margin: 0 0 40px; }
+.ff-intro-block { transition: opacity 0.3s ease, max-height 0.4s ease; overflow: hidden; }
+.ff-intro-block.hidden { opacity: 0; max-height: 0; margin: 0; pointer-events: none; }
+.ff-progress { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; padding: 18px 22px; background: #fff; border: 1px solid #E4E1DA; border-radius: 14px; }
+.ff-progress-label { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6E6E77; white-space: nowrap; }
+.ff-progress-bar { flex: 1; height: 4px; background: #ECE9E3; border-radius: 999px; overflow: hidden; position: relative; }
+.ff-progress-fill { position: absolute; top: 0; left: 0; height: 100%; background: #D7263D; border-radius: 999px; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); width: 14%; }
+.ff-progress-count { font-size: 13px; color: #3B3B43; font-weight: 600; white-space: nowrap; }
+.ff-progress-count em { font-style: normal; color: #B4192E; }
+.ff-step { display: none; animation: stepIn 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.ff-step.active { display: block; }
+@keyframes stepIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.ff-q-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #B4192E; margin-bottom: 18px; }
+.ff-q-eyebrow::before { content: ''; width: 28px; height: 2px; background: #D7263D; }
+.ff-q-title { font-family: 'Fraunces', Georgia, serif; font-size: 36px; font-weight: 500; line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 12px; color: #121216; }
+.ff-q-help { font-size: 16px; color: #3B3B43; margin: 0 0 32px; line-height: 1.55; }
+.ff-q-help-hint { display: block; font-size: 14px; color: #6E6E77; margin-top: 4px; font-style: italic; }
+.ff-options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.ff-opt { display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: #fff; border: 1px solid #E4E1DA; border-radius: 12px; cursor: pointer; transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; font-size: 16px; font-weight: 500; color: #121216; }
+.ff-opt:hover { border-color: #D7263D; box-shadow: 0 10px 30px -18px rgba(18,18,22,0.35); }
+.ff-opt.selected { border-color: #D7263D; background: #FCF1F2; color: #121216; box-shadow: 0 0 0 1px #D7263D inset; }
+.ff-opt-mark { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #C9C5BC; background: #fff; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
+.ff-opt.selected .ff-opt-mark { border-color: #D7263D; background: #D7263D; }
+.ff-opt-mark::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; opacity: 0; transition: opacity 0.2s ease; }
+.ff-opt.selected .ff-opt-mark::after { opacity: 1; }
+.ff-opt-checkbox { border-radius: 5px; }
+.ff-opt.selected .ff-opt-checkbox { background: #D7263D; }
+.ff-opt-checkbox::after { content: ''; width: 6px; height: 11px; border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(45deg) translate(-1px, -1px); background: none; border-radius: 0; opacity: 0; }
+.ff-opt.selected .ff-opt-checkbox::after { opacity: 1; }
+.ff-form { display: flex; flex-direction: column; gap: 18px; margin-bottom: 32px; }
+.ff-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ff-field { display: flex; flex-direction: column; gap: 8px; }
+.ff-field label { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #6E6E77; text-transform: uppercase; }
+.ff-field label .req { color: #B4192E; margin-left: 3px; }
+.ff-field input { background: #fff !important; border: 1px solid #E4E1DA; border-radius: 10px; padding: 16px 18px; color: #121216 !important; font-size: 15px; font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s; -webkit-text-fill-color: #121216 !important; caret-color: #D7263D !important; }
+.ff-field input::placeholder { color: #9A9AA3 !important; -webkit-text-fill-color: #9A9AA3 !important; }
+.ff-field input:focus { outline: none; border-color: #D7263D; box-shadow: 0 0 0 3px rgba(215,38,61,0.12); background: #fff !important; }
+.ff-field input:-webkit-autofill, .ff-field input:-webkit-autofill:hover, .ff-field input:-webkit-autofill:focus, .ff-field input:-webkit-autofill:active { -webkit-text-fill-color: #121216 !important; -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset !important; box-shadow: 0 0 0 1000px #FFFFFF inset !important; caret-color: #D7263D !important; transition: background-color 5000s ease-in-out 0s; }
+.ff-step-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 32px; border-top: 1px solid #E4E1DA; }
+.ff-btn-back { color: #6E6E77; font-size: 15px; font-weight: 500; padding: 14px 4px; cursor: pointer; transition: color 0.2s; background: none; border: none; font-family: inherit; }
+.ff-btn-back:hover { color: #121216; }
+.ff-btn-back:disabled { opacity: 0.4; cursor: not-allowed; color: #6E6E77; }
+.ff-btn-next { background: #D7263D; color: #fff; padding: 16px 32px; border-radius: 10px; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; border: none; font-family: inherit; transition: background 0.2s, box-shadow 0.2s; }
+.ff-btn-next:hover { background: #B4192E; box-shadow: 0 10px 30px -18px rgba(18,18,22,0.35); }
+.ff-btn-next:disabled { background: #E4E1DA; color: #6E6E77; opacity: 1; cursor: not-allowed; box-shadow: none; }
+.ff-btn-submit { background: #D7263D; color: #fff; }
+.ff-btn-submit:hover { background: #B4192E; box-shadow: 0 10px 30px -18px rgba(18,18,22,0.35); }
+.ff-error { padding: 14px 18px; background: #FCF1F2; border: 1px solid #F2D6DA; border-radius: 10px; color: #B4192E; font-size: 14px; margin-bottom: 20px; display: none; }
+.ff-error.show { display: block; }
+.ff-done { text-align: center; padding: 40px 0; }
+.ff-done-icon { width: 80px; height: 80px; margin: 0 auto 32px; border-radius: 50%; background: #D7263D; display: flex; align-items: center; justify-content: center; font-size: 38px; color: #fff; }
+.ff-done h2 { font-family: 'Fraunces', Georgia, serif; font-size: 48px; font-weight: 500; line-height: 1.06; letter-spacing: -0.03em; margin: 0 0 20px; color: #121216; }
+.ff-done h2 em { font-style: italic; color: #B4192E; }
+.ff-done p { font-size: 18px; color: #3B3B43; line-height: 1.6; max-width: 540px; margin: 0 auto 32px; }
+.ff-done-actions { display: flex; flex-direction: column; gap: 14px; max-width: 420px; margin: 32px auto 0; padding-top: 32px; border-top: 1px solid #E4E1DA; }
+.ff-done-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #6E6E77; font-weight: 700; margin-bottom: 8px; }
+.ff-done-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 24px; border-radius: 10px; font-size: 15px; font-weight: 600; transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+.ff-frame .ff-done-btn-primary { background: #D7263D; color: #fff !important; }
+.ff-frame .ff-done-btn-primary:hover { background: #B4192E; box-shadow: 0 10px 30px -18px rgba(18,18,22,0.35); }
+.ff-frame .ff-done-btn-ghost { background: #fff; color: #121216 !important; border: 1px solid #E4E1DA; }
+.ff-frame .ff-done-btn-ghost:hover { border-color: #D7263D; box-shadow: 0 10px 30px -18px rgba(18,18,22,0.35); }
+.ff-frame a:focus-visible, .ff-frame button:focus-visible { outline: 2px solid #D7263D; outline-offset: 3px; border-radius: 6px; }
+@media (prefers-reduced-motion: reduce) { .ff-step, .ff-pill-dot { animation: none; } .ff-opt, .ff-opt-mark, .ff-btn-next, .ff-done-btn { transition: none; } }
+@media (max-width: 700px) {
+  .ff-container { padding: 0 20px; }
+  .ff-logo { width: 140px; height: 40px; }
+  .ff-assess-wrap { padding: 48px 0 80px; }
+  .ff-assess-h1 { font-size: 36px; }
+  .ff-assess-sub { font-size: 16px; margin-bottom: 28px; }
+  .ff-q-title { font-size: 26px; }
+  .ff-opt { padding: 16px 18px; font-size: 15px; }
+  .ff-form-row { grid-template-columns: 1fr; }
+  .ff-done h2 { font-size: 34px; }
+}
+</style>
+<div class="ff-frame">
+  <div class="ff-nav-wrap"><div class="ff-container"><nav class="ff-nav">
+    <a href="/" class="ff-logo" aria-label="FrogFish Consulting"></a>
+    <a href="/" class="ff-nav-back">← Back to site</a>
+  </nav></div></div>
+  <div class="ff-assess-wrap">
+    <div class="ff-grid-bg"></div>
+    <div class="ff-container">
+      <div class="ff-assess-inner">
+        <div id="ff-intro-block" class="ff-intro-block">
+          <span class="ff-pill"><span class="ff-pill-dot"></span>Free 2-minute fit assessment</span>
+          <h1 class="ff-assess-h1">Let&#8217;s see if we&#8217;re <em>the right fit</em>.</h1>
+          <p class="ff-assess-sub">A few quick questions so we can come prepared. If we&#8217;re not the right team, we&#8217;ll tell you, and point you toward someone who is.</p>
+        </div>
+        <div class="ff-progress" id="ff-progress">
+          <span class="ff-progress-label">Progress</span>
+          <div class="ff-progress-bar"><div class="ff-progress-fill" id="ff-progress-fill"></div></div>
+          <span class="ff-progress-count"><em id="ff-step-current">1</em> of 7</span>
+        </div>
+        <div class="ff-step active" data-step="1">
+          <div class="ff-q-eyebrow">Question 1 of 7</div>
+          <h2 class="ff-q-title">What industry are you in?</h2>
+          <p class="ff-q-help">We work deepest in a handful of verticals where measurement actually matters.</p>
+          <div class="ff-options" data-type="single" data-field="industry">
+            <div class="ff-opt" data-value="healthcare"><span class="ff-opt-mark"></span><span>Healthcare, clinical trials, or biotech</span></div>
+            <div class="ff-opt" data-value="legal"><span class="ff-opt-mark"></span><span>Legal services</span></div>
+            <div class="ff-opt" data-value="solar"><span class="ff-opt-mark"></span><span>Solar, energy, or home services</span></div>
+            <div class="ff-opt" data-value="financial"><span class="ff-opt-mark"></span><span>Financial services or fintech</span></div>
+            <div class="ff-opt" data-value="ecommerce"><span class="ff-opt-mark"></span><span>E-commerce or DTC</span></div>
+            <div class="ff-opt" data-value="b2b-saas"><span class="ff-opt-mark"></span><span>B2B SaaS or tech</span></div>
+            <div class="ff-opt" data-value="other"><span class="ff-opt-mark"></span><span>Something else</span></div>
+          </div>
+        </div>
+        <div class="ff-step" data-step="2">
+          <div class="ff-q-eyebrow">Question 2 of 7</div>
+          <h2 class="ff-q-title">What&#8217;s the situation?</h2>
+          <p class="ff-q-help">The most honest description of where you are right now.</p>
+          <div class="ff-options" data-type="single" data-field="situation">
+            <div class="ff-opt" data-value="leak"><span class="ff-opt-mark"></span><span>Something&#8217;s leaking — spend is up but results aren&#8217;t</span></div>
+            <div class="ff-opt" data-value="growth"><span class="ff-opt-mark"></span><span>Ready to scale — need a new growth channel or system</span></div>
+            <div class="ff-opt" data-value="audit"><span class="ff-opt-mark"></span><span>Just want a fresh, honest audit of what we&#8217;re doing</span></div>
+            <div class="ff-opt" data-value="unsure"><span class="ff-opt-mark"></span><span>Honestly not sure — that&#8217;s why I&#8217;m here</span></div>
+          </div>
+        </div>
+        <div class="ff-step" data-step="3">
+          <div class="ff-q-eyebrow">Question 3 of 7</div>
+          <h2 class="ff-q-title">Are you currently spending on paid media?</h2>
+          <p class="ff-q-help">Google Ads, Meta, LinkedIn, programmatic — any of it.</p>
+          <div class="ff-options" data-type="single" data-field="spending">
+            <div class="ff-opt" data-value="yes"><span class="ff-opt-mark"></span><span>Yes, actively running paid media</span></div>
+            <div class="ff-opt" data-value="planning"><span class="ff-opt-mark"></span><span>Planning to, just haven&#8217;t started</span></div>
+            <div class="ff-opt" data-value="no"><span class="ff-opt-mark"></span><span>No, not running paid right now</span></div>
+          </div>
+        </div>
+        <div class="ff-step" data-step="4">
+          <div class="ff-q-eyebrow">Question 4 of 7</div>
+          <h2 class="ff-q-title">Roughly how much per month?</h2>
+          <p class="ff-q-help">Helps us understand the scale of what we&#8217;re walking into.<span class="ff-q-help-hint">No exact figures needed — a range is fine.</span></p>
+          <div class="ff-options" data-type="single" data-field="spend_range">
+            <div class="ff-opt" data-value="under-10k"><span class="ff-opt-mark"></span><span>Under $10K / month</span></div>
+            <div class="ff-opt" data-value="10-25k"><span class="ff-opt-mark"></span><span>$10K – $25K / month</span></div>
+            <div class="ff-opt" data-value="25-50k"><span class="ff-opt-mark"></span><span>$25K – $50K / month</span></div>
+            <div class="ff-opt" data-value="50-100k"><span class="ff-opt-mark"></span><span>$50K – $100K / month</span></div>
+            <div class="ff-opt" data-value="100k-plus"><span class="ff-opt-mark"></span><span>$100K+ / month</span></div>
+            <div class="ff-opt" data-value="prefer-not-say"><span class="ff-opt-mark"></span><span>Prefer not to say</span></div>
+          </div>
+        </div>
+        <div class="ff-step" data-step="5">
+          <div class="ff-q-eyebrow">Question 5 of 7</div>
+          <h2 class="ff-q-title">What&#8217;s most important to fix or build?</h2>
+          <p class="ff-q-help">Pick all that apply.<span class="ff-q-help-hint">No wrong answers — this tells us where to start.</span></p>
+          <div class="ff-options" data-type="multi" data-field="priorities">
+            <div class="ff-opt" data-value="attribution"><span class="ff-opt-mark ff-opt-checkbox"></span><span>Attribution &amp; measurement — knowing what actually works</span></div>
+            <div class="ff-opt" data-value="lead-quality"><span class="ff-opt-mark ff-opt-checkbox"></span><span>Lead quality — getting fewer junk leads, more real ones</span></div>
+            <div class="ff-opt" data-value="conversion"><span class="ff-opt-mark ff-opt-checkbox"></span><span>Landing page &amp; conversion rate</span></div>
+            <div class="ff-opt" data-value="seo-content"><span class="ff-opt-mark ff-opt-checkbox"></span><span>SEO, content, or organic demand</span></div>
+            <div class="ff-opt" data-value="scaling"><span class="ff-opt-mark ff-opt-checkbox"></span><span>Scaling paid channels profitably</span></div>
+            <div class="ff-opt" data-value="crm-ops"><span class="ff-opt-mark ff-opt-checkbox"></span><span>CRM, marketing ops, or RevOps</span></div>
+            <div class="ff-opt" data-value="strategy"><span class="ff-opt-mark ff-opt-checkbox"></span><span>Overall strategy — not sure yet</span></div>
+          </div>
+        </div>
+        <div class="ff-step" data-step="6">
+          <div class="ff-q-eyebrow">Question 6 of 7</div>
+          <h2 class="ff-q-title">When are you looking to make a move?</h2>
+          <p class="ff-q-help">No pressure — we want to match the conversation to where you actually are.</p>
+          <div class="ff-options" data-type="single" data-field="timeline">
+            <div class="ff-opt" data-value="active"><span class="ff-opt-mark"></span><span>Actively evaluating partners now</span></div>
+            <div class="ff-opt" data-value="1-3-months"><span class="ff-opt-mark"></span><span>Next 1–3 months</span></div>
+            <div class="ff-opt" data-value="3-6-months"><span class="ff-opt-mark"></span><span>3–6 months out</span></div>
+            <div class="ff-opt" data-value="exploring"><span class="ff-opt-mark"></span><span>Just exploring for now</span></div>
+          </div>
+        </div>
+        <div class="ff-step" data-step="7">
+          <div class="ff-q-eyebrow">Last step</div>
+          <h2 class="ff-q-title">Where should we send your audit?</h2>
+          <p class="ff-q-help">We&#8217;ll review your answers and respond within one business day.</p>
+          <div class="ff-error" id="ff-error">Something went wrong sending your info. Please try again, or email us directly at alex@frogfishconsulting.com.</div>
+          <form class="ff-form" id="ff-contact-form" onsubmit="return false;">
+            <div class="ff-field">
+              <label>First name <span class="req">*</span></label>
+              <input type="text" name="first_name" placeholder="Your first name" autocomplete="given-name" required="">
+            </div>
+            <div class="ff-form-row">
+              <div class="ff-field">
+                <label>Email <span class="req">*</span></label>
+                <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required="">
+              </div>
+              <div class="ff-field">
+                <label>Phone</label>
+                <input type="tel" name="phone" placeholder="(___) ___-____" autocomplete="tel">
+              </div>
+            </div>
+            <div class="ff-field">
+              <label>Company</label>
+              <input type="text" name="company" placeholder="Optional — company name" autocomplete="organization">
+            </div>
+          </form>
+        </div>
+        <div class="ff-step" data-step="done">
+          <div class="ff-done">
+            <div class="ff-done-icon">✓</div>
+            <h2>Got it. <em>Talk soon.</em></h2>
+            <p>We&#8217;ve received your info and Alex will review your answers personally, then respond within one business day with a tailored next step.</p>
+            <div class="ff-done-actions">
+              <div class="ff-done-label">Want a faster response?</div>
+              <a href="tel:+13104047947" class="ff-done-btn ff-done-btn-primary">&#x1f4de; Call directly: (310) 404-7947</a>
+              <a href="https://calendly.com/frogfishconsulting/discovery" target="_blank" rel="noopener" class="ff-done-btn ff-done-btn-ghost">Schedule a call →</a>
+            </div>
+          </div>
+        </div>
+        <div class="ff-step-nav" id="ff-step-nav">
+          <button class="ff-btn-back" id="ff-btn-back" disabled="">← Back</button>
+          <button class="ff-btn-next" id="ff-btn-next" disabled="">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbxXby8fjqjI_cfgBA6Vkbkr0tJnx2dXIQSFHBWNZjCEssBajq8cAr-mD-2jd1jU9uEN/exec";
+  const TOTAL_STEPS = 7;
+  const AUTO_ADVANCE_MS = 280; // delay before a single-choice answer moves to the next step
+  const state = { step: 1, answers: {}, skipSpend: false, introHidden: false, submitting: false };
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+  const introBlock = $('#ff-intro-block');
+  const progressFill = $('#ff-progress-fill');
+  const progressCurrent = $('#ff-step-current');
+  const btnBack = $('#ff-btn-back');
+  const btnNext = $('#ff-btn-next');
+  const errorBox = $('#ff-error');
+  function showStep(n) {
+    $$('.ff-step').forEach(s => s.classList.remove('active'));
+    const stepNav = $('#ff-step-nav');
+    const progress = $('#ff-progress');
+    if (n === 'done') {
+      $('.ff-step[data-step="done"]').classList.add('active');
+      stepNav.style.display = 'none';
+      progress.style.display = 'none';
+      return;
+    }
+    const target = $('.ff-step[data-step="' + n + '"]');
+    if (target) target.classList.add('active');
+    progressCurrent.textContent = n;
+    progressFill.style.width = ((n / TOTAL_STEPS) * 100) + '%';
+    btnBack.disabled = (n === 1);
+    updateNextButton();
+  }
+  function updateNextButton() {
+    const cur = $('.ff-step[data-step="' + state.step + '"]');
+    if (!cur) return;
+    if (state.step === 7) {
+      btnNext.textContent = state.submitting ? 'Sending...' : 'Submit →';
+      btnNext.classList.add('ff-btn-submit');
+      const form = $('#ff-contact-form');
+      const fn = form.first_name.value.trim();
+      const em = form.email.value.trim();
+      btnNext.disabled = state.submitting || !(fn && em && em.includes('@'));
+      return;
+    }
+    btnNext.classList.remove('ff-btn-submit');
+    btnNext.textContent = 'Next →';
+    const opts = cur.querySelector('.ff-options');
+    if (!opts) { btnNext.disabled = false; return; }
+    const selected = opts.querySelectorAll('.ff-opt.selected');
+    btnNext.disabled = (selected.length === 0);
+  }
+  function hideIntroOnce() {
+    if (state.introHidden) return;
+    state.introHidden = true;
+    introBlock.classList.add('hidden');
+  }
+  // Single source of truth for moving forward (button click OR auto-advance).
+  function goNext() {
+    hideIntroOnce();
+    if (state.step === 7) { submitForm(); return; }
+    let next = state.step + 1;
+    if (state.step === 3 && state.answers.spending !== 'yes') {
+      next = 5;
+      state.skipSpend = true;
+    }
+    state.step = next;
+    showStep(next);
+  }
+  document.addEventListener('click', e => {
+    const opt = e.target.closest('.ff-opt');
+    if (!opt) return;
+    hideIntroOnce();
+    const container = opt.closest('.ff-options');
+    if (!container) return;
+    const type = container.dataset.type;
+    const field = container.dataset.field;
+    if (type === 'single') {
+      container.querySelectorAll('.ff-opt').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      state.answers[field] = opt.dataset.value;
+      updateNextButton();
+      // Auto-advance: let the selection register visually, then move on.
+      // Guard on step so a quick Back press (or a stray second click) can't force a jump.
+      const stepAtClick = state.step;
+      setTimeout(() => { if (state.step === stepAtClick) goNext(); }, AUTO_ADVANCE_MS);
+      return;
+    }
+    // Multi-select (Q5): people pick several, so DON'T auto-advance — they use Next.
+    opt.classList.toggle('selected');
+    const vals = Array.from(container.querySelectorAll('.ff-opt.selected')).map(o => o.dataset.value);
+    state.answers[field] = vals;
+    updateNextButton();
+  });
+  document.addEventListener('input', e => {
+    if (e.target.closest('#ff-contact-form')) {
+      const form = $('#ff-contact-form');
+      state.answers.first_name = form.first_name.value.trim();
+      state.answers.email = form.email.value.trim();
+      state.answers.phone = form.phone.value.trim();
+      state.answers.company = form.company.value.trim();
+      updateNextButton();
+    }
+  });
+  async function submitForm() {
+    if (state.submitting) return;
+    state.submitting = true;
+    errorBox.classList.remove('show');
+    updateNextButton();
+    try {
+      // Send with no-cors mode so we don't get blocked by CORS
+      // (Google Apps Script accepts the POST but browser sees opaque response)
+      await fetch(ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(state.answers)
+      });
+      showStep('done');
+      state.step = 'done';
+    } catch (err) {
+      console.error('Assessment submission error:', err);
+      errorBox.classList.add('show');
+      state.submitting = false;
+      updateNextButton();
+    }
+  }
+  btnNext.addEventListener('click', goNext);
+  btnBack.addEventListener('click', () => {
+    if (state.step === 1) return;
+    let prev = state.step - 1;
+    if (state.step === 5 && state.skipSpend) prev = 3;
+    state.step = prev;
+    showStep(prev);
+  });
+  showStep(1);
+})();
+</script>
+<style id="ff-sitewide-light">body.page, body.page .site, body.page .site-container, body.page #content, body.page #primary, body.page .content-area, body.page .entry-content { background: #FAF9F6 !important; color: #3B3B43 !important; } body .ff-audit-float { background: #D7263D !important; border: 0 !important; backdrop-filter: none !important; } body .ff-audit-float:hover { background: #B4192E !important; transform: none !important; } body .ff-audit-float-dot { background: #FFFFFF !important; box-shadow: none !important; } body.page-id-452 .entry-content, body.page-id-456 .entry-content { max-width: 760px; margin-left: auto; margin-right: auto; padding-top: 80px !important; padding-bottom: 80px !important; font-size: 16px; line-height: 1.7; } body.page-id-452 .entry-content h1, body.page-id-452 .entry-content h2, body.page-id-452 .entry-content h3, body.page-id-456 .entry-content h1, body.page-id-456 .entry-content h2, body.page-id-456 .entry-content h3 { color: #121216 !important; font-weight: 500; } body.page-id-452 .entry-content a, body.page-id-456 .entry-content a { color: #B4192E !important; } @media (max-width: 900px) { body .ff-mobile-btn { background: #0E0E11 !important; backdrop-filter: none !important; } body .ff-mobile-btn.is-open { background: #121216 !important; } body .ff-mobile-overlay { background: #FAF9F6 !important; backdrop-filter: none !important; } body .ff-mobile-overlay a { color: #121216 !important; font-weight: 500 !important; } body .ff-mobile-overlay .ff-mobile-cta { background: #D7263D !important; color: #FFFFFF !important; } }</style>

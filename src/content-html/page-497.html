@@ -1,0 +1,135 @@
+
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap');
+.ff-frame { all: initial; display: block; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #3B3B43; line-height: 1.6; -webkit-font-smoothing: antialiased; background: #FAF9F6; }
+.ff-frame *, .ff-frame *::before, .ff-frame *::after { box-sizing: border-box; }
+.ff-frame a { color: inherit; text-decoration: none; }
+.ff-container { max-width: 1240px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+.ff-nav-wrap { background: #0E0E11; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 10; }
+.ff-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+.ff-logo { display: block; width: 190px; height: 52px; position: relative; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-nav-links { display: flex; gap: 40px; font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 500; }
+.ff-nav-links a:hover { color: #fff; }
+.ff-nav-cta { background: #D7263D; color: #fff !important; padding: 13px 22px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+.ff-hero-wrap { position: relative; padding: 112px 0 96px; overflow: hidden; background: #0E0E11; }
+.ff-hero-wrap::before { content: ''; position: absolute; top: -260px; right: -180px; width: 720px; height: 720px; background: radial-gradient(circle, rgba(215,38,61,0.28) 0%, transparent 62%); filter: blur(60px); pointer-events: none; z-index: 1; }
+.ff-grid-bg { display: none; }
+.ff-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #B4192E; margin-bottom: 20px; }
+.ff-eyebrow::before { content: ''; width: 28px; height: 2px; background: #D7263D; }
+.ff-hero-wrap .ff-eyebrow { color: #FF6B7D; }
+.ff-hero-h1 { font-family: 'Fraunces', Georgia, serif; font-size: 76px; font-weight: 500; line-height: 1.02; letter-spacing: -0.035em; margin: 0 0 28px; max-width: 1000px; color: #FFFFFF !important; text-wrap: balance; }
+.ff-hero-h1 em { font-style: italic; color: #FF6B7D; }
+.ff-hero-sub { font-size: 21px; line-height: 1.6; color: rgba(255,255,255,0.88); margin: 0; max-width: 700px; }
+.ff-hero-tabs { display: flex; gap: 12px; margin-top: 40px; flex-wrap: wrap; }
+.ff-frame .ff-hero-tab { font-size: 14px; font-weight: 600; padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.28); color: rgba(255,255,255,0.88); }
+.ff-frame .ff-hero-tab.is-on { background: #fff; border-color: #fff; color: #121216; }
+.ff-section { padding: 104px 0; border-top: 1px solid #E4E1DA; position: relative; background: #FAF9F6; }
+.ff-section.alt { background: #F2F0EB; }
+.ff-section-head { max-width: 780px; margin: 0 0 56px; }
+.ff-section-head h2 { font-family: 'Fraunces', Georgia, serif; font-size: 54px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 18px; color: #121216 !important; text-wrap: balance; }
+.ff-section-head h2 em { font-style: italic; color: #B4192E !important; }
+.ff-section-head p { font-size: 19px; line-height: 1.65; color: #3B3B43; margin: 0; }
+.ff-ledger { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid #E4E1DA; border-radius: 14px; overflow: hidden; background: #fff; }
+.ff-stage { padding: 28px 24px; border-right: 1px solid #E4E1DA; }
+.ff-stage:last-child { border-right: 0; }
+.ff-stage.ours { background: #FCF1F2; }
+.ff-stage-num { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6E6E77; margin: 0 0 12px; }
+.ff-stage.ours .ff-stage-num { color: #B4192E; }
+.ff-stage-name { font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.15; margin: 0 0 8px; color: #121216; }
+.ff-stage-desc { font-size: 14px; line-height: 1.5; color: #3B3B43; margin: 0; }
+.ff-ledger-note { margin: 20px 0 0; font-size: 15px; color: #3B3B43; }
+.ff-ledger-note strong { color: #B4192E; font-weight: 600; }
+.ff-caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ff-cap { padding: 32px 28px; background: #fff; border: 1px solid #E4E1DA; border-radius: 14px; transition: border-color 0.2s, box-shadow 0.2s; }
+.ff-cap:hover { border-color: #D7263D; box-shadow: 0 10px 30px -18px rgba(18,18,22,0.35); }
+.ff-cap h3 { font-family: 'Fraunces', Georgia, serif; font-size: 23px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.2; margin: 0 0 12px; color: #121216; }
+.ff-cap p { font-size: 15px; line-height: 1.6; color: #3B3B43; margin: 0; }
+.ff-cases { display: flex; flex-direction: column; gap: 20px; }
+.ff-case { display: grid; grid-template-columns: 1.6fr 1fr; border: 1px solid #E4E1DA; border-radius: 14px; overflow: hidden; background: #fff; }
+.ff-case-body { padding: 40px 40px; }
+.ff-case-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6E6E77; margin: 0 0 12px; }
+.ff-case-body h3 { font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 24px; color: #121216; }
+.ff-case-row { display: grid; grid-template-columns: 120px 1fr; gap: 20px; padding: 14px 0; border-top: 1px solid #ECE9E3; }
+.ff-case-row span { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B4192E; padding-top: 4px; }
+.ff-case-row p { font-size: 16px; line-height: 1.6; color: #3B3B43; margin: 0; }
+.ff-case-results { padding: 40px 36px; background: #FCF1F2; border-left: 1px solid #F2D6DA; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.ff-metric-num { font-family: 'Fraunces', Georgia, serif; font-size: 64px; font-weight: 500; letter-spacing: -0.035em; line-height: 1; margin: 0 0 6px; color: #B4192E; font-variant-numeric: tabular-nums; }
+.ff-metric-label { font-size: 15px; line-height: 1.45; color: #3B3B43; margin: 0; }
+.ff-group { display: flex; align-items: baseline; gap: 14px; margin: 48px 0 20px; }
+.ff-group:first-child { margin-top: 0; }
+.ff-group-pill { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 13px; border-radius: 999px; background: #121216; color: #fff; }
+.ff-group-desc { font-size: 15px; color: #6E6E77; }
+.ff-quote { margin: 6px 0 0; padding: 14px 0 0; border-top: 1px solid #ECE9E3; font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 18px; line-height: 1.45; color: #121216; }
+.ff-quote span { display: block; font-family: 'Inter', sans-serif; font-style: normal; font-size: 13px; color: #6E6E77; margin-top: 6px; }
+.ff-terms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.ff-term { padding: 22px 22px; background: #fff; border: 1px solid #E4E1DA; border-radius: 12px; }
+.ff-term strong { color: #B4192E; display: block; margin-bottom: 8px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+.ff-term span { font-family: 'Fraunces', Georgia, serif; font-size: 21px; font-weight: 500; line-height: 1.3; color: #121216; }
+.ff-cta-band-wrap { padding: 112px 0; position: relative; overflow: hidden; background: #0E0E11; }
+.ff-cta-band-wrap::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 760px; height: 380px; background: radial-gradient(ellipse, rgba(215,38,61,0.22) 0%, transparent 70%); filter: blur(70px); pointer-events: none; }
+.ff-cta-band { text-align: center; position: relative; z-index: 2; }
+.ff-cta-band h2 { font-family: 'Fraunces', Georgia, serif; font-size: 60px; font-weight: 500; letter-spacing: -0.035em; line-height: 1.06; margin: 0 auto 24px; max-width: 860px; color: #ffffff !important; text-wrap: balance; }
+.ff-cta-band h2 em { font-style: italic; color: #FF6B7D; }
+.ff-cta-band p { font-size: 19px; color: rgba(255,255,255,0.88); margin: 0 auto 36px; max-width: 620px; line-height: 1.6; }
+.ff-cta-primary { background: #fff; color: #121216 !important; padding: 18px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; }
+.ff-cta-band .ff-cta-contact { margin: 44px auto 0; max-width: none; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.62); }
+.ff-footer-wrap { background: #0E0E11; border-top: 1px solid rgba(255,255,255,0.08); padding: 48px 0; }
+.ff-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 14px; color: rgba(255,255,255,0.62); }
+.ff-footer-logo { display: block; width: 150px; height: 42px; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-footer-note { font-size: 13px; color: rgba(255,255,255,0.5); margin: 16px 0 0; max-width: 720px; }
+.ff-frame a:focus-visible { outline: 2px solid #D7263D; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { .ff-cap { transition: none; } }
+@media (max-width: 1100px) { .ff-ledger { grid-template-columns: 1fr; } .ff-stage { border-right: 0; border-bottom: 1px solid #E4E1DA; } .ff-stage:last-child { border-bottom: 0; } .ff-terms { grid-template-columns: 1fr 1fr; } .ff-caps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 900px) {
+  .ff-container { padding: 0 20px; } .ff-nav { flex-wrap: wrap; row-gap: 14px; } .ff-nav-links { display: flex; order: 3; width: 100%; gap: 24px; font-size: 14px; overflow-x: auto; white-space: nowrap; padding-bottom: 2px; } .ff-logo { width: 140px; height: 40px; } .ff-nav-cta { padding: 10px 15px; font-size: 13px; }
+  .ff-hero-wrap { padding: 64px 0 56px; } .ff-hero-h1 { font-size: 42px; } .ff-hero-sub { font-size: 18px; }
+  .ff-section { padding: 64px 0; } .ff-section-head { margin-bottom: 36px; } .ff-section-head h2 { font-size: 36px; } .ff-section-head p { font-size: 17px; }
+  .ff-caps, .ff-terms { grid-template-columns: 1fr; } .ff-cap { padding: 26px 22px; }
+  .ff-case { grid-template-columns: 1fr; } .ff-case-body { padding: 28px 22px; } .ff-case-body h3 { font-size: 26px; } .ff-case-row { grid-template-columns: 1fr; gap: 6px; }
+  .ff-case-results { border-left: 0; border-top: 1px solid #F2D6DA; padding: 28px 22px; flex-direction: row; flex-wrap: wrap; gap: 24px 36px; } .ff-metric-num { font-size: 50px; }
+  .ff-group { flex-direction: column; gap: 10px; } .ff-cta-band-wrap { padding: 72px 0; } .ff-cta-band h2 { font-size: 36px; } .ff-cta-band p { font-size: 17px; }
+}
+</style>
+
+<div class="ff-frame">
+  <div class="ff-nav-wrap"><div class="ff-container"><nav class="ff-nav">
+    <a href="/" class="ff-logo" aria-label="FrogFish Consulting"></a>
+    <div class="ff-nav-links"><a href="/services/">Services</a><a href="/industries/">Industries</a><a href="/about-us/">About</a><a href="/contact-us/">Contact</a></div>
+    <a href="https://calendly.com/frogfishconsulting/discovery" class="ff-nav-cta" target="_blank">Book a call →</a>
+  </nav></div></div>
+
+  <div class="ff-hero-wrap"><div class="ff-grid-bg"></div><div class="ff-container">
+    <div class="ff-eyebrow">AI search (AEO) · Capabilities &amp; case studies</div>
+    <h1 class="ff-hero-h1">Be the answer <em>when buyers ask AI.</em></h1>
+    <p class="ff-hero-sub">Buyers now ask ChatGPT, Gemini, Perplexity and Google AI Overviews who to hire. We get your brand recommended in those answers, then track the leads and revenue AI search sends you.</p>
+    <div class="ff-hero-tabs"><a class="ff-hero-tab " href="/paid-media/">Paid media</a><a class="ff-hero-tab is-on" href="/aeo/">AI search (AEO)</a></div>
+  </div></div>
+  <div class="ff-section"><div class="ff-container">
+    <div class="ff-section-head"><div class="ff-eyebrow">How AI search becomes revenue</div><h2>Visibility only counts <em>if it closes.</em></h2></div>
+    <div class="ff-ledger"><div class="ff-stage"><p class="ff-stage-num">01 · Prompt</p><p class="ff-stage-name">Buyer asks AI</p><p class="ff-stage-desc">“Best firm for…” or “Who should I call about…”</p></div><div class="ff-stage ours"><p class="ff-stage-num">02 · Citation</p><p class="ff-stage-name">You get named</p><p class="ff-stage-desc">Content and sources AI models trust</p></div><div class="ff-stage ours"><p class="ff-stage-num">03 · Visit</p><p class="ff-stage-name">AI referral</p><p class="ff-stage-desc">Pages built to convert AI-sent traffic</p></div><div class="ff-stage ours"><p class="ff-stage-num">04 · Lead</p><p class="ff-stage-name">Tagged at intake</p><p class="ff-stage-desc">AI source captured in your CRM</p></div><div class="ff-stage ours"><p class="ff-stage-num">05 · Revenue</p><p class="ff-stage-name">Attributed</p><p class="ff-stage-desc">Closed deals traced back to AI search</p></div></div><p class="ff-ledger-note"><strong>We measure both:</strong> how often AI recommends you, and what those recommendations close.</p>
+  </div></div>
+  <div class="ff-section alt"><div class="ff-container">
+    <div class="ff-section-head"><div class="ff-eyebrow">Capabilities</div><h2>What&#8217;s <em>included.</em></h2></div>
+    <div class="ff-caps"><div class="ff-cap"><h3>AI visibility audit</h3><p>We test the prompts your buyers actually use across the major AI engines and score how often, and how favorably, you are recommended against competitors.</p></div><div class="ff-cap"><h3>On-site technical AEO</h3><p>Structured data, entity clarity, crawlability for AI agents, and page architecture that models can parse and cite.</p></div><div class="ff-cap"><h3>Answer-first content</h3><p>Pages and articles written around the questions buyers ask, grounded in your expertise and built to be quoted.</p></div><div class="ff-cap"><h3>Off-site source building</h3><p>Presence on the reviews, directories, publications and forums AI models pull from when they form recommendations.</p></div><div class="ff-cap"><h3>AI-attributed revenue tracking</h3><p>AI referral tagging, intake capture and CRM attribution, so AEO is reported in leads and closed revenue.</p></div><div class="ff-cap"><h3>Recurring AEO reporting</h3><p>Weekly or biweekly reports on share of AI answers, citations won, and the pipeline they produced.</p></div></div>
+  </div></div>
+  <div class="ff-section"><div class="ff-container">
+    <div class="ff-section-head"><div class="ff-eyebrow">Case studies</div><h2>Selected <em>results.</em></h2></div>
+    <div class="ff-cases"><div class="ff-group"><span class="ff-group-pill">B2C</span><span class="ff-group-desc">Consumer-facing, high-consideration services</span></div><div class="ff-case"><div class="ff-case-body"><p class="ff-case-tag">B2C law firm · AEO program · 4 months</p><h3>From invisible to recommended in AI answers</h3><div class="ff-case-row"><span>Problem</span><p>The firm rarely appeared when prospective clients asked AI tools which attorney to hire, and had no way to see AI-driven leads.</p></div><div class="ff-case-row"><span>What we did</span><p>Audited AI visibility, rebuilt key pages for citation, expanded trusted off-site sources, and tagged AI-referred leads through to closed matters.</p></div></div><div class="ff-case-results"><div><p class="ff-metric-num">6&times;</p><p class="ff-metric-label">increase in AI visibility score</p></div><div><p class="ff-metric-num">$250K</p><p class="ff-metric-label">incremental closed revenue from AI-attributed leads</p></div></div></div><div class="ff-group"><span class="ff-group-pill">B2B</span><span class="ff-group-desc">Buyers researching vendors in AI tools</span></div><div class="ff-case"><div class="ff-case-body"><p class="ff-case-tag">B2B company · AI search · 60 days</p><h3>Showing up where buyers now research</h3><div class="ff-case-row"><span>Problem</span><p>Buyers were researching in ChatGPT, Perplexity and other AI tools, and the brand wasn&#8217;t showing up. Performance data was spread across systems.</p></div><div class="ff-case-row"><span>What we did</span><p>Optimized the site and content so AI platforms could find and cite the brand, and built a single source of truth for AI and organic search performance.</p></div><p class="ff-quote">“We have a single source of truth that gives us immediate visibility into performance.”<span>B2B marketing executive</span></p></div><div class="ff-case-results"><div><p class="ff-metric-num">2&times;</p><p class="ff-metric-label">AI search traffic in the first 60 days</p></div><div><p class="ff-metric-num">3&times;</p><p class="ff-metric-label">conversions from AI search</p></div></div></div><div class="ff-case"><div class="ff-case-body"><p class="ff-case-tag">B2B software · AI search · 90 days</p><h3>Standing out in a crowded category</h3><div class="ff-case-row"><span>Problem</span><p>No visibility when buyers asked AI about the category, in a crowded market where messaging didn&#8217;t stand out.</p></div><div class="ff-case-row"><span>What we did</span><p>Built an AI search strategy around core topics and competitive positioning, shipped technical AEO fixes with the client team, and published monthly content to build authority.</p></div></div><div class="ff-case-results"><div><p class="ff-metric-num">4&times;</p><p class="ff-metric-label">AI presence</p></div><div><p class="ff-metric-num">~5&times;</p><p class="ff-metric-label">AI search traffic</p></div></div></div><div class="ff-case"><div class="ff-case-body"><p class="ff-case-tag">B2B company · AI search + paid search</p><h3>AEO and paid search as one program</h3><div class="ff-case-row"><span>Problem</span><p>Paid search was carrying acquisition on its own, at a high cost per conversion, while organic and AI search weren&#8217;t pulling their weight.</p></div><div class="ff-case-row"><span>What we did</span><p>Ran AI search optimization and paid search together, improving rankings and conversion rate so every click worked harder.</p></div></div><div class="ff-case-results"><div><p class="ff-metric-num">+80%</p><p class="ff-metric-label">paid conversions</p></div><div><p class="ff-metric-num">&minus;34%</p><p class="ff-metric-label">cost per conversion</p></div></div></div></div>
+  </div></div>
+  <div class="ff-section alt"><div class="ff-container">
+    <div class="ff-section-head"><div class="ff-eyebrow">Engagement</div><h2>How we <em>work together.</em></h2></div>
+    <div class="ff-terms"><div class="ff-term"><strong>Standalone AEO</strong><span>From $5K per month</span></div><div class="ff-term"><strong>With paid media</strong><span>Bundled rate available</span></div><div class="ff-term"><strong>Best fit</strong><span>High-consideration services with $10K+ deal values</span></div><div class="ff-term"><strong>Reporting</strong><span>AI share of answer plus attributed revenue</span></div></div>
+  </div></div>
+
+  <div class="ff-cta-band-wrap"><div class="ff-container"><div class="ff-cta-band">
+    <h2>Find out what AI <em>says about you.</em></h2>
+    <p>Most engagements start with a 30-minute call. We&#8217;ll show you how AI engines answer your buyers&#8217; questions today and where you&#8217;re missing.</p>
+    <a href="https://calendly.com/frogfishconsulting/discovery" class="ff-cta-primary" target="_blank">Book a strategy call →</a>
+    <p class="ff-cta-contact">Alex Fleshner, Founder &amp; CEO · alex@frogfishconsulting.com · +1 310 404 7947 · Los Angeles, CA</p>
+  </div></div></div>
+
+  <div class="ff-footer-wrap"><div class="ff-container"><div class="ff-footer">
+    <div class="ff-footer-logo" aria-label="FrogFish Consulting"></div>
+    <div>© 2026 FrogFish Consulting · All rights reserved</div>
+  </div><p class="ff-footer-note">Client names in case studies are withheld at client request. All results are from FrogFish engagements.</p></div></div>
+</div>
+<style id="ff-sitewide-light">body.page, body.page .site, body.page .site-container, body.page #content, body.page #primary, body.page .content-area, body.page .entry-content { background: #FAF9F6 !important; color: #3B3B43 !important; } body .ff-audit-float { background: #D7263D !important; border: 0 !important; backdrop-filter: none !important; } body .ff-audit-float:hover { background: #B4192E !important; transform: none !important; } body .ff-audit-float-dot { background: #FFFFFF !important; box-shadow: none !important; } body.page-id-452 .entry-content, body.page-id-456 .entry-content { max-width: 760px; margin-left: auto; margin-right: auto; padding-top: 80px !important; padding-bottom: 80px !important; font-size: 16px; line-height: 1.7; } body.page-id-452 .entry-content h1, body.page-id-452 .entry-content h2, body.page-id-452 .entry-content h3, body.page-id-456 .entry-content h1, body.page-id-456 .entry-content h2, body.page-id-456 .entry-content h3 { color: #121216 !important; font-weight: 500; } body.page-id-452 .entry-content a, body.page-id-456 .entry-content a { color: #B4192E !important; } @media (max-width: 900px) { body .ff-mobile-btn { background: #0E0E11 !important; backdrop-filter: none !important; } body .ff-mobile-btn.is-open { background: #121216 !important; } body .ff-mobile-overlay { background: #FAF9F6 !important; backdrop-filter: none !important; } body .ff-mobile-overlay a { color: #121216 !important; font-weight: 500 !important; } body .ff-mobile-overlay .ff-mobile-cta { background: #D7263D !important; color: #FFFFFF !important; } }</style>

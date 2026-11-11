@@ -1,0 +1,208 @@
+
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap');
+.ff-frame { all: initial; display: block; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #3B3B43; line-height: 1.6; -webkit-font-smoothing: antialiased; background: #FAF9F6; }
+.ff-frame *, .ff-frame *::before, .ff-frame *::after { box-sizing: border-box; }
+.ff-frame a { color: inherit; text-decoration: none; }
+.ff-container { max-width: 1240px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+.ff-nav-wrap { background: #0E0E11; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 10; }
+.ff-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+.ff-logo { display: block; width: 190px; height: 52px; position: relative; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-nav-links { display: flex; gap: 40px; font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 500; }
+.ff-nav-links a:hover { color: #fff; }
+.ff-nav-cta { background: #D7263D; color: #fff !important; padding: 13px 22px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+
+.ff-hero-wrap { position: relative; padding: 112px 0 96px; overflow: hidden; background: #0E0E11; }
+.ff-hero-wrap::before { content: ''; position: absolute; top: -260px; right: -180px; width: 720px; height: 720px; background: radial-gradient(circle, rgba(215,38,61,0.28) 0%, transparent 62%); filter: blur(60px); pointer-events: none; z-index: 1; }
+.ff-grid-bg { display: none; }
+
+.ff-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #B4192E; margin-bottom: 20px; }
+.ff-eyebrow::before { content: ''; width: 28px; height: 2px; background: #D7263D; }
+.ff-hero-wrap .ff-eyebrow { color: #FF6B7D; }
+
+.ff-hero-h1 { font-family: 'Fraunces', Georgia, serif; font-size: 76px; font-weight: 500; line-height: 1.02; letter-spacing: -0.035em; margin: 0 0 28px; max-width: 1000px; color: #FFFFFF !important; text-wrap: balance; }
+.ff-hero-h1 em { font-style: italic; color: #FF6B7D; }
+.ff-hero-sub { font-size: 21px; line-height: 1.6; color: rgba(255,255,255,0.88); margin: 0; max-width: 700px; }
+
+.ff-contact-section { padding: 104px 0; position: relative; background: #FAF9F6; border-top: 1px solid #E4E1DA; }
+.ff-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.ff-contact-block { position: sticky; top: 32px; }
+.ff-contact-block h2 { font-family: 'Fraunces', Georgia, serif; font-size: 54px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 20px; color: #121216 !important; text-wrap: balance; }
+.ff-contact-block h2 em { font-style: italic; color: #B4192E !important; }
+.ff-contact-block p { font-size: 18px; line-height: 1.65; color: #3B3B43; margin: 0 0 32px; max-width: 480px; }
+.ff-contact-options { display: flex; flex-direction: column; gap: 16px; }
+.ff-frame .ff-contact-card { display: flex; align-items: center; gap: 20px; padding: 22px 26px; background: #fff; border: 1px solid #E4E1DA; border-radius: 14px; color: #121216; transition: border-color 0.2s, box-shadow 0.2s; }
+.ff-frame .ff-contact-card:hover { border-color: #D7263D; box-shadow: 0 10px 30px -18px rgba(18,18,22,0.35); }
+.ff-contact-icon { width: 48px; height: 48px; border-radius: 12px; background: #FCF1F2; border: 1px solid #F2D6DA; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; color: #B4192E; font-family: 'Fraunces', Georgia, serif; font-style: italic; }
+.ff-contact-card-body { flex: 1; min-width: 0; }
+.ff-contact-card-body p.ff-contact-label { font-size: 11px; color: #6E6E77; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin: 0 0 4px; }
+.ff-contact-card-body p.ff-contact-value { font-size: 18px; color: #121216; font-weight: 500; margin: 0; overflow-wrap: anywhere; }
+.ff-contact-card .arrow { color: #D7263D; font-size: 20px; }
+
+.ff-next-box { padding: 36px; background: #fff; border: 1px solid #E4E1DA; border-radius: 14px; }
+.ff-next-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B4192E; margin: 0 0 20px; }
+.ff-next-box h3 { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 500; letter-spacing: -0.015em; color: #121216; margin: 0 0 24px; line-height: 1.2; }
+.ff-step { display: grid; grid-template-columns: 32px 1fr; gap: 20px; padding: 18px 0; border-top: 1px solid #ECE9E3; }
+.ff-step:first-of-type { border-top: none; padding-top: 0; }
+.ff-step:last-of-type { padding-bottom: 0; }
+.ff-step-num { font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 500; font-style: italic; color: #B4192E; line-height: 1.3; }
+.ff-step p.ff-step-title { font-size: 15px; color: #121216; font-weight: 600; margin: 0 0 4px; }
+.ff-step p.ff-step-desc { font-size: 14px; color: #3B3B43; line-height: 1.55; margin: 0; }
+
+.ff-calendly-wrap { padding: 104px 0; position: relative; overflow: hidden; background: #F2F0EB; border-top: 1px solid #E4E1DA; }
+.ff-calendly-head { text-align: center; max-width: 780px; margin: 0 auto 48px; position: relative; z-index: 2; }
+.ff-calendly-head .ff-eyebrow { justify-content: center; }
+.ff-calendly-head h2 { font-family: 'Fraunces', Georgia, serif; font-size: 54px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 18px; color: #121216 !important; text-wrap: balance; }
+.ff-calendly-head h2 em { font-style: italic; color: #B4192E !important; }
+.ff-calendly-head p { font-size: 19px; color: #3B3B43; line-height: 1.65; margin: 0; }
+.ff-calendly-embed { position: relative; z-index: 2; min-height: 700px; background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid #E4E1DA; }
+.ff-calendly-embed iframe { width: 100%; height: 700px; border: none; display: block; }
+
+.ff-hq-wrap { padding: 104px 0; position: relative; overflow: hidden; background: #FAF9F6; border-top: 1px solid #E4E1DA; }
+.ff-hq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.ff-hq-block h2 { font-family: 'Fraunces', Georgia, serif; font-size: 54px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 24px; color: #121216 !important; text-wrap: balance; }
+.ff-hq-block h2 em { font-style: italic; color: #B4192E !important; }
+.ff-hq-block p { font-size: 18px; line-height: 1.65; color: #3B3B43; margin: 0; max-width: 480px; }
+.ff-hq-card { padding: 44px; background: #FCF1F2; border: 1px solid #F2D6DA; border-radius: 14px; }
+.ff-hq-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: #fff; background: #D7263D; padding: 4px 10px; border-radius: 999px; margin-bottom: 18px; }
+.ff-hq-city { font-family: 'Fraunces', Georgia, serif; font-size: 52px; font-weight: 500; letter-spacing: -0.03em; color: #121216; margin: 0 0 8px; line-height: 1; }
+.ff-hq-region { font-size: 16px; color: #6E6E77; margin: 0 0 24px; letter-spacing: 0.02em; }
+.ff-hq-team { font-size: 14px; color: #3B3B43; padding-top: 22px; border-top: 1px solid #F2D6DA; line-height: 1.6; }
+.ff-frame .ff-hq-team a { color: #B4192E !important; font-weight: 600; overflow-wrap: anywhere; }
+
+.ff-footer-wrap { background: #0E0E11; border-top: 1px solid rgba(255,255,255,0.08); padding: 48px 0; }
+.ff-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 14px; color: rgba(255,255,255,0.62); }
+.ff-footer-logo { display: block; width: 150px; height: 42px; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-frame a:focus-visible { outline: 2px solid #D7263D; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { .ff-frame .ff-contact-card { transition: none; } }
+@media (max-width: 900px) {
+  .ff-container { padding: 0 20px; }
+  .ff-nav { flex-wrap: wrap; row-gap: 14px; } .ff-nav-links { display: flex; order: 3; width: 100%; gap: 24px; font-size: 14px; overflow-x: auto; white-space: nowrap; padding-bottom: 2px; } .ff-logo { width: 140px; height: 40px; } .ff-nav-cta { padding: 10px 15px; font-size: 13px; }
+  .ff-hero-wrap { padding: 64px 0 56px; }
+  .ff-hero-h1 { font-size: 42px; }
+  .ff-hero-sub { font-size: 18px; }
+  .ff-contact-section { padding: 64px 0; }
+  .ff-contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .ff-contact-block { position: static; }
+  .ff-contact-block h2 { font-size: 36px; } .ff-contact-block p { font-size: 17px; }
+  .ff-frame .ff-contact-card { padding: 20px 18px; gap: 16px; }
+  .ff-contact-card-body p.ff-contact-value { font-size: 14px; overflow-wrap: normal; }
+  .ff-contact-icon { width: 40px; height: 40px; font-size: 19px; }
+  .ff-next-box { padding: 28px 22px; }
+  .ff-next-box h3 { font-size: 24px; }
+  .ff-calendly-wrap { padding: 64px 0; }
+  .ff-calendly-head { margin-bottom: 32px; }
+  .ff-calendly-head h2 { font-size: 36px; } .ff-calendly-head p { font-size: 17px; }
+  .ff-calendly-embed iframe { height: 800px; }
+  .ff-hq-wrap { padding: 64px 0; }
+  .ff-hq-grid { grid-template-columns: 1fr; gap: 36px; }
+  .ff-hq-block h2 { font-size: 36px; } .ff-hq-block p { font-size: 17px; }
+  .ff-hq-card { padding: 28px 22px; }
+  .ff-hq-city { font-size: 40px; }
+}
+</style>
+
+<div class="ff-frame">
+  <div class="ff-nav-wrap"><div class="ff-container"><nav class="ff-nav">
+    <a href="/" class="ff-logo" aria-label="FrogFish Consulting"></a>
+    <div class="ff-nav-links"><a href="/services">Services</a><a href="/industries">Industries</a><a href="/about-us">About</a><a href="/contact-us">Contact</a></div>
+    <a href="https://calendly.com/frogfishconsulting/discovery" class="ff-nav-cta" target="_blank">Book a call →</a>
+  </nav></div></div>
+
+  <div class="ff-hero-wrap">
+    <div class="ff-grid-bg"></div>
+    <div class="ff-container">
+      <div class="ff-eyebrow">Get in touch</div>
+      <h1 class="ff-hero-h1">Let&#8217;s <em>talk.</em></h1>
+      <p class="ff-hero-sub">Whether you&#8217;re scaling, starting over, or just want a second opinion — we&#8217;ll tell you straight whether FrogFish is the right partner.</p>
+    </div>
+  </div>
+
+  <div class="ff-contact-section"><div class="ff-container">
+    <div class="ff-contact-grid">
+      <div class="ff-contact-block">
+        <h2>Two ways to <em>reach us.</em></h2>
+        <p>Pick whichever feels right. The Calendly link below skips the back-and-forth — book a 30-minute slot directly. Otherwise, email Alex and we&#8217;ll respond within one business day.</p>
+        <div class="ff-contact-options">
+          <a href="https://calendly.com/frogfishconsulting/discovery" target="_blank" class="ff-contact-card">
+            <div class="ff-contact-icon">→</div>
+            <div class="ff-contact-card-body">
+              <p class="ff-contact-label">Book a strategy call</p>
+              <p class="ff-contact-value">30 min · No prep needed</p>
+            </div>
+            <div class="arrow">&#x2197;</div>
+          </a>
+          <a href="mailto:alex@frogfishconsulting.com" class="ff-contact-card">
+            <div class="ff-contact-icon">@</div>
+            <div class="ff-contact-card-body">
+              <p class="ff-contact-label">Email directly</p>
+              <p class="ff-contact-value">alex@frogfishconsulting.com</p>
+            </div>
+            <div class="arrow">&#x2197;</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="ff-next-box">
+        <div class="ff-next-label">What happens next</div>
+        <h3>From &#8220;hello&#8221; to a real conversation in 5 days or less.</h3>
+        <div class="ff-step">
+          <div class="ff-step-num">i.</div>
+          <div>
+            <p class="ff-step-title">You book or email</p>
+            <p class="ff-step-desc">No long forms, no qualifying questionnaires. Just pick a time or send a quick note.</p>
+          </div>
+        </div>
+        <div class="ff-step">
+          <div class="ff-step-num">ii.</div>
+          <div>
+            <p class="ff-step-title">30-minute discovery call</p>
+            <p class="ff-step-desc">We&#8217;ll talk through your funnel, your goals, and the specific outcome you&#8217;re after. No pitch deck.</p>
+          </div>
+        </div>
+        <div class="ff-step">
+          <div class="ff-step-num">iii.</div>
+          <div>
+            <p class="ff-step-title">Honest recommendation</p>
+            <p class="ff-step-desc">Within 5 business days you&#8217;ll get a tailored proposal — or a referral to someone better suited.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ff-calendly-wrap"><div class="ff-container">
+    <div class="ff-calendly-head">
+      <div class="ff-eyebrow">Book directly</div>
+      <h2>Pick a <em>time.</em></h2>
+      <p>30 minutes is enough to know whether we should keep talking. Choose a slot that works for you.</p>
+    </div>
+    <div class="ff-calendly-embed">
+      <iframe src="https://calendly.com/frogfishconsulting/discovery?embed_domain=frogfishconsulting.com&#038;embed_type=Inline&#038;hide_event_type_details=0&#038;hide_gdpr_banner=1" loading="lazy" title="Schedule with FrogFish Consulting"></iframe>
+    </div>
+  </div></div>
+
+  <div class="ff-hq-wrap"><div class="ff-container">
+    <div class="ff-hq-grid">
+      <div class="ff-hq-block">
+        <div class="ff-eyebrow">Where we are</div>
+        <h2>Headquartered in <em>Los Angeles.</em></h2>
+        <p>Operating with team members across four continents — so we&#8217;re awake when your customers are. For specific project regions, mention it on the call and we&#8217;ll route you.</p>
+      </div>
+      <div class="ff-hq-card">
+        <div class="ff-hq-badge">HQ</div>
+        <div class="ff-hq-city">Los Angeles</div>
+        <div class="ff-hq-region">United States</div>
+        <div class="ff-hq-team">
+          For partnership and engagement inquiries:<br>
+          <a href="mailto:alex@frogfishconsulting.com" style="color: #FF4D63;">alex@frogfishconsulting.com</a>
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ff-footer-wrap"><div class="ff-container"><div class="ff-footer">
+    <div class="ff-footer-logo" aria-label="FrogFish Consulting"></div>
+    <div>© 2026 FrogFish Consulting · All rights reserved</div>
+  </div></div></div>
+</div>
+<style id="ff-sitewide-light">body.page, body.page .site, body.page .site-container, body.page #content, body.page #primary, body.page .content-area, body.page .entry-content { background: #FAF9F6 !important; color: #3B3B43 !important; } body .ff-audit-float { background: #D7263D !important; border: 0 !important; backdrop-filter: none !important; } body .ff-audit-float:hover { background: #B4192E !important; transform: none !important; } body .ff-audit-float-dot { background: #FFFFFF !important; box-shadow: none !important; } body.page-id-452 .entry-content, body.page-id-456 .entry-content { max-width: 760px; margin-left: auto; margin-right: auto; padding-top: 80px !important; padding-bottom: 80px !important; font-size: 16px; line-height: 1.7; } body.page-id-452 .entry-content h1, body.page-id-452 .entry-content h2, body.page-id-452 .entry-content h3, body.page-id-456 .entry-content h1, body.page-id-456 .entry-content h2, body.page-id-456 .entry-content h3 { color: #121216 !important; font-weight: 500; } body.page-id-452 .entry-content a, body.page-id-456 .entry-content a { color: #B4192E !important; } @media (max-width: 900px) { body .ff-mobile-btn { background: #0E0E11 !important; backdrop-filter: none !important; } body .ff-mobile-btn.is-open { background: #121216 !important; } body .ff-mobile-overlay { background: #FAF9F6 !important; backdrop-filter: none !important; } body .ff-mobile-overlay a { color: #121216 !important; font-weight: 500 !important; } body .ff-mobile-overlay .ff-mobile-cta { background: #D7263D !important; color: #FFFFFF !important; } }</style>

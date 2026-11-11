@@ -1,0 +1,29 @@
+# FrogFish Consulting
+
+> FrogFish Consulting is a Los Angeles-based growth consultancy that gets brands recommended in AI answers (ChatGPT, Perplexity, Gemini, Google AI Overviews) and runs AEO, SEO, paid media, lead scoring and analytics as one system, measured on revenue in the client's CRM. Founded by Alex Fleshner, 13 years at Google (Google Ads lead-gen vertical, Head of Media Strategy at Verily, AI Transformation Lead at Google Cloud AI).
+
+## Services
+- [AI search / AEO](https://www.frogfishconsulting.com/aeo/): AI visibility audits, technical AEO, answer-first content, off-site source building, AI-attributed revenue tracking
+- [Paid media](https://www.frogfishconsulting.com/paid-media/): Google, Microsoft, Meta, LinkedIn, CTV, optimized to CRM outcomes
+- [Services overview](https://www.frogfishconsulting.com/services/): paid, earned, digital intelligence
+
+## Industries
+- [AEO for clinical trial recruitment](https://www.frogfishconsulting.com/aeo-clinical-trial-recruitment/): get studies, CROs and site networks cited by AI answers, HIPAA-safe
+- [AI search optimization for solar & home energy](https://www.frogfishconsulting.com/ai-search-optimization-solar/): get solar brands cited, measured in signed contracts
+- [Clinical trials](https://www.frogfishconsulting.com/industries/clinical-trials/): HIPAA-compliant patient recruitment
+- [Legal](https://www.frogfishconsulting.com/industries/legal/): personal injury, mass tort, asset protection
+- [Lead gen / solar & home services](https://www.frogfishconsulting.com/industries/lead-gen/)
+- [Real estate](https://www.frogfishconsulting.com/industries/real-estate/)
+
+## Proof
+- $250K closed revenue from AI-attributed leads for a B2C law firm in four months
+- +32% cost-per-sale efficiency from lead scoring for a publicly traded solar company
+- $120M client revenue tracked to source across 20+ brands
+
+## Insights
+- [Blog](https://www.frogfishconsulting.com/blog/): articles by Alex Fleshner on AI search, lead gen and attribution
+- [About Alex Fleshner](https://www.frogfishconsulting.com/about-us/)
+
+## Contact
+- [Book a 30-minute strategy call](https://www.frogfishconsulting.com/contact-us/)
+- [Free assessment](https://www.frogfishconsulting.com/assessment/)

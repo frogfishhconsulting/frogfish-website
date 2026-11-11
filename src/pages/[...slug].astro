@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import FFNav from '../components/FFNav.astro';
+import FFCta from '../components/FFCta.astro';
+import FFFooter from '../components/FFFooter.astro';
+import site from '../data/site.json';
+import { pageGraph } from '../lib/schema.js';
+import homeCss from '../styles/ff-home.css?raw';
+import articleCss from '../styles/article.css?raw';
+import kadenceCss from '../styles/kadence-content.css?raw';
+
+const html = import.meta.glob('../content-html/*.html', { query: '?raw', import: 'default', eager: true });
+
+export function getStaticPaths() {
+  return site.map((e) => ({ params: { slug: e.path === '/' ? undefined : e.path.replace(/^\/|\/$/g, '') }, props: { e } }));
+}
+const { e } = Astro.props;
+const body = e.file ? html[`../content-html/${e.file}.html`] : '';
+const posts = site.filter((x) => x.kind === 'post');
+const fmt = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+const headshot = '/wp-content/uploads/2026/05/headshot-avatar-1024.jpg';
+const lede = e.kind === 'landing' ? (body.match(/<p><strong>(.*?)<\/strong>/s)?.[1] ?? '') : '';
+const bodyOut = e.kind === 'landing' ? body.replace(/<h1>.*?<\/h1>/s, '') : body;
+const crumbs = e.kind === 'post' ? [['Insights', '/blog/']] : e.kind === 'landing' ? [['AI Search', '/aeo/']] : [];
+---
+<Base title={e.title} description={e.description} path={e.path} noindex={e.noindex} schema={pageGraph(e)}
+      ogImage={e.image} ogType={e.kind === 'post' ? 'article' : 'website'} bodyClass={e.kind === 'raw' ? `page-id-${e.id}` : `page-${e.kind}`}>
+  {e.kind === 'raw' && <><style is:inline set:html={kadenceCss}></style><div class="entry-content single-content" style="margin:0"><Fragment set:html={body} /></div></>}
+  {e.kind !== 'raw' && (
+    <div class="ff-frame">
+      <style is:inline set:html={homeCss.replace(/@import url\([^)]*\);/, '') + articleCss}></style>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" />
+      <FFNav />
+      <div class="ffa-hero"><div class="ff-container">
+        {crumbs.length > 0 && <div class="ffa-crumbs"><a href="/">Home</a>{crumbs.map(([n, p]) => <><span>/</span><a href={p}>{n}</a></>)}</div>}
+        <h1 class="ffa-h1">{e.h1}</h1>
+        {e.kind === 'blog' && <p class="ffa-lede">Notes from FrogFish founder Alex Fleshner on AI search, paid media, lead scoring and the measurement that ties it all to revenue.</p>}
+        {e.kind === 'landing' && <p class="ffa-lede" set:html={lede} />}
+        {e.kind === 'post' && (
+          <div class="ffa-byline"><img src={headshot} alt="Alex Fleshner" width="44" height="44" /><span>By <strong>Alex Fleshner</strong>, Founder · {fmt(e.date)}</span></div>
+        )}
+      </div></div>
+      <div class="ffa-body">
+        {e.kind === 'blog' ? (
+          <div class="ffa-grid">
+            {posts.map((p) => (
+              <a class="ffa-card" href={p.path}>
+                {p.image && <img src={p.image} alt="" loading="lazy" />}
+                <div class="ffa-card-body"><div class="ffa-card-date">{fmt(p.date)}</div><h2>{p.h1}</h2><p>{p.excerpt}</p></div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <article class={`ffa-prose ${e.kind === 'legal' ? 'ffa-legal' : ''}`} set:html={e.kind === 'landing' ? bodyOut.replace(/<p><strong>.*?<\/strong>/s, '<p>') : bodyOut} />
+        )}
+        {(e.kind === 'post' || e.kind === 'landing') && (
+          <div class="ffa-author"><img src={headshot} alt="Alex Fleshner" width="64" height="64" />
+            <p><strong>Alex Fleshner</strong> is the founder of FrogFish Consulting. He spent 13 years at Google across Ads and AI, including AI Transformation Lead at Google Cloud AI, Head of Media Strategy at Verily, and lead of the Google Ads lead-gen vertical. <a href="/about-us/">More about Alex</a> · <a href="https://www.linkedin.com/in/alexfleshner" target="_blank" rel="noopener">LinkedIn</a></p>
+          </div>
+        )}
+      </div>
+      {e.kind !== 'legal' && <FFCta />}
+      <FFFooter />
+    </div>
+  )}
+</Base>

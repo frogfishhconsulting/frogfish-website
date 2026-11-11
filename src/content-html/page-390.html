@@ -1,0 +1,277 @@
+
+
+<style>
+  .ff-brand-portal { all: initial; display: block; }
+  .ff-brand-portal *, .ff-brand-portal *::before, .ff-brand-portal *::after { box-sizing: border-box; }
+
+  @import url('https://rsms.me/inter/inter.css');
+
+  .ff-brand-portal {
+    --ff-red: #E10600;
+    --ff-red-glow: rgba(255, 77, 99, 0.4);
+    --ff-black: #050505;
+    --ff-ink-950: #0A0A0A;
+    --ff-ink-900: #171717;
+    --ff-ink-800: #262626;
+    --ff-ink-700: #404040;
+    --ff-ink-500: #6B7280;
+    --ff-ink-400: #9CA3AF;
+    --ff-ink-300: #D1D5DB;
+    --ff-ink-200: #E5E7EB;
+    --ff-ink-100: #F3F4F6;
+    --ff-white: #FFFFFF;
+    --ff-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ff-asset-base: '/wp-content/uploads/2026/05/';
+    font-family: var(--ff-font);
+    background: var(--ff-black);
+    color: var(--ff-white);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .ff-brand-portal h1, .ff-brand-portal h2, .ff-brand-portal h3, .ff-brand-portal h4, .ff-brand-portal p, .ff-brand-portal ul, .ff-brand-portal li, .ff-brand-portal blockquote { margin: 0; padding: 0; font-weight: inherit; }
+  .ff-brand-portal ul { list-style: none; }
+  .ff-brand-portal a { color: inherit; text-decoration: none; }
+  .ff-brand-portal img { display: block; max-width: 100%; height: auto; }
+
+  .ff-brand-portal__container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  .ff-brand-portal section { padding: 120px 0; border-bottom: 1px solid var(--ff-ink-900); }
+  .ff-brand-portal__eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ff-ink-500); margin-bottom: 24px; }
+  .ff-brand-portal__eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--ff-red); vertical-align: middle; margin-right: 12px; }
+  .ff-brand-portal__section-title { font-size: clamp(40px, 6vw, 72px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin-bottom: 32px; }
+  .ff-brand-portal__section-title em { font-style: italic; color: var(--ff-red); font-weight: 800; }
+  .ff-brand-portal__section-desc { font-size: 20px; line-height: 1.5; color: var(--ff-ink-300); max-width: 720px; margin-bottom: 64px; }
+
+  .ff-brand-portal__hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--ff-ink-900); }
+  .ff-brand-portal__hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 800px; height: 800px; background: radial-gradient(circle, var(--ff-red-glow) 0%, transparent 60%); filter: blur(100px); pointer-events: none; }
+  .ff-brand-portal__hero-meta { font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ff-ink-500); margin-bottom: 80px; display: flex; align-items: center; gap: 24px; }
+  .ff-brand-portal__hero-meta::before { content: ''; width: 8px; height: 8px; background: var(--ff-red); border-radius: 50%; box-shadow: 0 0 16px var(--ff-red); animation: ff-pulse 2s ease-in-out infinite; }
+  @keyframes ff-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .ff-brand-portal__hero-title { font-size: clamp(56px, 10vw, 160px); font-weight: 800; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 40px; }
+  .ff-brand-portal__hero-title em { font-style: italic; color: var(--ff-red); font-weight: 800; }
+  .ff-brand-portal__hero-tagline { font-size: clamp(20px, 2.5vw, 28px); color: var(--ff-ink-300); max-width: 640px; margin-bottom: 56px; font-style: italic; }
+  .ff-brand-portal__hero-cta { display: inline-flex; align-items: center; gap: 12px; padding: 18px 32px; background: var(--ff-red); color: var(--ff-white); font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; transition: transform 0.2s, background 0.2s; width: fit-content; }
+  .ff-brand-portal__hero-cta:hover { background: #B30500; transform: translateX(4px); }
+  .ff-brand-portal__hero-cta::after { content: '→'; font-size: 18px; }
+
+  .ff-brand-portal__logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; }
+  .ff-brand-portal__logo-card { background: var(--ff-ink-950); border: 1px solid var(--ff-ink-900); border-radius: 4px; overflow: hidden; transition: border-color 0.2s; display: flex; flex-direction: column; }
+  .ff-brand-portal__logo-card:hover { border-color: var(--ff-red); }
+  .ff-brand-portal__logo-preview { aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; padding: 40px; overflow: hidden; }
+  .ff-brand-portal__logo-preview img { max-width: 75%; max-height: 75%; object-fit: contain; }
+  .ff-brand-portal__logo-preview--light { background: var(--ff-white); }
+  .ff-brand-portal__logo-preview--dark { background: var(--ff-black); }
+  .ff-brand-portal__logo-preview--check { background-color: #1a1a1a; background-image: linear-gradient(45deg, #262626 25%, transparent 25%), linear-gradient(-45deg, #262626 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #262626 75%), linear-gradient(-45deg, transparent 75%, #262626 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, 10px 0; }
+  .ff-brand-portal__logo-info { padding: 20px 24px 24px; border-top: 1px solid var(--ff-ink-900); }
+  .ff-brand-portal__logo-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .ff-brand-portal__logo-desc { font-size: 12px; color: var(--ff-ink-500); margin-bottom: 16px; line-height: 1.5; min-height: 36px; }
+  .ff-brand-portal__download-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .ff-brand-portal__download-btn { padding: 8px 14px; background: var(--ff-ink-900); color: var(--ff-ink-300); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; transition: background 0.15s, color 0.15s; border: 1px solid var(--ff-ink-800); display: inline-flex; align-items: center; gap: 6px; }
+  .ff-brand-portal__download-btn:hover { background: var(--ff-red); color: var(--ff-white); border-color: var(--ff-red); }
+  .ff-brand-portal__download-btn::before { content: '↓'; font-size: 14px; }
+
+  .ff-brand-portal__color-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 48px; }
+  .ff-brand-portal__color-card { border-radius: 4px; padding: 32px 28px; cursor: pointer; position: relative; transition: transform 0.2s; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between; }
+  .ff-brand-portal__color-card:hover { transform: translateY(-4px); }
+  .ff-brand-portal__color-card[data-bg="white"] { background: var(--ff-white); color: var(--ff-black); border: 1px solid var(--ff-ink-200); }
+  .ff-brand-portal__color-name { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .ff-brand-portal__color-usage { font-size: 12px; opacity: 0.75; line-height: 1.5; margin-bottom: 24px; }
+  .ff-brand-portal__color-values { font-size: 12px; line-height: 1.7; font-family: ui-monospace, Menlo, monospace; opacity: 0.9; }
+  .ff-brand-portal__color-values span { display: block; }
+  .ff-brand-portal__color-values strong { font-weight: 700; opacity: 0.55; display: inline-block; width: 50px; font-family: var(--ff-font); letter-spacing: 0.05em; font-size: 10px; text-transform: uppercase; }
+  .ff-brand-portal__copy-hint { position: absolute; top: 16px; right: 16px; font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.4; }
+  .ff-brand-portal__color-card.copied .ff-brand-portal__copy-hint { opacity: 1; }
+  .ff-brand-portal__color-card.copied .ff-brand-portal__copy-hint::before { content: '✓ '; }
+
+  .ff-brand-portal__neutral-row { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin-top: 32px; }
+  @media (max-width: 768px) { .ff-brand-portal__neutral-row { grid-template-columns: repeat(4, 1fr); } }
+  .ff-brand-portal__neutral-swatch { aspect-ratio: 1; border-radius: 2px; padding: 12px; cursor: pointer; transition: transform 0.15s; display: flex; flex-direction: column; justify-content: flex-end; }
+  .ff-brand-portal__neutral-swatch:hover { transform: scale(1.05); }
+  .ff-brand-portal__neutral-swatch span { font-size: 10px; font-weight: 700; font-family: ui-monospace, monospace; }
+
+  .ff-brand-portal__type-spec { border-top: 1px solid var(--ff-ink-900); padding: 32px 0; }
+  .ff-brand-portal__type-spec:first-of-type { border-top: 0; padding-top: 0; }
+  .ff-brand-portal__type-spec-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; font-size: 11px; color: var(--ff-ink-500); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; }
+  .ff-brand-portal__type-spec-label span:last-child { font-family: ui-monospace, monospace; letter-spacing: 0; text-transform: none; color: var(--ff-ink-400); }
+  .ff-brand-portal__type-h1 { font-size: 72px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+  .ff-brand-portal__type-h2 { font-size: 48px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+  .ff-brand-portal__type-h3 { font-size: 28px; font-weight: 700; color: var(--ff-red); line-height: 1.3; }
+  .ff-brand-portal__type-body { font-size: 18px; font-weight: 400; line-height: 1.6; color: var(--ff-ink-300); max-width: 65ch; }
+  .ff-brand-portal__type-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ff-ink-500); }
+
+  .ff-brand-portal__voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  @media (max-width: 768px) { .ff-brand-portal__voice-grid { grid-template-columns: 1fr; } }
+  .ff-brand-portal__voice-card { padding: 40px; border: 1px solid var(--ff-ink-900); border-radius: 4px; background: var(--ff-ink-950); }
+  .ff-brand-portal__voice-card--do { border-left: 3px solid var(--ff-red); }
+  .ff-brand-portal__voice-card--dont { border-left: 3px solid var(--ff-ink-700); }
+  .ff-brand-portal__voice-card h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ff-ink-500); margin-bottom: 20px; }
+  .ff-brand-portal__voice-card h3 { font-size: 24px; font-weight: 700; margin-bottom: 24px; letter-spacing: -0.01em; }
+  .ff-brand-portal__voice-card ul li { padding: 12px 0; color: var(--ff-ink-300); font-size: 15px; line-height: 1.5; border-top: 1px solid var(--ff-ink-900); padding-left: 28px; position: relative; }
+  .ff-brand-portal__voice-card ul li:first-child { border-top: 0; }
+  .ff-brand-portal__voice-card--do ul li::before { content: '+'; position: absolute; left: 0; color: var(--ff-red); font-weight: 700; }
+  .ff-brand-portal__voice-card--dont ul li::before { content: '×'; position: absolute; left: 0; color: var(--ff-ink-500); font-weight: 700; }
+  .ff-brand-portal__voice-quotes { margin-top: 64px; border-left: 3px solid var(--ff-red); padding-left: 32px; }
+  .ff-brand-portal__voice-quotes blockquote { font-size: 22px; line-height: 1.5; color: var(--ff-ink-200); font-style: italic; padding: 16px 0; border-bottom: 1px solid var(--ff-ink-900); }
+  .ff-brand-portal__voice-quotes blockquote:last-child { border-bottom: 0; }
+
+  .ff-brand-portal__downloads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .ff-brand-portal__download-card { padding: 32px; background: var(--ff-ink-950); border: 1px solid var(--ff-ink-900); border-radius: 4px; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; gap: 16px; }
+  .ff-brand-portal__download-card:hover { border-color: var(--ff-red); transform: translateY(-4px); }
+  .ff-brand-portal__download-card h3 { font-size: 18px; font-weight: 700; }
+  .ff-brand-portal__download-card p { font-size: 13px; color: var(--ff-ink-500); line-height: 1.5; flex: 1; }
+  .ff-brand-portal__download-card-cta { display: inline-flex; align-items: center; gap: 8px; color: var(--ff-red); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid var(--ff-ink-900); padding-top: 16px; margin-top: 8px; }
+  .ff-brand-portal__download-card-cta::after { content: '↓'; font-size: 14px; }
+
+  .ff-brand-portal__footer { padding: 80px 0 60px; text-align: center; border-bottom: 0; }
+  .ff-brand-portal__footer-text { color: var(--ff-ink-500); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; }
+  .ff-brand-portal__footer-version { font-family: ui-monospace, monospace; font-size: 11px; color: var(--ff-ink-700); margin-top: 16px; letter-spacing: 0; text-transform: none; }
+
+  .ff-brand-portal__toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(120%); background: var(--ff-red); color: var(--ff-white); padding: 14px 24px; border-radius: 2px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; box-shadow: 0 10px 40px rgba(225, 6, 0, 0.4); transition: transform 0.3s; z-index: 9999; pointer-events: none; }
+  .ff-brand-portal__toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 640px) { .ff-brand-portal section { padding: 80px 0; } .ff-brand-portal__container { padding: 0 20px; } .ff-brand-portal__hero { min-height: 70vh; } .ff-brand-portal__hero-meta { margin-bottom: 48px; } .ff-brand-portal__voice-card { padding: 28px; } .ff-brand-portal__type-h1 { font-size: 48px; } .ff-brand-portal__type-h2 { font-size: 34px; } }
+</style>
+
+<div class="ff-brand-portal" id="ff-brand-portal">
+  <header class="ff-brand-portal__hero">
+    <div class="ff-brand-portal__container">
+      <div class="ff-brand-portal__hero-meta">Internal · Brand Portal · v1.1 · May 2026</div>
+      <h1 class="ff-brand-portal__hero-title">Brand<br><em>Guidelines.</em></h1>
+      <p class="ff-brand-portal__hero-tagline">Patient. Strategic. Lethal at the right moment. Every asset, every color, every word — engineered for one purpose.</p>
+      <a href="#downloads" class="ff-brand-portal__hero-cta">Jump to downloads</a>
+    </div>
+  </header>
+
+  <section id="logos">
+    <div class="ff-brand-portal__container">
+      <div class="ff-brand-portal__eyebrow">01 — The mark</div>
+      <h2 class="ff-brand-portal__section-title">Logo <em>system.</em></h2>
+      <p class="ff-brand-portal__section-desc">Every approved variation. Hover any tile to download. The hand-drawn quality is intentional — never retype the wordmark, never redraw the fish.</p>
+      <div class="ff-brand-portal__logo-grid">
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--light"><img data-src="frogfish-primary-light.png" alt="Primary light" loading="lazy"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Primary · Light</div><div class="ff-brand-portal__logo-desc">Stacked lockup. Red on white. The default for print and light surfaces.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-primary-light.png" download>PNG</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--dark"><img data-src="frogfish-primary-dark.png" alt="Primary dark" loading="lazy"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Primary · Dark</div><div class="ff-brand-portal__logo-desc">Stacked lockup on Abyss Black. The dominant digital treatment.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-primary-dark.png" download>PNG</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--check"><img data-src="frogfish-primary-transparent.png" alt="Primary transparent" loading="lazy"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Primary · Transparent</div><div class="ff-brand-portal__logo-desc">Red on transparent. Composite onto any custom background.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-primary-transparent.png" download>PNG</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--dark"><img data-src="frogfish-horizontal-dark.png" alt="Horizontal dark" loading="lazy"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Horizontal · Dark</div><div class="ff-brand-portal__logo-desc">Email signatures, website headers, wide placements. Recommended.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-horizontal-dark.png" download>PNG</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--light"><img data-src="frogfish-horizontal-light.png" alt="Horizontal light" loading="lazy"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Horizontal · Light</div><div class="ff-brand-portal__logo-desc">Horizontal lockup on white. Business card backs, letterheads.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-horizontal-light.png" download>PNG</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--dark"><img data-src="frogfish-mark-on-dark.png" alt="Mark dark" loading="lazy"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Mark Only · Dark</div><div class="ff-brand-portal__logo-desc">Fish + funnel without wordmark. For watermarks and accent uses.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-mark-on-dark.png" download>PNG</a><a class="ff-brand-portal__download-btn" data-file="frogfish-mark-transparent.png" download>Transparent</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--light"><img data-src="frogfish-mono-black.png" alt="Mono black" loading="lazy"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Monochrome Black</div><div class="ff-brand-portal__logo-desc">Single-color print, embossing, faxes, low-fidelity output.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-mono-black.png" download>PNG</a><a class="ff-brand-portal__download-btn" data-file="frogfish-mark-black.png" download>Mark Only</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--light"><img data-src="frogfish-wordmark-red-on-white.png" alt="Wordmark" loading="lazy"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Wordmark Only</div><div class="ff-brand-portal__logo-desc">When the mark would be too small to read. Don't retype — this is custom artwork.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-wordmark-red-on-white.png" download>PNG</a><a class="ff-brand-portal__download-btn" data-file="frogfish-wordmark-white.png" download>White</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--dark"><img data-src="frogfish-avatar-dark.png" alt="Avatar dark" loading="lazy"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Social Avatar · 1024px</div><div class="ff-brand-portal__logo-desc">Square profile photo for LinkedIn, Twitter/X, Instagram, podcasts.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-avatar-dark.png" download>Dark</a><a class="ff-brand-portal__download-btn" data-file="frogfish-avatar-light.png" download>Light</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--dark"><img data-src="frogfish-hero-1920x1080.png" alt="Hero" loading="lazy"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Hero Composition</div><div class="ff-brand-portal__logo-desc">LinkedIn cover, deck title slides, video thumbnails. 16:9 and 1:1.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-hero-1920x1080.png" download>16:9</a><a class="ff-brand-portal__download-btn" data-file="frogfish-hero-square-1080.png" download>1:1</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--check"><img data-src="frogfish-favicon-512.png" alt="Favicons" loading="lazy" style="max-width:35%;max-height:35%"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Favicons</div><div class="ff-brand-portal__logo-desc">Browser tabs, app icons, Apple touch icons. Four sizes provided.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="frogfish-favicon-16.png" download>16</a><a class="ff-brand-portal__download-btn" data-file="frogfish-favicon-32.png" download>32</a><a class="ff-brand-portal__download-btn" data-file="frogfish-favicon-180-apple.png" download>180</a><a class="ff-brand-portal__download-btn" data-file="frogfish-favicon-512.png" download>512</a></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="colors">
+    <div class="ff-brand-portal__container">
+      <div class="ff-brand-portal__eyebrow">02 — Color</div>
+      <h2 class="ff-brand-portal__section-title">The <em>palette.</em></h2>
+      <p class="ff-brand-portal__section-desc">Click any swatch to copy its HEX code. Four colors carry the brand. Everything else is a neutral.</p>
+      <div class="ff-brand-portal__color-grid">
+        <div class="ff-brand-portal__color-card" data-copy="#E10600" style="background:#E10600"><div class="ff-brand-portal__copy-hint">Click to copy</div><div><div class="ff-brand-portal__color-name">FrogFish Red</div><div class="ff-brand-portal__color-usage">Hero color · CTAs · the strike moment</div></div><div class="ff-brand-portal__color-values"><span><strong>HEX</strong>#E10600</span><span><strong>RGB</strong>225, 6, 0</span><span><strong>CMYK</strong>0, 97, 100, 12</span><span><strong>PMS</strong>185 C</span></div></div>
+        <div class="ff-brand-portal__color-card" data-copy="#050505" style="background:#050505"><div class="ff-brand-portal__copy-hint">Click to copy</div><div><div class="ff-brand-portal__color-name">Abyss Black</div><div class="ff-brand-portal__color-usage">Primary background · dominant surface color</div></div><div class="ff-brand-portal__color-values"><span><strong>HEX</strong>#050505</span><span><strong>RGB</strong>5, 5, 5</span><span><strong>CMYK</strong>0, 0, 0, 98</span><span><strong>PMS</strong>Black 6 C</span></div></div>
+        <div class="ff-brand-portal__color-card" data-copy="#FFFFFF" data-bg="white"><div class="ff-brand-portal__copy-hint">Click to copy</div><div><div class="ff-brand-portal__color-name">Pure White</div><div class="ff-brand-portal__color-usage">Primary type on dark · clarity surface</div></div><div class="ff-brand-portal__color-values"><span><strong>HEX</strong>#FFFFFF</span><span><strong>RGB</strong>255, 255, 255</span><span><strong>CMYK</strong>0, 0, 0, 0</span><span><strong>PMS</strong>—</span></div></div>
+        <div class="ff-brand-portal__color-card" data-copy="rgba(255, 77, 99, 0.4)" style="background:radial-gradient(circle at 30% 40%, rgba(255,77,99,0.5), #050505 70%)"><div class="ff-brand-portal__copy-hint">Click to copy</div><div><div class="ff-brand-portal__color-name">Strike Glow</div><div class="ff-brand-portal__color-usage">Atmospheric glow only · blurred radial · never solid</div></div><div class="ff-brand-portal__color-values"><span><strong>HEX</strong>#FF4D63</span><span><strong>RGBA</strong>255, 77, 99, 0.4</span><span><strong>BLUR</strong>80px+ recommended</span></div></div>
+      </div>
+      <div class="ff-brand-portal__eyebrow" style="margin-bottom:16px">Neutral scale</div>
+      <p style="color:var(--ff-ink-400);font-size:14px;margin-bottom:16px">For body type, UI surfaces, dividers, supporting text.</p>
+      <div class="ff-brand-portal__neutral-row">
+        <div class="ff-brand-portal__neutral-swatch" data-copy="#0A0A0A" style="background:#0A0A0A;color:#fff"><span>#0A0A0A</span></div>
+        <div class="ff-brand-portal__neutral-swatch" data-copy="#171717" style="background:#171717;color:#fff"><span>#171717</span></div>
+        <div class="ff-brand-portal__neutral-swatch" data-copy="#404040" style="background:#404040;color:#fff"><span>#404040</span></div>
+        <div class="ff-brand-portal__neutral-swatch" data-copy="#6B7280" style="background:#6B7280;color:#fff"><span>#6B7280</span></div>
+        <div class="ff-brand-portal__neutral-swatch" data-copy="#9CA3AF" style="background:#9CA3AF;color:#050505"><span>#9CA3AF</span></div>
+        <div class="ff-brand-portal__neutral-swatch" data-copy="#D1D5DB" style="background:#D1D5DB;color:#050505"><span>#D1D5DB</span></div>
+        <div class="ff-brand-portal__neutral-swatch" data-copy="#E5E7EB" style="background:#E5E7EB;color:#050505"><span>#E5E7EB</span></div>
+        <div class="ff-brand-portal__neutral-swatch" data-copy="#F3F4F6" style="background:#F3F4F6;color:#050505"><span>#F3F4F6</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="typography">
+    <div class="ff-brand-portal__container">
+      <div class="ff-brand-portal__eyebrow">03 — Typography</div>
+      <h2 class="ff-brand-portal__section-title">Type <em>system.</em></h2>
+      <p class="ff-brand-portal__section-desc">Inter for everything. Free under the SIL Open Font License — install once, use forever. The wordmark in the logo is custom artwork. Never retype it.</p>
+      <div class="ff-brand-portal__type-spec"><div class="ff-brand-portal__type-spec-label"><span>Hero / H1</span><span>800 · 72px · -3% · 1.05</span></div><div class="ff-brand-portal__type-h1">The frogfish doesn't chase.</div></div>
+      <div class="ff-brand-portal__type-spec"><div class="ff-brand-portal__type-spec-label"><span>Section / H2</span><span>700 · 48px · -2% · 1.15</span></div><div class="ff-brand-portal__type-h2">Engineered for revenue, not vanity metrics.</div></div>
+      <div class="ff-brand-portal__type-spec"><div class="ff-brand-portal__type-spec-label"><span>Subhead / H3</span><span>700 · 28px · Red accent</span></div><div class="ff-brand-portal__type-h3">Three disciplines. One operating system.</div></div>
+      <div class="ff-brand-portal__type-spec"><div class="ff-brand-portal__type-spec-label"><span>Body</span><span>400 · 18px · 1.6 · max 65ch</span></div><div class="ff-brand-portal__type-body">The strategy team Fortune 500s and growing brands hire when "more marketing" isn't the answer, and a sharper, more accountable system is.</div></div>
+      <div class="ff-brand-portal__type-spec"><div class="ff-brand-portal__type-spec-label"><span>Eyebrow</span><span>700 · 12px · ALL CAPS · +25%</span></div><div class="ff-brand-portal__type-eyebrow">— Operators trust us</div></div>
+    </div>
+  </section>
+
+  <section id="voice">
+    <div class="ff-brand-portal__container">
+      <div class="ff-brand-portal__eyebrow">04 — Voice</div>
+      <h2 class="ff-brand-portal__section-title">How we <em>sound.</em></h2>
+      <p class="ff-brand-portal__section-desc">Patient. Strategic. Lethal at the right moment. Confident, technical, slightly understated — the way a senior operator talks to another senior operator. Never hyped. Never desperate. Always specific.</p>
+      <div class="ff-brand-portal__voice-grid">
+        <div class="ff-brand-portal__voice-card ff-brand-portal__voice-card--do"><h4>We sound like</h4><h3>The senior operator in the room.</h3><ul><li>A board-ready strategist explaining the move in plain English</li><li>Confident in numbers — every claim earns its place</li><li>Slightly dry, occasionally surgical, never theatrical</li><li>More interested in pipeline that closes than dashboards that look good</li></ul></div>
+        <div class="ff-brand-portal__voice-card ff-brand-portal__voice-card--dont"><h4>We do not sound like</h4><h3>The agency pitch deck.</h3><ul><li>A growth-hacker (no "10x," "rocket fuel," "ninjas," "secrets")</li><li>A motivational speaker (no "transform," "unleash," "unlock potential")</li><li>An agency pitch deck ("award-winning," "passionate team")</li><li>A corporate consultant ("synergy," "leverage," "ecosystem")</li></ul></div>
+      </div>
+      <div class="ff-brand-portal__voice-quotes">
+        <blockquote>"Engineered for revenue, not vanity metrics."</blockquote>
+        <blockquote>"Most agencies burn budget on motion. We invest yours in leverage."</blockquote>
+        <blockquote>"Real-time reporting access. No monthly PDFs, no black boxes."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="headshots">
+    <div class="ff-brand-portal__container">
+      <div class="ff-brand-portal__eyebrow">05 — The founder</div>
+      <h2 class="ff-brand-portal__section-title">Headshots <em>& team.</em></h2>
+      <p class="ff-brand-portal__section-desc">Official portrait files. Use for LinkedIn, press features, About sections, pitch decks.</p>
+      <div class="ff-brand-portal__logo-grid">
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--dark" style="padding:0"><img data-src="headshot-portrait-cleaned.jpg" alt="Studio" loading="lazy" style="max-width:100%;max-height:100%;width:100%;height:100%;object-fit:cover"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Studio Portrait</div><div class="ff-brand-portal__logo-desc">800×800. Lightly cleaned studio portrait. Default headshot for bios, press, website.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="headshot-portrait-cleaned.jpg" download>JPG</a><a class="ff-brand-portal__download-btn" data-file="headshot-master-original.jpg" download>Original</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--dark" style="padding:0"><img data-src="headshot-avatar-1024.jpg" alt="Avatar" loading="lazy" style="max-width:100%;max-height:100%;width:100%;height:100%;object-fit:cover"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Social Avatar · 1024px</div><div class="ff-brand-portal__logo-desc">Face-focused tight crop. LinkedIn, Twitter/X, Slack, podcast profile photos.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="headshot-avatar-1024.jpg" download>JPG</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--dark" style="padding:0"><img data-src="headshot-editorial.jpg" alt="Editorial" loading="lazy" style="max-width:100%;max-height:100%;width:100%;height:100%;object-fit:cover"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Editorial Vignette</div><div class="ff-brand-portal__logo-desc">Moody vignette pulling focus to the face. Pitch deck About pages, press.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="headshot-editorial.jpg" download>JPG</a></div></div></div>
+        <div class="ff-brand-portal__logo-card"><div class="ff-brand-portal__logo-preview ff-brand-portal__logo-preview--dark" style="padding:0"><img data-src="headshot-founder-card-1920x1080.jpg" alt="Founder card" loading="lazy" style="max-width:100%;max-height:100%;width:100%;height:100%;object-fit:cover"></div><div class="ff-brand-portal__logo-info"><div class="ff-brand-portal__logo-name">Founder Card · 16:9</div><div class="ff-brand-portal__logo-desc">Pitch deck slide / LinkedIn cover. Portrait + brand environment + tagline.</div><div class="ff-brand-portal__download-row"><a class="ff-brand-portal__download-btn" data-file="headshot-founder-card-1920x1080.jpg" download>JPG</a></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="downloads">
+    <div class="ff-brand-portal__container">
+      <div class="ff-brand-portal__eyebrow">06 — Downloads</div>
+      <h2 class="ff-brand-portal__section-title">Pull what you <em>need.</em></h2>
+      <p class="ff-brand-portal__section-desc">Bulk packages for handing off. Individual files live in the gallery above.</p>
+      <div class="ff-brand-portal__downloads-grid">
+        <a class="ff-brand-portal__download-card" data-file="FrogFish_Brand_Asset_Kit.docx" download><h3>Brand guide (.docx)</h3><p>Full Word document with embedded logo previews, color specs, type hierarchy, voice rules.</p><span class="ff-brand-portal__download-card-cta">Download</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ff-brand-portal__footer">
+    <div class="ff-brand-portal__container">
+      <div class="ff-brand-portal__footer-text">© 2026 FrogFish Consulting · Internal Brand Portal</div>
+      <div class="ff-brand-portal__footer-version">v1.1 · May 2026</div>
+    </div>
+  </footer>
+
+  <div class="ff-brand-portal__toast" id="ff-toast">Copied to clipboard</div>
+</div>
+
+<script>
+(function() {
+  var portal = document.getElementById('ff-brand-portal');
+  if (!portal) return;
+  var styles = getComputedStyle(portal);
+  var base = styles.getPropertyValue('--ff-asset-base').trim().replace(/['"]/g, '');
+  if (!base.endsWith('/')) base += '/';
+  portal.querySelectorAll('img[data-src]').forEach(function(img) { img.src = base + img.getAttribute('data-src'); });
+  portal.querySelectorAll('[data-file]').forEach(function(el) { el.href = base + el.getAttribute('data-file'); });
+  var toast = document.getElementById('ff-toast');
+  var t;
+  function showToast(msg) { toast.textContent = msg; toast.classList.add('show'); clearTimeout(t); t = setTimeout(function(){ toast.classList.remove('show'); }, 1800); }
+  portal.querySelectorAll('[data-copy]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var v = el.getAttribute('data-copy');
+      if (navigator.clipboard) { navigator.clipboard.writeText(v).then(function(){ el.classList.add('copied'); setTimeout(function(){el.classList.remove('copied')}, 1200); showToast('Copied ' + v); }); }
+    });
+  });
+})();
+</script>

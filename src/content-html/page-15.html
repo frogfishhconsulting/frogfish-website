@@ -1,0 +1,283 @@
+
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap');
+.ff-frame { all: initial; display: block; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #3B3B43; line-height: 1.6; -webkit-font-smoothing: antialiased; background: #FAF9F6; }
+.ff-frame *, .ff-frame *::before, .ff-frame *::after { box-sizing: border-box; }
+.ff-frame a { color: inherit; text-decoration: none; }
+.ff-container { max-width: 1240px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+.ff-nav-wrap { background: #0E0E11; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 10; }
+.ff-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+.ff-logo { display: block; width: 190px; height: 52px; position: relative; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-nav-links { display: flex; gap: 40px; font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 500; }
+.ff-nav-links a:hover { color: #fff; }
+.ff-nav-cta { background: #D7263D; color: #fff !important; padding: 13px 22px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+
+.ff-hero-wrap { position: relative; padding: 112px 0 96px; overflow: hidden; background: #0E0E11; }
+.ff-hero-wrap::before { content: ''; position: absolute; top: -260px; right: -180px; width: 720px; height: 720px; background: radial-gradient(circle, rgba(215,38,61,0.28) 0%, transparent 62%); filter: blur(60px); pointer-events: none; z-index: 1; }
+.ff-grid-bg { display: none; }
+
+.ff-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #B4192E; margin-bottom: 20px; }
+.ff-eyebrow::before { content: ''; width: 28px; height: 2px; background: #D7263D; }
+.ff-hero-wrap .ff-eyebrow { color: #FF6B7D; }
+
+.ff-hero-h1 { font-family: 'Fraunces', Georgia, serif; font-size: 76px; font-weight: 500; line-height: 1.02; letter-spacing: -0.035em; margin: 0 0 28px; max-width: 1000px; color: #FFFFFF !important; text-wrap: balance; }
+.ff-hero-h1 em { font-style: italic; color: #FF6B7D; }
+.ff-hero-sub { font-size: 21px; line-height: 1.6; color: rgba(255,255,255,0.88); margin: 0; max-width: 700px; }
+
+.ff-discipline { padding: 104px 0; position: relative; border-top: 1px solid #E4E1DA; background: #FAF9F6; }
+.ff-discipline.alt { background: #F2F0EB; }
+.ff-discipline-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 72px; align-items: start; }
+.ff-discipline-num { font-family: 'Fraunces', Georgia, serif; font-size: 18px; color: #B4192E; font-style: italic; margin-bottom: 16px; letter-spacing: 0.04em; }
+.ff-discipline h2 { font-family: 'Fraunces', Georgia, serif; font-size: 54px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 24px; color: #121216 !important; text-wrap: balance; }
+.ff-discipline h2 em { font-style: italic; color: #B4192E !important; }
+.ff-discipline-lede { font-size: 19px; line-height: 1.65; color: #3B3B43; margin: 0 0 40px; max-width: 600px; }
+.ff-discipline-stat { padding: 28px 0; border-top: 1px solid #E4E1DA; border-bottom: 1px solid #E4E1DA; margin-bottom: 40px; max-width: 480px; }
+.ff-discipline-stat-num { font-family: 'Fraunces', Georgia, serif; font-size: 52px; font-weight: 500; letter-spacing: -0.035em; line-height: 1; color: #121216; margin: 0 0 8px; font-variant-numeric: tabular-nums; }
+.ff-discipline-stat-num em { font-style: italic; color: #B4192E; }
+.ff-discipline-stat-label { font-size: 14px; color: #6E6E77; margin: 0; line-height: 1.5; }
+
+.ff-deliverables-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6E6E77; margin: 0 0 16px; }
+.ff-deliverables { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+.ff-deliverable { font-size: 15px; color: #3B3B43; padding: 12px 0; border-bottom: 1px solid #ECE9E3; display: flex; align-items: center; gap: 12px; }
+.ff-deliverable::before { content: '→'; color: #D7263D; font-size: 13px; }
+
+.ff-sidebar { padding: 36px; background: #fff; border: 1px solid #E4E1DA; border-radius: 14px; position: sticky; top: 32px; }
+.ff-sidebar-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B4192E; margin: 0 0 16px; }
+.ff-sidebar h3 { font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 500; letter-spacing: -0.015em; color: #121216; margin: 0 0 16px; line-height: 1.25; }
+.ff-sidebar-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.ff-sidebar-list li { font-size: 15px; color: #3B3B43; padding: 8px 0 8px 20px; line-height: 1.5; position: relative; border-top: 1px solid #ECE9E3; }
+.ff-sidebar-list li:first-child { border-top: 0; }
+.ff-sidebar-list li::before { content: ''; position: absolute; left: 0; top: 16px; width: 7px; height: 7px; border-radius: 50%; background: #D7263D; }
+.ff-sidebar-qual { padding: 16px 20px; background: #FCF1F2; border: 1px solid #F2D6DA; border-radius: 10px; font-size: 14px; color: #3B3B43; line-height: 1.5; }
+.ff-sidebar-qual strong { color: #B4192E; display: block; margin-bottom: 4px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+
+.ff-process-wrap { padding: 104px 0; position: relative; overflow: hidden; background: #F2F0EB; border-top: 1px solid #E4E1DA; }
+.ff-process-head { text-align: center; max-width: 780px; margin: 0 auto 56px; position: relative; z-index: 2; }
+.ff-process-head .ff-eyebrow { justify-content: center; }
+.ff-process-head h2 { font-family: 'Fraunces', Georgia, serif; font-size: 54px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 18px; color: #121216 !important; text-wrap: balance; }
+.ff-process-head h2 em { font-style: italic; color: #B4192E !important; }
+.ff-process-head p { font-size: 19px; color: #3B3B43; line-height: 1.65; margin: 0; }
+.ff-process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; z-index: 2; }
+.ff-phase { padding: 32px 28px; background: #fff; border: 1px solid #E4E1DA; border-radius: 14px; transition: border-color 0.2s, box-shadow 0.2s; }
+.ff-phase:hover { border-color: #D7263D; box-shadow: 0 10px 30px -18px rgba(18,18,22,0.35); }
+.ff-phase-num { font-family: 'Fraunces', Georgia, serif; font-size: 52px; font-weight: 500; font-style: italic; color: #B4192E; margin: 0 0 18px; line-height: 1; }
+.ff-phase-name { font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 500; letter-spacing: -0.02em; color: #121216; margin: 0 0 12px; line-height: 1.15; }
+.ff-phase-desc { font-size: 15px; line-height: 1.6; color: #3B3B43; margin: 0; }
+
+.ff-cta-band-wrap { padding: 112px 0; position: relative; overflow: hidden; background: #0E0E11; }
+.ff-cta-band-wrap::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 760px; height: 380px; background: radial-gradient(ellipse, rgba(215,38,61,0.22) 0%, transparent 70%); filter: blur(70px); pointer-events: none; }
+.ff-cta-band { text-align: center; position: relative; z-index: 2; }
+.ff-cta-band h2 { font-family: 'Fraunces', Georgia, serif; font-size: 60px; font-weight: 500; letter-spacing: -0.035em; line-height: 1.06; margin: 0 auto 24px; max-width: 860px; color: #ffffff !important; text-wrap: balance; }
+.ff-cta-band h2 em { font-style: italic; color: #FF6B7D; }
+.ff-cta-band p { font-size: 19px; color: rgba(255,255,255,0.88); margin: 0 auto 36px; max-width: 620px; line-height: 1.6; }
+.ff-cta-primary { background: #fff; color: #121216 !important; padding: 18px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; }
+
+.ff-footer-wrap { background: #0E0E11; border-top: 1px solid rgba(255,255,255,0.08); padding: 48px 0; }
+.ff-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 14px; color: rgba(255,255,255,0.62); }
+.ff-footer-logo { display: block; width: 150px; height: 42px; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-frame a:focus-visible { outline: 2px solid #D7263D; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { .ff-phase { transition: none; } }
+@media (max-width: 1100px) { .ff-process-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 900px) {
+  .ff-container { padding: 0 20px; }
+  .ff-nav { flex-wrap: wrap; row-gap: 14px; } .ff-nav-links { display: flex; order: 3; width: 100%; gap: 24px; font-size: 14px; overflow-x: auto; white-space: nowrap; padding-bottom: 2px; } .ff-logo { width: 140px; height: 40px; } .ff-nav-cta { padding: 10px 15px; font-size: 13px; }
+  .ff-hero-wrap { padding: 64px 0 56px; }
+  .ff-hero-h1 { font-size: 42px; } .ff-hero-sub { font-size: 18px; }
+  .ff-discipline { padding: 64px 0; }
+  .ff-discipline-grid { grid-template-columns: 1fr; gap: 40px; }
+  .ff-discipline h2 { font-size: 36px; } .ff-discipline-lede { font-size: 17px; }
+  .ff-deliverables { grid-template-columns: 1fr; }
+  .ff-sidebar { position: static; padding: 28px 22px; }
+  .ff-process-wrap { padding: 64px 0; }
+  .ff-process-head { margin-bottom: 36px; }
+  .ff-process-head h2 { font-size: 36px; } .ff-process-head p { font-size: 17px; }
+  .ff-process-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ff-phase { padding: 26px 20px; }
+  .ff-phase-num { font-size: 40px; }
+  .ff-phase-name { font-size: 24px; }
+  .ff-cta-band-wrap { padding: 72px 0; }
+  .ff-cta-band h2 { font-size: 36px; } .ff-cta-band p { font-size: 17px; }
+  .ff-discipline-stat-num { font-size: 40px; }
+}
+@media (max-width: 520px) { .ff-process-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="ff-frame">
+  <div class="ff-nav-wrap"><div class="ff-container"><nav class="ff-nav">
+    <a href="/" class="ff-logo" aria-label="FrogFish Consulting"></a>
+    <div class="ff-nav-links"><a href="/services">Services</a><a href="/industries">Industries</a><a href="/about-us">About</a><a href="/contact-us/">Contact</a></div>
+    <a href="https://calendly.com/frogfishconsulting/discovery" class="ff-nav-cta" target="_blank">Book a call →</a>
+  </nav></div></div>
+
+  <div class="ff-hero-wrap">
+    <div class="ff-grid-bg"></div>
+    <div class="ff-container">
+      <div class="ff-eyebrow">What we do</div>
+      <h1 class="ff-hero-h1">Three disciplines. <em>One operating system</em> for growth.</h1>
+      <p class="ff-hero-sub">We don&#8217;t run channels in silos. We build a unified funnel where paid, earned, and intelligence reinforce each other — so every dollar compounds and every decision is defendable.</p>
+    </div>
+  </div>
+
+  <!-- DISCIPLINE 1: PAID MEDIA -->
+  <div class="ff-discipline"><div class="ff-container">
+    <div class="ff-discipline-grid">
+      <div>
+        <div class="ff-discipline-num">— 01 / Paid Media</div>
+        <h2>Paid that pays. <em>Accountable to revenue.</em></h2>
+        <p class="ff-discipline-lede">Search, social, programmatic, CTV, and performance creative — built to drive qualified pipeline, not impression counts. We engineer for ROAS and CAC discipline, not vanity dashboards.</p>
+        <div class="ff-discipline-stat">
+          <p class="ff-discipline-stat-num"><em>+32%</em> cost per sale efficiency</p>
+          <p class="ff-discipline-stat-label">From lead scoring for a publicly traded solar energy company</p>
+        </div>
+        <p class="ff-deliverables-label">What&#8217;s included</p>
+        <div class="ff-deliverables">
+          <div class="ff-deliverable">Paid Search (Google, Bing)</div>
+          <div class="ff-deliverable">Paid Social (Meta, LinkedIn, TikTok)</div>
+          <div class="ff-deliverable">Programmatic Display</div>
+          <div class="ff-deliverable">Connected TV (CTV/OTT)</div>
+          <div class="ff-deliverable">Performance Creative</div>
+          <div class="ff-deliverable">Landing Page Optimization</div>
+          <div class="ff-deliverable">Bid &#038; Budget Strategy</div>
+          <div class="ff-deliverable">Media Mix Modeling</div>
+        </div>
+      </div>
+      <div class="ff-sidebar">
+        <div class="ff-sidebar-label">Best for</div>
+        <h3>Brands ready to scale efficient acquisition.</h3>
+        <ul class="ff-sidebar-list">
+          <li>Established product-market fit</li>
+          <li>Attribution infrastructure in place (or willing to build)</li>
+          <li>Tracking real conversions, not form fills</li>
+          <li>Open to creative testing as a strategic lever</li>
+        </ul>
+        <div class="ff-sidebar-qual">
+          <strong>Engagement floor</strong>
+          $10K+/month media spend, or ready to get started at that level.
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+  <!-- DISCIPLINE 2: EARNED MEDIA -->
+  <div class="ff-discipline alt"><div class="ff-container">
+    <div class="ff-discipline-grid">
+      <div>
+        <div class="ff-discipline-num">— 02 / Earned Media</div>
+        <h2>Demand you don&#8217;t <em>have to rent.</em></h2>
+        <p class="ff-discipline-lede">SEO, content, email, influencer, and video systems that build durable pipeline you own. Earned channels are slower to compound — and far more defensible than paid alone.</p>
+        <div class="ff-discipline-stat">
+          <p class="ff-discipline-stat-num"><em>6x</em> AI visibility score</p>
+          <p class="ff-discipline-stat-label">For a B2C law firm in four months, plus $250K in AI-attributed closed revenue</p>
+        </div>
+        <p class="ff-deliverables-label">What&#8217;s included</p>
+        <div class="ff-deliverables">
+          <div class="ff-deliverable">Technical &#038; Content SEO</div>
+          <div class="ff-deliverable">Editorial Strategy &#038; Production</div>
+          <div class="ff-deliverable">Lifecycle Email &#038; SMS</div>
+          <div class="ff-deliverable">Influencer &#038; Creator Programs</div>
+          <div class="ff-deliverable">Video &#038; YouTube Strategy</div>
+          <div class="ff-deliverable">PR &#038; Brand Storytelling</div>
+          <div class="ff-deliverable">Community &#038; Owned Audiences</div>
+          <div class="ff-deliverable">Linkable Asset Development</div>
+        </div>
+      </div>
+      <div class="ff-sidebar">
+        <div class="ff-sidebar-label">Best for</div>
+        <h3>Brands building long-term equity.</h3>
+        <ul class="ff-sidebar-list">
+          <li>Willing to invest 6-12 months for compounding returns</li>
+          <li>Want to reduce dependence on rising paid CPMs</li>
+          <li>Have a real point of view worth amplifying</li>
+          <li>Need authority in a high-trust category</li>
+        </ul>
+        <div class="ff-sidebar-qual">
+          <strong>Engagement floor</strong>
+          Best paired with paid or intelligence work. Standalone retainers from $15K/month.
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+  <!-- DISCIPLINE 3: DIGITAL INTELLIGENCE -->
+  <div class="ff-discipline"><div class="ff-container">
+    <div class="ff-discipline-grid">
+      <div>
+        <div class="ff-discipline-num">— 03 / Digital Intelligence</div>
+        <h2>Data into decisions. <em>Defendable in any room.</em></h2>
+        <p class="ff-discipline-lede">Attribution, CRO, lead scoring, CRM architecture, and data science. We turn dashboards into decisions you can defend in a board meeting — and a system the next operator can actually use.</p>
+        <div class="ff-discipline-stat">
+          <p class="ff-discipline-stat-num"><em>&minus;56%</em> spam leads</p>
+          <p class="ff-discipline-stat-label">After rebuilding a law firm&#8217;s conversion tracking around closed cases</p>
+        </div>
+        <p class="ff-deliverables-label">What&#8217;s included</p>
+        <div class="ff-deliverables">
+          <div class="ff-deliverable">Attribution Modeling</div>
+          <div class="ff-deliverable">Conversion Rate Optimization</div>
+          <div class="ff-deliverable">Lead Scoring &#038; Routing</div>
+          <div class="ff-deliverable">CRM Architecture (HubSpot, Salesforce)</div>
+          <div class="ff-deliverable">Analytics Stack (GA4, Looker, Amplitude)</div>
+          <div class="ff-deliverable">Data Science &#038; Predictive Models</div>
+          <div class="ff-deliverable">Tag Management &#038; Tracking</div>
+          <div class="ff-deliverable">Executive Reporting Systems</div>
+        </div>
+      </div>
+      <div class="ff-sidebar">
+        <div class="ff-sidebar-label">Best for</div>
+        <h3>Operators who need clean data, not more of it.</h3>
+        <ul class="ff-sidebar-list">
+          <li>Tired of conflicting numbers across teams</li>
+          <li>Need to defend marketing spend to the board</li>
+          <li>CRM and ad platforms aren&#8217;t talking to each other</li>
+          <li>Want predictable, transparent reporting</li>
+        </ul>
+        <div class="ff-sidebar-qual">
+          <strong>Engagement type</strong>
+          Project-based audits or retained intelligence ops. Often the highest-leverage place to start.
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+  <!-- PROCESS -->
+  <div class="ff-process-wrap"><div class="ff-container">
+    <div class="ff-process-head">
+      <div class="ff-eyebrow">How we work</div>
+      <h2>Four phases. <em>One outcome.</em></h2>
+      <p>Every engagement runs the same operating rhythm — so the work compounds and nothing falls through the cracks.</p>
+    </div>
+    <div class="ff-process-grid">
+      <div class="ff-phase">
+        <div class="ff-phase-num">01</div>
+        <div class="ff-phase-name">Assess</div>
+        <p class="ff-phase-desc">Audit your funnel, attribution, channels, creative, and data. Identify the highest-leverage moves before we touch anything live.</p>
+      </div>
+      <div class="ff-phase">
+        <div class="ff-phase-num">02</div>
+        <div class="ff-phase-name">Architect</div>
+        <p class="ff-phase-desc">Build the strategy, measurement plan, creative direction, and roadmap. Get alignment before we spend.</p>
+      </div>
+      <div class="ff-phase">
+        <div class="ff-phase-num">03</div>
+        <div class="ff-phase-name">Activate</div>
+        <p class="ff-phase-desc">Launch campaigns, ship content, deploy tracking. Real-time dashboards live from day one — no monthly PDFs.</p>
+      </div>
+      <div class="ff-phase">
+        <div class="ff-phase-num">04</div>
+        <div class="ff-phase-name">Accelerate</div>
+        <p class="ff-phase-desc">Iterate weekly. Double down on what&#8217;s compounding, kill what isn&#8217;t, and feed insights back into strategy.</p>
+      </div>
+    </div>
+  </div></div>
+
+  <!-- CTA -->
+  <div class="ff-cta-band-wrap"><div class="ff-container"><div class="ff-cta-band">
+    <h2>Not sure where to <em>start?</em></h2>
+    <p>Most engagements begin with a 30-minute discovery call. We&#8217;ll review your funnel, identify the biggest unlock, and tell you whether FrogFish is the right partner — or who is.</p>
+    <a href="https://calendly.com/frogfishconsulting/discovery" class="ff-cta-primary" target="_blank">Book a strategy call →</a>
+  </div></div></div>
+
+  <div class="ff-footer-wrap"><div class="ff-container"><div class="ff-footer">
+    <div class="ff-footer-logo" aria-label="FrogFish Consulting"></div>
+    <div>© 2026 FrogFish Consulting · All rights reserved</div>
+  </div></div></div>
+</div>
+<style id="ff-sitewide-light">body.page, body.page .site, body.page .site-container, body.page #content, body.page #primary, body.page .content-area, body.page .entry-content { background: #FAF9F6 !important; color: #3B3B43 !important; } body .ff-audit-float { background: #D7263D !important; border: 0 !important; backdrop-filter: none !important; } body .ff-audit-float:hover { background: #B4192E !important; transform: none !important; } body .ff-audit-float-dot { background: #FFFFFF !important; box-shadow: none !important; } body.page-id-452 .entry-content, body.page-id-456 .entry-content { max-width: 760px; margin-left: auto; margin-right: auto; padding-top: 80px !important; padding-bottom: 80px !important; font-size: 16px; line-height: 1.7; } body.page-id-452 .entry-content h1, body.page-id-452 .entry-content h2, body.page-id-452 .entry-content h3, body.page-id-456 .entry-content h1, body.page-id-456 .entry-content h2, body.page-id-456 .entry-content h3 { color: #121216 !important; font-weight: 500; } body.page-id-452 .entry-content a, body.page-id-456 .entry-content a { color: #B4192E !important; } @media (max-width: 900px) { body .ff-mobile-btn { background: #0E0E11 !important; backdrop-filter: none !important; } body .ff-mobile-btn.is-open { background: #121216 !important; } body .ff-mobile-overlay { background: #FAF9F6 !important; backdrop-filter: none !important; } body .ff-mobile-overlay a { color: #121216 !important; font-weight: 500 !important; } body .ff-mobile-overlay .ff-mobile-cta { background: #D7263D !important; color: #FFFFFF !important; } }</style>

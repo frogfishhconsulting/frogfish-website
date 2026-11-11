@@ -1,0 +1,95 @@
+---
+// Site-wide shell: SEO head, JSON-LD, tracking (GTM + Google tag), mobile menu, floating audit CTA.
+import globalCss from '../styles/wp-global.css?raw';
+import { SITE, orgGraph } from '../lib/schema.js';
+
+const { title, description, path, noindex = false, schema = [], ogImage, bodyClass = '', ogType = 'website' } = Astro.props;
+const canonical = SITE + path;
+const image = ogImage ? (ogImage.startsWith('http') ? ogImage : SITE + ogImage) : SITE + '/wp-content/uploads/2026/05/frogfish-hero-square-1080.png';
+const ld = JSON.stringify({ '@context': 'https://schema.org', '@graph': [...orgGraph(), ...schema] });
+---
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
+  <meta property="og:site_name" content="FrogFish Consulting" />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={image} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+  <link rel="icon" href="/wp-content/uploads/2023/08/frogfish-favicon-150x150.png" sizes="32x32" />
+  <link rel="icon" href="/wp-content/uploads/2023/08/frogfish-favicon-300x300.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/wp-content/uploads/2023/08/frogfish-favicon-300x300.png" />
+  <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
+  <link rel="alternate" type="application/rss+xml" title="FrogFish Consulting" href="/rss.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script type="application/ld+json" set:html={ld} />
+
+  <!-- Google tag (gtag.js), same ID as the WordPress Site Kit install -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=GT-WFFZFGQR"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GT-WFFZFGQR');
+  </script>
+  <!-- Google Tag Manager -->
+  <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TCWTJR7M');</script>
+  <!-- Thank-you page conversion (unchanged from WordPress) -->
+  <script is:inline>
+  (function() {
+    var path = window.location.pathname.toLowerCase();
+    if (path.indexOf('/thank-you') === -1) return;
+    function fireConversion(attempts) {
+      attempts = attempts || 0;
+      if (typeof oaiq !== 'undefined') {
+        oaiq("measure", "registration_completed", { type: "customer_action", amount: 0, currency: "USD" });
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "calendly_booking_completed", conversion_source: "thank_you_page" });
+      } else if (attempts < 10) {
+        setTimeout(function() { fireConversion(attempts + 1); }, 300);
+      }
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', function() { fireConversion(); }); } else { fireConversion(); }
+  })();
+  </script>
+  <style is:inline set:html={`html,body{margin:0;padding:0;background:#FAF9F6;}` + globalCss}></style>
+  <slot name="head" />
+</head>
+<body class={`page ${bodyClass}`}>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCWTJR7M" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <main id="content" class="entry-content site">
+    <slot />
+  </main>
+
+  <a href="/assessment/" class="ff-audit-float" aria-label="Take the free assessment">
+    <span class="ff-audit-float-dot"></span>
+    Get a Free Audit →
+  </a>
+  <button class="ff-mobile-btn" aria-label="Open menu" id="ffMobileBtn"><span></span><span></span><span></span></button>
+  <div class="ff-mobile-overlay" id="ffMobileOverlay">
+    <a href="/services/">Services</a>
+    <a href="/industries/">Industries</a>
+    <a href="/aeo/">AI Search</a>
+    <a href="/about-us/">About</a>
+    <a href="/contact-us/">Contact</a>
+    <a href="https://calendly.com/frogfishconsulting/discovery" target="_blank" class="ff-mobile-cta">Book a call &rarr;</a>
+  </div>
+  <script is:inline src="/js/site.js"></script>
+</body>
+</html>

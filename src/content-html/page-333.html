@@ -1,0 +1,122 @@
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap');
+.ff-frame { all: initial; display: block; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #3B3B43; line-height: 1.6; -webkit-font-smoothing: antialiased; background: #FAF9F6; min-height: 100vh; }
+.ff-frame *, .ff-frame *::before, .ff-frame *::after { box-sizing: border-box; }
+.ff-frame a { color: inherit; text-decoration: none; }
+.ff-container { max-width: 1240px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+
+.ff-nav-wrap { background: #0E0E11; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 10; }
+.ff-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+.ff-logo { display: block; width: 190px; height: 52px; position: relative; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-nav-links { display: flex; gap: 40px; font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 500; }
+.ff-nav-links a:hover { color: #fff; }
+
+.ff-hero { padding: 112px 0 96px; position: relative; overflow: hidden; text-align: center; background: #0E0E11; }
+.ff-hero::before { content: ''; position: absolute; top: -260px; left: 50%; transform: translateX(-50%); width: 720px; height: 720px; background: radial-gradient(circle, rgba(215,38,61,0.28) 0%, transparent 62%); filter: blur(60px); pointer-events: none; z-index: 1; }
+.ff-grid-bg { display: none; }
+
+.ff-check { width: 80px; height: 80px; margin: 0 auto 32px; border-radius: 50%; background: rgba(215,38,61,0.16); border: 1px solid rgba(255,107,125,0.45); display: flex; align-items: center; justify-content: center; position: relative; }
+.ff-check::after { content: ''; width: 28px; height: 14px; border-left: 2px solid #FF6B7D; border-bottom: 2px solid #FF6B7D; transform: rotate(-45deg) translate(2px, -4px); }
+
+.ff-h1 { font-family: 'Fraunces', Georgia, serif; font-size: 76px; font-weight: 500; line-height: 1.02; letter-spacing: -0.035em; margin: 0 auto 28px; max-width: 900px; color: #FFFFFF !important; text-wrap: balance; }
+.ff-h1 em { font-style: italic; color: #FF6B7D; }
+.ff-sub { font-size: 21px; line-height: 1.6; color: rgba(255,255,255,0.88); margin: 0 auto; max-width: 640px; }
+
+.ff-next { padding: 104px 0; background: #FAF9F6; border-top: 1px solid #E4E1DA; position: relative; }
+.ff-next-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #B4192E; margin-bottom: 20px; }
+.ff-next-eyebrow::before { content: ''; width: 28px; height: 2px; background: #D7263D; }
+.ff-next h2 { font-family: 'Fraunces', Georgia, serif; font-size: 54px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 56px; color: #121216 !important; max-width: 780px; text-wrap: balance; }
+.ff-next h2 em { font-style: italic; color: #B4192E !important; }
+
+.ff-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ff-step { padding: 32px 28px; background: #fff; border: 1px solid #E4E1DA; border-radius: 14px; transition: border-color 0.2s, box-shadow 0.2s; }
+.ff-step:hover { border-color: #D7263D; box-shadow: 0 10px 30px -18px rgba(18,18,22,0.35); }
+.ff-step-num { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 500; font-size: 32px; color: #B4192E; margin: 0 0 16px; line-height: 1; }
+.ff-step h3 { font-family: 'Fraunces', Georgia, serif; font-size: 23px; font-weight: 500; letter-spacing: -0.015em; color: #121216; margin: 0 0 12px; line-height: 1.2; }
+.ff-step p { font-size: 15px; line-height: 1.6; color: #3B3B43; margin: 0; }
+
+.ff-bonus { padding: 104px 0; background: #F2F0EB; border-top: 1px solid #E4E1DA; position: relative; }
+.ff-bonus h3 { font-family: 'Fraunces', Georgia, serif; font-size: 36px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.15; margin: 0 0 16px; color: #121216; }
+.ff-bonus h3 em { font-style: italic; color: #B4192E; }
+.ff-bonus p { font-size: 17px; line-height: 1.6; color: #3B3B43; margin: 0 0 32px; max-width: 560px; }
+.ff-bonus-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.ff-frame .ff-bonus-link { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; background: #fff; border: 1px solid #E4E1DA; border-radius: 10px; font-size: 14px; font-weight: 600; color: #121216 !important; transition: border-color 0.2s, box-shadow 0.2s; }
+.ff-frame .ff-bonus-link:hover { border-color: #D7263D; box-shadow: 0 10px 30px -18px rgba(18,18,22,0.35); }
+
+.ff-footer-wrap { background: #0E0E11; border-top: 1px solid rgba(255,255,255,0.08); padding: 48px 0; }
+.ff-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 14px; color: rgba(255,255,255,0.62); }
+.ff-footer-logo { display: block; width: 150px; height: 42px; position: relative; background-image: url('/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; }
+.ff-frame a:focus-visible { outline: 2px solid #D7263D; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { .ff-step, .ff-frame .ff-bonus-link { transition: none; } }
+
+@media (max-width: 900px) {
+  .ff-container { padding: 0 20px; }
+  .ff-nav { flex-wrap: wrap; row-gap: 14px; } .ff-nav-links { display: flex; order: 3; width: 100%; gap: 24px; font-size: 14px; overflow-x: auto; white-space: nowrap; padding-bottom: 2px; } .ff-logo { width: 140px; height: 40px; }
+  .ff-hero { padding: 64px 0 56px; }
+  .ff-h1 { font-size: 42px; }
+  .ff-sub { font-size: 17px; }
+  .ff-next { padding: 64px 0; }
+  .ff-next h2 { font-size: 32px; margin-bottom: 32px; }
+  .ff-steps { grid-template-columns: 1fr; gap: 16px; }
+  .ff-step { padding: 26px 22px; }
+  .ff-bonus { padding: 64px 0; }
+  .ff-bonus h3 { font-size: 26px; }
+}
+</style>
+
+<div class="ff-frame">
+  <div class="ff-nav-wrap"><div class="ff-container"><nav class="ff-nav">
+    <a href="/" class="ff-logo" aria-label="FrogFish Consulting"></a>
+    <div class="ff-nav-links"><a href="/services/">Services</a><a href="/industries/">Industries</a><a href="/about-us/">About</a><a href="/contact-us/">Contact</a></div>
+  </nav></div></div>
+
+  <div class="ff-hero">
+    <div class="ff-grid-bg"></div>
+    <div class="ff-container">
+      <div class="ff-check"></div>
+      <h1 class="ff-h1">You&#8217;re <em>on the calendar.</em></h1>
+      <p class="ff-sub">Check your inbox for the confirmation email and calendar invite. We&#8217;ll see you at the time you booked.</p>
+    </div>
+  </div>
+
+  <div class="ff-next"><div class="ff-container">
+    <div class="ff-next-eyebrow">What happens next</div>
+    <h2>Three things <em>before our call.</em></h2>
+    <div class="ff-steps">
+      <div class="ff-step">
+        <div class="ff-step-num">01</div>
+        <h3>Confirm the invite</h3>
+        <p>Calendar invite is in your inbox. Accept it so the time blocks in your calendar and we&#8217;re aligned on the slot.</p>
+      </div>
+      <div class="ff-step">
+        <div class="ff-step-num">02</div>
+        <h3>Send context if you have it</h3>
+        <p>Reply to the confirmation with anything you want us to review first: protocol details, current dashboards, or the specific problem you&#8217;re trying to solve.</p>
+      </div>
+      <div class="ff-step">
+        <div class="ff-step-num">03</div>
+        <h3>Show up ready</h3>
+        <p>Bring your sharpest question. We&#8217;ll spend 30 minutes on your funnel, not ours.</p>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ff-bonus"><div class="ff-container">
+    <h3>While you <em>wait.</em></h3>
+    <p>A few things worth reading before we talk. No pressure, just useful.</p>
+    <div class="ff-bonus-links">
+      <a href="/services/" class="ff-bonus-link">See our services →</a>
+      <a href="/industries/" class="ff-bonus-link">Industries we serve →</a>
+      <a href="https://www.linkedin.com/in/alexfleshner" target="_blank" rel="noopener" class="ff-bonus-link">Connect on LinkedIn →</a>
+    </div>
+  </div></div>
+
+  <div class="ff-footer-wrap"><div class="ff-container"><div class="ff-footer">
+    <div class="ff-footer-logo" aria-label="FrogFish Consulting"></div>
+    <div>© 2026 FrogFish Consulting · All rights reserved</div>
+  </div></div></div>
+</div>
+<style id="ff-sitewide-light">body.page, body.page .site, body.page .site-container, body.page #content, body.page #primary, body.page .content-area, body.page .entry-content { background: #FAF9F6 !important; color: #3B3B43 !important; } body .ff-audit-float { background: #D7263D !important; border: 0 !important; backdrop-filter: none !important; } body .ff-audit-float:hover { background: #B4192E !important; transform: none !important; } body .ff-audit-float-dot { background: #FFFFFF !important; box-shadow: none !important; } body.page-id-452 .entry-content, body.page-id-456 .entry-content { max-width: 760px; margin-left: auto; margin-right: auto; padding-top: 80px !important; padding-bottom: 80px !important; font-size: 16px; line-height: 1.7; } body.page-id-452 .entry-content h1, body.page-id-452 .entry-content h2, body.page-id-452 .entry-content h3, body.page-id-456 .entry-content h1, body.page-id-456 .entry-content h2, body.page-id-456 .entry-content h3 { color: #121216 !important; font-weight: 500; } body.page-id-452 .entry-content a, body.page-id-456 .entry-content a { color: #B4192E !important; } @media (max-width: 900px) { body .ff-mobile-btn { background: #0E0E11 !important; backdrop-filter: none !important; } body .ff-mobile-btn.is-open { background: #121216 !important; } body .ff-mobile-overlay { background: #FAF9F6 !important; backdrop-filter: none !important; } body .ff-mobile-overlay a { color: #121216 !important; font-weight: 500 !important; } body .ff-mobile-overlay .ff-mobile-cta { background: #D7263D !important; color: #FFFFFF !important; } }</style>
