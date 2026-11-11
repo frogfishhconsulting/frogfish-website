@@ -3,7 +3,7 @@
 Static Astro site deployed on Vercel. Replaces the WordPress (Kadence) site at the exact same URLs.
 
 - `src/content-html/` – page bodies ported verbatim from WordPress (`page-<wp id>.html`, `post-<wp id>.html`) plus new pages (`new-<slug>.html`).
-- `src/data/site.json` – every route: path, kind (`raw` = hand-built page block, `post`, `legal`, `landing`, `blog`), SEO title, description, dates.
+- `src/data/site.json` – every route: path, kind (`app` = self-contained page (own CSS/JS) wrapped in the site nav + footer, `raw` = hand-built page block, `post`, `legal`, `landing`, `blog`), SEO title, description, dates.
 - `src/layouts/Base.astro` – head/SEO, JSON-LD (`src/lib/schema.js`), GTM `GTM-TCWTJR7M`, Google tag `GT-WFFZFGQR`, thank-you conversion, mobile menu, floating audit button.
 - `src/styles/` – WordPress global CSS, Kadence content rules (kept so ported blocks render identically), article shell.
 - `public/` – `/wp-content/uploads/...` assets at their original paths, `llms.txt`, `robots.txt`, `js/site.js` (menu + UTM attribution cookie).
@@ -17,3 +17,5 @@ npm run build && npm run check:site   # verifies every local link/asset resolves
 ```
 
 Adding a page: drop the HTML body in `src/content-html/`, add an entry to `src/data/site.json`, and it is in the sitemap automatically. Update `public/llms.txt` too.
+
+The homepage (`app-home.html`) and `/ai-concierge/` (`app-ai-concierge.html`) are generated from separately maintained demo sources; edit those and re-export rather than hand-editing the HTML.

@@ -33,6 +33,17 @@
   "h1": "Real Estate"
  },
  {
+  "id": "ai-concierge",
+  "path": "/ai-concierge/",
+  "kind": "app",
+  "file": "app-ai-concierge",
+  "title": "AI Concierge for Real Estate: Replies in Seconds, Books Showings | FrogFish",
+  "description": "An AI concierge that answers every real estate lead in under 10 seconds, qualifies, books showings on agents' calendars, updates the CRM and feeds closings back to your ads.",
+  "noindex": false,
+  "modified": "2026-11-11",
+  "h1": "AI Concierge"
+ },
+ {
   "id": 467,
   "path": "/assessment/",
   "kind": "raw",
@@ -134,12 +145,12 @@
  {
   "id": 284,
   "path": "/",
-  "kind": "raw",
-  "file": "page-284",
-  "title": "AEO & AI Search Agency + Paid Media | FrogFish Consulting",
-  "description": "FrogFish gets brands cited in ChatGPT, Perplexity and Google AI Overviews, and ties AEO and paid media to revenue in your CRM. Led by a 13-year Google vet.",
+  "kind": "app",
+  "file": "app-home",
+  "title": "FrogFish Consulting | Not Another Agency: Paid Growth Tied to Revenue",
+  "description": "FrogFish connects AI, paid media and your first-party data, from first click to signed contract, and optimizes every dollar to revenue. Led by a 13-year Google vet.",
   "noindex": false,
-  "modified": "2026-10-26",
+  "modified": "2026-11-11",
   "h1": "Home"
  },
  {
