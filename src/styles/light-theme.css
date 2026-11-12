@@ -54,6 +54,16 @@ html body :is(.ff-nav-links,.re-nav-links) { align-items: center !important; gap
 html body :is(.ff-nav-links,.re-nav-links) a { color: var(--lt-text) !important; white-space: nowrap !important; line-height: 1.2 !important; }
 @media (max-width: 1100px) { html body :is(.ff-nav-links,.re-nav-links) { gap: 24px !important; font-size: 15px !important; } }
 html body :is(.ff-nav-links,.re-nav-links) a:hover { color: var(--lt-red) !important; }
+/* Capabilities dropdown */
+html body .ff-dd { position: relative; display: inline-flex; align-items: center; }
+html body .ff-dd-top::after { content: ""; display: inline-block; width: 6px; height: 6px; margin-left: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-3px) rotate(45deg); }
+html body .ff-dd-menu { position: absolute; top: 100%; left: 50%; transform: translate(-50%, 8px); min-width: 300px; padding: 10px; margin-top: 10px; background: #fff; border: 1px solid var(--lt-line); border-radius: 16px; box-shadow: 0 24px 48px -24px rgba(18,18,22,.35); display: flex; flex-direction: column; gap: 2px; opacity: 0; visibility: hidden; transition: opacity .15s, transform .15s, visibility .15s; z-index: 60; white-space: normal; }
+html body .ff-dd-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -22px; height: 22px; }
+html body .ff-dd:hover .ff-dd-menu, html body .ff-dd:focus-within .ff-dd-menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+html body .ff-dd-menu a { display: block; padding: 10px 12px; border-radius: 10px; white-space: normal !important; }
+html body .ff-dd-menu a:hover { background: #FAF9F6; }
+html body .ff-dd-menu b { display: block; font-weight: 600; color: var(--lt-ink); font-size: 15px; }
+html body .ff-dd-menu small { display: block; font-size: 12.5px; color: var(--lt-muted, #6E6E77); margin-top: 2px; line-height: 1.35; }
 html body :is(.ff-nav-cta,.re-nav-cta) { color: #fff !important; border-radius: 999px !important; }
 html body :is(.ff-logo,.re-logo,.ff-footer-logo,.re-footer-logo) {
   width: auto !important; min-width: 150px; height: 44px !important; padding-left: 52px; display: flex !important; align-items: center;

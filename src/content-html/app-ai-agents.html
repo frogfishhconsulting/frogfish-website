@@ -1,0 +1,290 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+.aa{--red:#D7263D;--red-d:#B4192E;--ink:#121216;--text:#3B3B43;--muted:#6E6E77;--paper:#FAF9F6;--line:#E4E1DA;--tint:#FCF1F2;--green:#1F8A5B;--gtint:#EAF5EF;--slack:#4A154B;font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--paper);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
+.aa *{box-sizing:border-box}
+.aa h1,.aa h2,.aa h3{font-family:Fraunces,Georgia,serif;color:var(--ink);font-weight:500;letter-spacing:-.01em;margin:0}
+.aa p{margin:0}
+.aa a{color:inherit}
+.aa .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.aa .label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.aa .btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:14px 24px;border-radius:999px;font-size:15px;transition:background .15s}
+.aa .btn:hover{background:var(--red-d)}
+.aa .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.aa section{padding:92px 0}
+.aa section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.aa .head{max-width:800px;margin-bottom:46px}
+.aa .head.c{margin-left:auto;margin-right:auto;text-align:center}
+.aa .head h2{font-size:clamp(34px,4.2vw,52px);line-height:1.05;margin:14px 0 16px}
+.aa .head h2 em,.aa .hero h1 em{color:var(--red)}
+.aa .head p{font-size:18px}
+.aa .illus{font-size:11px;letter-spacing:.04em;color:var(--muted);font-weight:500;background:#F1EFEA;padding:3px 9px;border-radius:99px;white-space:nowrap}
+
+/* hero */
+.aa .hero{padding:80px 0 60px}
+.aa .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.aa .hero h1{font-size:clamp(44px,5.6vw,76px);line-height:1;margin:16px 0 22px}
+.aa .hero p.sub{font-size:19px;max-width:560px}
+.aa .hero .ctas{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.aa .orbit{position:relative;aspect-ratio:1;max-width:470px;margin:0 auto;width:100%}
+.aa .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+.aa .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34%;aspect-ratio:1;border-radius:50%;background:var(--ink);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 30px 60px -30px rgba(18,18,22,.6)}
+.aa .core b{font-family:Fraunces,serif;font-weight:500;font-size:clamp(17px,2vw,22px);line-height:1.1}
+.aa .core small{font-size:10px;opacity:.7;margin-top:6px;letter-spacing:.05em;text-transform:uppercase;max-width:80%;line-height:1.3}
+.aa .node{position:absolute;transform:translate(-50%,-50%);background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 13px;font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap;box-shadow:0 10px 24px -16px rgba(18,18,22,.35);transition:all .35s}
+.aa .node i{font-style:normal;display:block;font-size:11px;font-weight:500;color:var(--muted)}
+.aa .node.on{border-color:var(--red);box-shadow:0 0 0 4px rgba(215,38,61,.12),0 14px 28px -16px rgba(215,38,61,.5);transform:translate(-50%,-50%) scale(1.06)}
+.aa .pulse{fill:var(--red)}
+
+/* steps */
+.aa .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.aa .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}
+.aa .step .n{font-family:Fraunces,serif;font-size:15px;color:var(--red);font-weight:500}
+.aa .step h3{font-size:23px;margin:10px 0 10px}
+.aa .step p{font-size:15px}
+.aa .step ul{margin:14px 0 0;padding-left:18px;font-size:14px;color:var(--muted)}
+.aa .step li{margin:3px 0}
+
+/* law demo */
+.aa .demo{display:grid;grid-template-columns:1fr 380px;gap:26px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 40px 80px -50px rgba(18,18,22,.35)}
+.aa .demo-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px;flex-wrap:wrap}
+.aa .demo-top h3{font-size:22px}
+.aa .replay{font:600 13px Inter,sans-serif;border:1.5px solid var(--line);background:#fff;padding:7px 14px;border-radius:99px;cursor:pointer}
+.aa .replay:hover{border-color:var(--ink)}
+.aa .lane{display:flex;flex-direction:column;gap:10px}
+.aa .ag{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:13px 15px;opacity:.38;transition:all .4s}
+.aa .ag .ic{width:44px;height:44px;border-radius:12px;background:#F1EFEA;display:flex;align-items:center;justify-content:center;font-size:20px}
+.aa .ag b{display:block;color:var(--ink);font-size:15px}
+.aa .ag span{font-size:13.5px;color:var(--muted)}
+.aa .ag .st{font-size:12px;font-weight:600;padding:4px 10px;border-radius:99px;background:#F1EFEA;color:var(--muted);white-space:nowrap}
+.aa .ag.run{opacity:1;border-color:var(--red);box-shadow:0 0 0 4px rgba(215,38,61,.08)}
+.aa .ag.run .ic{background:var(--tint)}
+.aa .ag.run .st{background:var(--tint);color:var(--red)}
+.aa .ag.done{opacity:1}
+.aa .ag.done .st{background:var(--gtint);color:var(--green)}
+.aa .ag.human.run .st{background:#FFF4DB;color:#8A5A00}
+.aa .feed{background:var(--paper);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;overflow:hidden}
+.aa .feed-h{background:var(--slack);color:#fff;padding:12px 16px;font-size:14px;font-weight:600;display:flex;justify-content:space-between}
+.aa .feed-h span{font-weight:400;opacity:.7;font-size:12px}
+.aa .msgs{padding:14px;display:flex;flex-direction:column;gap:10px;min-height:440px;max-height:520px;overflow:hidden}
+.aa .msg{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13.5px;animation:aain .4s ease both}
+.aa .msg .who{font-weight:700;color:var(--ink);font-size:13px}
+.aa .msg .who small{font-weight:400;color:var(--muted);margin-left:6px}
+.aa .msg .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:5px;margin-right:6px;background:var(--tint);color:var(--red)}
+.aa .msg .tag.g{background:var(--gtint);color:var(--green)}
+.aa .msg .tag.y{background:#FFF4DB;color:#8A5A00}
+@keyframes aain{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.aa .clock{font-family:Fraunces,serif;font-size:15px;color:var(--muted)}
+.aa .outcome{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.aa .outcome div{border-top:2px solid var(--ink);padding-top:12px;font-size:14px}
+.aa .outcome b{display:block;font-family:Fraunces,serif;font-weight:500;font-size:28px;color:var(--ink)}
+
+/* agent library */
+.aa .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.aa .tabs button{font:600 14px Inter,sans-serif;border:1.5px solid var(--line);background:#fff;color:var(--text);padding:10px 18px;border-radius:99px;cursor:pointer}
+.aa .tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.aa .lib{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.aa .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.aa .card h3{font-size:21px}
+.aa .card p{font-size:15px}
+.aa .card .meta{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted)}
+.aa .card .meta b{color:var(--ink);font-weight:600}
+.aa .pane{display:none}.aa .pane.on{display:block}
+
+/* guardrails */
+.aa .guard{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.aa .guard div{padding:22px;border-left:2px solid var(--red);background:#fff;border-radius:0 14px 14px 0}
+.aa .guard h3{font-size:19px;margin-bottom:8px}
+.aa .guard p{font-size:14.5px}
+
+/* faq + cta */
+.aa .faq{max-width:820px;margin:0 auto}
+.aa details{border-bottom:1px solid var(--line);padding:20px 0}
+.aa summary{cursor:pointer;font-family:Fraunces,serif;font-size:21px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:20px}
+.aa summary::after{content:"+";color:var(--red)}
+.aa details[open] summary::after{content:"–"}
+.aa details p{margin-top:12px;font-size:16px}
+.aa .cta{text-align:center}
+.aa .cta h2{font-size:clamp(36px,4.6vw,58px);line-height:1.04;margin:14px auto 18px;max-width:860px}
+.aa .cta h2 em{color:var(--red)}
+.aa .cta p{font-size:18px;max-width:640px;margin:0 auto 28px}
+.aa .xlinks{margin-top:26px;font-size:14px;color:var(--muted)}
+.aa .xlinks a{color:var(--ink);margin:0 8px}
+
+@media (max-width:980px){
+ .aa .hero-grid,.aa .demo{grid-template-columns:1fr}
+ .aa .steps,.aa .guard{grid-template-columns:1fr 1fr}
+ .aa .lib{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+ .aa section{padding:64px 0}
+ .aa .steps,.aa .guard,.aa .lib,.aa .outcome{grid-template-columns:1fr}
+ .aa .node{font-size:11px;padding:6px 9px}.aa .node i{display:none}
+ .aa .ag{grid-template-columns:36px 1fr}.aa .ag .st{grid-column:2;justify-self:start}
+ .aa .ag .ic{width:36px;height:36px;font-size:17px}
+ .aa .msgs{min-height:300px}
+}
+@media (prefers-reduced-motion:reduce){.aa *{animation:none!important;transition:none!important}}
+</style>
+
+<div class="aa">
+
+<!-- HERO -->
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <div class="label">Capabilities · AI agents</div>
+    <h1>AI agents that run your business <em>the way your best people would.</em></h1>
+    <p class="sub">We learn your business and find your bottlenecks. Then we build your end-to-end agentic workflow, from the first click to the signed contract and everything after, so the business runs <b>profitably, smoothly and efficiently</b>.</p>
+    <div class="ctas"><a class="btn" href="https://calendly.com/frogfishconsulting/discovery" target="_blank" rel="noopener">Map my bottlenecks →</a><a class="btn ghost" href="#law">See a law firm example</a></div>
+  </div>
+  <div class="orbit" id="aaOrbit" aria-hidden="true">
+    <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="none" stroke="#E4E1DA" stroke-width=".5" stroke-dasharray="1.4 1.4"/><circle id="aaPulse" class="pulse" r="1.6" cx="50" cy="12"/></svg>
+    <div class="core"><b>Your<br>business</b><small>one connected system</small></div>
+  </div>
+</div></section>
+
+<!-- HOW WE BUILD -->
+<section class="alt"><div class="wrap">
+  <div class="head"><div class="label">How we build it</div><h2>We don't sell you a chatbot. <em>We rebuild the workflow.</em></h2><p>Every agent we build starts with how your business actually makes money, and where it leaks.</p></div>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><h3>Learn the business</h3><p>We sit with your team, your CRM, your phones and your numbers. We learn how a lead becomes revenue, and who touches it along the way.</p><ul><li>Unit economics</li><li>Team roles and handoffs</li><li>Systems and data</li></ul></div>
+    <div class="step"><div class="n">02</div><h3>Find the bottlenecks</h3><p>We measure where time, money and leads are lost: slow responses, manual follow-up, messy intake, reports nobody trusts.</p><ul><li>Speed-to-lead</li><li>Drop-off by stage</li><li>Hours lost to busywork</li></ul></div>
+    <div class="step"><div class="n">03</div><h3>Build the agentic flow</h3><p>We design and build agents that each own one job, connected to your tools and to each other, with humans approving what matters.</p><ul><li>Intake, follow-up, scheduling</li><li>Docs, billing, reporting</li><li>Ads optimized to revenue</li></ul></div>
+    <div class="step"><div class="n">04</div><h3>Run and improve</h3><p>We operate it with you. Every outcome is fed back into the system, so the agents and your ad spend get sharper every week.</p><ul><li>Weekly tuning</li><li>Slack alerts and approvals</li><li>Revenue-based scorecard</li></ul></div>
+  </div>
+</div></section>
+
+<!-- LAW FIRM DEMO -->
+<section id="law"><div class="wrap">
+  <div class="head"><div class="label">Sample · Personal injury law firm</div><h2>A car-accident lead at 9:47 PM. <em>Signed by 10:31 AM.</em></h2><p>Here's how a law firm's agentic workflow handles one lead, end to end. Each agent does one job, hands off to the next, and asks a human when it should.</p></div>
+  <div class="demo">
+    <div>
+      <div class="demo-top"><h3>Agent workflow</h3><div style="display:flex;gap:10px;align-items:center"><span class="illus">Illustrative example</span><span class="clock" id="aaClock">9:47 PM</span><button class="replay" id="aaReplay">↻ Replay</button></div></div>
+      <div class="lane" id="aaLane">
+        <div class="ag"><div class="ic">📞</div><div><b>Intake agent</b><span>Answers the call or form in seconds, 24/7, in English or Spanish. Gathers date, injuries, insurance and police report.</span></div><div class="st">Waiting</div></div>
+        <div class="ag"><div class="ic">⚖️</div><div><b>Case qualification agent</b><span>Scores the case against your criteria (liability, damages, statute of limitations, venue) and runs a conflict check.</span></div><div class="st">Waiting</div></div>
+        <div class="ag human"><div class="ic">👩‍⚖️</div><div><b>Attorney review</b><span>A summary goes to the on-call attorney in Slack. One tap to accept, decline or ask a question.</span></div><div class="st">Waiting</div></div>
+        <div class="ag"><div class="ic">📅</div><div><b>Scheduling agent</b><span>Books the consult on the attorney's calendar and sends reminders by text, so fewer people no-show.</span></div><div class="st">Waiting</div></div>
+        <div class="ag"><div class="ic">✍️</div><div><b>Retainer and docs agent</b><span>Sends the retainer for e-signature, chases it politely, and collects photos, medical records and the police report.</span></div><div class="st">Waiting</div></div>
+        <div class="ag"><div class="ic">🗂️</div><div><b>Case setup agent</b><span>Opens the matter in your case management system (Filevine, Clio, Litify) with every document filed.</span></div><div class="st">Waiting</div></div>
+        <div class="ag"><div class="ic">📈</div><div><b>Ad signal agent</b><span>Sends the signed case back to Google, Meta and Microsoft as a conversion, so ad spend moves toward cases like this one.</span></div><div class="st">Waiting</div></div>
+      </div>
+      <div class="outcome">
+        <div><b>11 sec</b>first response, at 9:47 PM</div>
+        <div><b>0</b>staff hours of intake and chasing</div>
+        <div><b>1</b>signed case, credited to the right ad</div>
+      </div>
+    </div>
+    <div class="feed"><div class="feed-h"># intake-ops <span>Illustrative example</span></div><div class="msgs" id="aaMsgs"></div></div>
+  </div>
+</div></section>
+
+<!-- AGENT LIBRARY -->
+<section class="alt"><div class="wrap">
+  <div class="head"><div class="label">What we can build</div><h2>Agents for every part <em>of the business.</em></h2><p>Sample agents we build for law firms, plus the agents that fit any lead-driven business. Yours are designed around your bottlenecks.</p></div>
+  <div class="tabs" id="aaTabs"><button class="on" data-p="0">Law firms</button><button data-p="1">Growth and marketing</button><button data-p="2">Operations</button></div>
+  <div class="pane on"><div class="lib">
+    <div class="card"><h3>24/7 intake agent</h3><p>Answers calls, texts, chats and forms in seconds, day or night. Collects the facts of the case and never puts a caller on hold.</p><div class="meta"><b>Fixes:</b> after-hours leads lost to voicemail</div></div>
+    <div class="card"><h3>Case qualification and conflict check</h3><p>Scores each case against your criteria, flags statute-of-limitations risk, runs the conflict check, and routes good cases to the right attorney.</p><div class="meta"><b>Fixes:</b> attorneys screening bad cases</div></div>
+    <div class="card"><h3>Retainer chase agent</h3><p>Sends the retainer for e-signature, follows up by text and email on a schedule, and alerts the team when a hot case stalls.</p><div class="meta"><b>Fixes:</b> accepted cases that never sign</div></div>
+    <div class="card"><h3>Client update agent</h3><p>Keeps clients informed on case status, using the case management system, so the front desk isn't stuck answering "any update?" calls.</p><div class="meta"><b>Fixes:</b> status calls swamping staff</div></div>
+    <div class="card"><h3>Medical records agent</h3><p>Requests records and bills from providers, tracks what's missing, and files everything to the matter as it arrives.</p><div class="meta"><b>Fixes:</b> paralegals chasing paperwork</div></div>
+    <div class="card"><h3>Cost-per-signed-case agent</h3><p>Watches spend by campaign, keyword and case type every day. It alerts you in Slack and moves budget, with your approval, toward what actually signs.</p><div class="meta"><b>Fixes:</b> paying for leads that never sign</div></div>
+  </div></div>
+  <div class="pane"><div class="lib">
+    <div class="card"><h3>Speed-to-lead concierge</h3><p>Replies to every lead in seconds, qualifies them, and books the appointment. <a href="/ai-concierge/">See the live real estate demo →</a></p><div class="meta"><b>Fixes:</b> leads going cold in the queue</div></div>
+    <div class="card"><h3>Pipeline and budget agent</h3><p>Connects ad spend to booked and closed revenue by market, and flags leaks and headroom before the monthly report would.</p><div class="meta"><b>Fixes:</b> optimizing to leads, not revenue</div></div>
+    <div class="card"><h3>Nurture agent</h3><p>Follows up with every lead that isn't ready yet, by text and email, at the right moment, and hands them back to sales when they're ready.</p><div class="meta"><b>Fixes:</b> leads nobody calls back</div></div>
+    <div class="card"><h3>Offline conversion agent</h3><p>Sends signed, scheduled and closed outcomes from your CRM back to Google, Meta and Microsoft, as hashed data only.</p><div class="meta"><b>Fixes:</b> ad platforms learning from junk</div></div>
+    <div class="card"><h3>Lead quality agent</h3><p>Catches spam, duplicates and bad-fit leads at the door, and tells the ad platforms which sources to avoid.</p><div class="meta"><b>Fixes:</b> sales time wasted on junk</div></div>
+    <div class="card"><h3>Reporting agent</h3><p>Sends a plain-English summary of what happened and what to do next in Slack every morning, with numbers that match your CRM.</p><div class="meta"><b>Fixes:</b> reports nobody trusts</div></div>
+  </div></div>
+  <div class="pane"><div class="lib">
+    <div class="card"><h3>Scheduling agent</h3><p>Books, reschedules and reminds by text, synced to your team's calendars, with no back-and-forth.</p><div class="meta"><b>Fixes:</b> no-shows and phone tag</div></div>
+    <div class="card"><h3>Document collection agent</h3><p>Requests, chases, checks and files the documents a deal or case needs, and flags anything missing.</p><div class="meta"><b>Fixes:</b> stalled deals and files</div></div>
+    <div class="card"><h3>Billing and collections agent</h3><p>Sends invoices, reminds clients politely, and alerts you when an account is overdue.</p><div class="meta"><b>Fixes:</b> cash stuck in receivables</div></div>
+    <div class="card"><h3>CRM hygiene agent</h3><p>Fixes duplicates, missing fields and stale stages, so every other agent and every report works from clean data.</p><div class="meta"><b>Fixes:</b> a CRM nobody believes</div></div>
+    <div class="card"><h3>Internal ops assistant</h3><p>Answers your team's questions from your playbooks, policies and past cases, right in Slack.</p><div class="meta"><b>Fixes:</b> the same questions every day</div></div>
+    <div class="card"><h3>Review and referral agent</h3><p>Asks happy clients for reviews and referrals at the right moment, and tracks who sent whom.</p><div class="meta"><b>Fixes:</b> word of mouth left to chance</div></div>
+  </div></div>
+</div></section>
+
+<!-- GUARDRAILS -->
+<section><div class="wrap">
+  <div class="head"><div class="label">Built to be trusted</div><h2>Agents that know <em>when to ask a human.</em></h2></div>
+  <div class="guard">
+    <div><h3>Humans approve what matters</h3><p>You decide which steps need a person: accepting a case, a budget change, a client message. Agents ask in Slack, and one tap approves.</p></div>
+    <div><h3>Your data stays yours</h3><p>Agents work inside your systems and accounts. Only hashed identifiers ever go to ad platforms.</p></div>
+    <div><h3>Every action is logged</h3><p>Each agent action is recorded and can be reviewed, so you always know what happened, when and why.</p></div>
+    <div><h3>Industry guardrails</h3><p>For law firms, agents never give legal advice and they follow your bar's advertising and intake rules. Other industries get their own rules, like HIPAA and fair housing.</p></div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section class="alt"><div class="wrap">
+  <div class="head c"><div class="label">FAQ</div><h2>AI agents, answered.</h2></div>
+  <div class="faq">
+    <details open><summary>What is an agentic workflow?</summary><p>It's a set of AI agents that each own one job, like intake, qualification, scheduling, documents or reporting. They're connected to your tools and to each other, so work moves from step to step without someone pushing it. People step in only where you want them to.</p></details>
+    <details><summary>What can AI agents do for a law firm?</summary><p>They answer and qualify every lead 24/7, run conflict checks, book consults, chase retainers and medical records, open matters in your case management system, keep clients updated, and send signed cases back to your ad platforms, so spend moves toward cases that sign.</p></details>
+    <details><summary>How do you decide which agents to build?</summary><p>We start by learning your business: how a lead becomes revenue, who touches it and where it stalls. Then we build the agents that remove the biggest bottlenecks first and add more from there.</p></details>
+    <details><summary>Do the agents replace my staff?</summary><p>No. They take over the repetitive work, like chasing, data entry and after-hours coverage, so your team spends its time on clients and decisions. Humans approve anything sensitive.</p></details>
+    <details><summary>Which systems do you connect to?</summary><p>Your CRM or case management system (Salesforce, HubSpot, Filevine, Clio, Litify and others), phones and text, calendars, e-signature, Slack, and the Google, Meta and Microsoft ad platforms.</p></details>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta"><div class="wrap">
+  <div class="label">Start with one bottleneck</div>
+  <h2>Show us where it's stuck. <em>We'll build what unsticks it.</em></h2>
+  <p>In 30 minutes, we'll walk through how your business runs, find the biggest bottleneck, and sketch the agent workflow that fixes it.</p>
+  <a class="btn" href="https://calendly.com/frogfishconsulting/discovery" target="_blank" rel="noopener">Book a call →</a>
+  <div class="xlinks">See it by industry: <a href="/industries/legal/">Law firms</a>·<a href="/industries/lead-gen/">Solar, home and financial</a>·<a href="/industries/real-estate/">Real estate</a>·<a href="/industries/clinical-trials/">Clinical trials</a></div>
+</div></section>
+</div>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is an agentic workflow?","acceptedAnswer":{"@type":"Answer","text":"It's a set of AI agents that each own one job, like intake, qualification, scheduling, documents or reporting. They're connected to your tools and to each other, so work moves from step to step without someone pushing it. People step in only where you want them to."}},
+{"@type":"Question","name":"What can AI agents do for a law firm?","acceptedAnswer":{"@type":"Answer","text":"They answer and qualify every lead 24/7, run conflict checks, book consults, chase retainers and medical records, open matters in your case management system, keep clients updated, and send signed cases back to your ad platforms, so spend moves toward cases that sign."}},
+{"@type":"Question","name":"How do you decide which agents to build?","acceptedAnswer":{"@type":"Answer","text":"We start by learning your business: how a lead becomes revenue, who touches it and where it stalls. Then we build the agents that remove the biggest bottlenecks first and add more from there."}},
+{"@type":"Question","name":"Do the agents replace my staff?","acceptedAnswer":{"@type":"Answer","text":"No. They take over the repetitive work, like chasing, data entry and after-hours coverage, so your team spends its time on clients and decisions. Humans approve anything sensitive."}},
+{"@type":"Question","name":"Which systems do you connect to?","acceptedAnswer":{"@type":"Answer","text":"Your CRM or case management system (Salesforce, HubSpot, Filevine, Clio, Litify and others), phones and text, calendars, e-signature, Slack, and the Google, Meta and Microsoft ad platforms."}}]}</script>
+
+<script>
+(function(){
+  /* orbit */
+  var orbit=document.getElementById('aaOrbit');
+  if(orbit){
+    var names=[["Intake","answers in seconds"],["Qualify","scores every lead"],["Schedule","books and reminds"],["Docs","chases and files"],["CRM","stays clean"],["Ads","learn from revenue"],["Report","Slack every morning"],["Nurture","follows up"]];
+    var nodes=names.map(function(n,i){var a=-Math.PI/2+i*2*Math.PI/names.length;var d=document.createElement('div');d.className='node';d.style.left=(50+38*Math.cos(a))+'%';d.style.top=(50+38*Math.sin(a))+'%';d.innerHTML=n[0]+'<i>'+n[1]+'</i>';orbit.appendChild(d);return d;});
+    var pulse=document.getElementById('aaPulse'),t0=performance.now(),last=-1;
+    (function tick(now){var p=((now-t0)/9000)%1,a=-Math.PI/2+p*2*Math.PI;pulse.setAttribute('cx',50+38*Math.cos(a));pulse.setAttribute('cy',50+38*Math.sin(a));var k=Math.round(p*names.length)%names.length;if(k!==last){nodes.forEach(function(n,i){n.classList.toggle('on',i===k)});last=k;}requestAnimationFrame(tick);})(t0);
+  }
+  /* tabs */
+  var tabs=document.querySelectorAll('#aaTabs button'),panes=document.querySelectorAll('.aa .pane');
+  tabs.forEach(function(b){b.onclick=function(){tabs.forEach(function(x){x.classList.remove('on')});panes.forEach(function(x){x.classList.remove('on')});b.classList.add('on');panes[+b.dataset.p].classList.add('on');};});
+  /* law demo */
+  var lane=document.querySelectorAll('#aaLane .ag'),msgs=document.getElementById('aaMsgs'),clock=document.getElementById('aaClock');
+  var S=[
+   {a:0,t:"9:47 PM",tag:["NEW",""],m:"<b>Maria G.</b> called from a Google Ad: rear-ended on I-10 today, neck and back pain, went to the ER. Answered in 11 seconds."},
+   {a:1,t:"9:49 PM",tag:["QUALIFIED","g"],m:"Score <b>86/100</b>: clear liability, treated in the ER, policy limits likely $100K+. Within statute of limitations. No conflicts found."},
+   {a:2,t:"9:50 PM",tag:["NEEDS YOU","y"],m:"@Attorney on call: a case summary is ready. <b>Accept</b> · Decline · Ask a question"},
+   {a:2,t:"7:58 AM",tag:["ACCEPTED","g"],m:"Accepted by <b>J. Rivera</b>. Moving to scheduling."},
+   {a:3,t:"8:01 AM",tag:["BOOKED","g"],m:"Consult booked for <b>Thu 10:00 AM</b> (video). Text reminders are set for 24 hours and 1 hour before."},
+   {a:4,t:"10:31 AM",tag:["SIGNED","g"],m:"Retainer <b>signed</b> during the consult. 4 of 5 documents received, and the police report has been requested."},
+   {a:5,t:"10:32 AM",tag:["FILED","g"],m:"Matter opened in Filevine with all documents filed. The paralegal has been assigned."},
+   {a:6,t:"10:33 AM",tag:["SIGNAL","g"],m:"Signed case sent to Google Ads as a conversion (hashed). The keyword <b>\"rear-ended attorney\"</b> gets +15% budget, pending approval."}
+  ];
+  var timers=[];
+  function reset(){timers.forEach(clearTimeout);timers=[];msgs.innerHTML='';lane.forEach(function(x){x.classList.remove('run','done');x.querySelector('.st').textContent='Waiting';});clock.textContent='9:47 PM';}
+  function play(){reset();S.forEach(function(s,i){timers.push(setTimeout(function(){
+    lane.forEach(function(x,j){if(j<s.a){x.classList.remove('run');x.classList.add('done');x.querySelector('.st').textContent='Done';}});
+    var el=lane[s.a];el.classList.add('run');el.querySelector('.st').textContent=(s.tag[1]==='y'?'Waiting on you':'Working');
+    clock.textContent=s.t;
+    var d=document.createElement('div');d.className='msg';d.innerHTML='<div class="who">FrogFish Agent<small>'+s.t+'</small></div><span class="tag '+s.tag[1]+'">'+s.tag[0]+'</span>'+s.m;msgs.appendChild(d);
+    while(msgs.children.length>6)msgs.removeChild(msgs.firstChild);
+    if(i===S.length-1){timers.push(setTimeout(function(){lane.forEach(function(x){x.classList.remove('run');x.classList.add('done');x.querySelector('.st').textContent='Done';});},1400));}
+  },600+i*1900));});}
+  document.getElementById('aaReplay').onclick=play;
+  var started=false,demo=document.getElementById('law');
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){if(e[0].isIntersecting&&!started){started=true;play();}},{threshold:.25}).observe(demo);}else play();
+})();
+</script>

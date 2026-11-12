@@ -15,6 +15,7 @@
 - [Legal](https://www.frogfishconsulting.com/industries/legal/): personal injury, mass tort, asset protection
 - [Lead gen / solar & home services](https://www.frogfishconsulting.com/industries/lead-gen/)
 - [Real estate](https://www.frogfishconsulting.com/industries/real-estate/)
+- [AI agents and agentic workflows](https://www.frogfishconsulting.com/ai-agents/): we learn the business and its bottlenecks, then build end-to-end AI agent workflows (intake, case qualification, scheduling, retainers and documents, CRM, ad signals, reporting), with law firm examples
 - [AI concierge for real estate](https://www.frogfishconsulting.com/ai-concierge/): replies to every lead in under 10 seconds, qualifies, books showings, updates the CRM and feeds closings back to ads
 
 ## Proof
