@@ -18,4 +18,4 @@ npm run build && npm run check:site   # verifies every local link/asset resolves
 
 Adding a page: drop the HTML body in `src/content-html/`, add an entry to `src/data/site.json`, and it is in the sitemap automatically. Update `public/llms.txt` too.
 
-The homepage (`app-home.html`) and `/ai-concierge/` (`app-ai-concierge.html`) and the 4 `/industries/<vertical>/` pages (`app-ind-*.html`) are generated from separately maintained sources; edit those and re-export rather than hand-editing the HTML.
+The homepage (`app-home.html`) and `/ai-concierge/` (`app-ai-concierge.html`) and the 4 `/industries/<vertical>/` pages (`app-ind-*.html`) were originally generated, but this repo is now the source of truth: edit the HTML directly. See CLAUDE.md.
