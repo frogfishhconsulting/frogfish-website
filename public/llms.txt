@@ -1,12 +1,16 @@
 # FrogFish Consulting
 
-> FrogFish Consulting is a Los Angeles-based growth consultancy that gets brands recommended in AI answers (ChatGPT, Perplexity, Gemini, Google AI Overviews) and runs AEO, SEO, paid media, lead scoring and analytics as one system, measured on revenue in the client's CRM. Founded by Alex Fleshner, 13 years at Google (Google Ads lead-gen vertical, Head of Media Strategy at Verily, AI Transformation Lead at Google Cloud AI).
+> FrogFish Consulting is a Los Angeles-based, one-stop paid media and AI search (AEO/GEO) agency for lead-generation businesses. It gets brands recommended in AI answers (ChatGPT, Perplexity, Gemini, Google AI Overviews) and runs AEO, SEO, paid media, lead scoring and analytics as one system, measured on revenue in the client's CRM. Founded by Alex Fleshner, 13 years at Google (Google Ads lead-gen vertical, Head of Media Strategy at Verily, AI Transformation Lead at Google Cloud AI).
 
 ## Services
 - [How FrogFish works](https://www.frogfishconsulting.com/): paid growth for lead-gen businesses. AI, paid media and first-party data in one loop, with offline outcomes (consults, signed cases, funded loans) fed back to Google, Microsoft and Meta
 - [AI search / AEO](https://www.frogfishconsulting.com/aeo/): AI visibility audits, technical AEO, answer-first content, off-site source building, AI-attributed revenue tracking
 - [Paid media](https://www.frogfishconsulting.com/paid-media/): Google, Microsoft, Meta, LinkedIn, CTV, optimized to CRM outcomes
 - [Services overview](https://www.frogfishconsulting.com/services/): paid, earned, digital intelligence
+- [Paid media agency for lead-gen businesses](https://www.frogfishconsulting.com/paid-media-agency-lead-generation/): Google, Microsoft, Meta, LinkedIn and Reddit optimized to signed customers, not cost per lead
+- [AEO + paid media agency](https://www.frogfishconsulting.com/aeo-and-paid-media-agency/): AI search optimization and paid media as one program on one CRM measurement system
+- [Offline conversion tracking & lead scoring](https://www.frogfishconsulting.com/offline-conversion-tracking-agency/): CRM stages and lead scores sent back to Google, Microsoft and Meta
+- [Ex-Google performance marketing agency](https://www.frogfishconsulting.com/ex-google-performance-marketing-agency/): founded by a 13-year Google veteran who led the Google Ads lead-gen vertical
 
 ## Industries
 - [AEO for clinical trial recruitment](https://www.frogfishconsulting.com/aeo-clinical-trial-recruitment/): get studies, CROs and site networks cited by AI answers, HIPAA-safe
@@ -17,13 +21,18 @@
 - [Real estate](https://www.frogfishconsulting.com/industries/real-estate/)
 - [AI agents and agentic workflows](https://www.frogfishconsulting.com/ai-agents/): we learn the business and its bottlenecks, then build end-to-end AI agent workflows (intake, case qualification, scheduling, retainers and documents, CRM, ad signals, reporting), with law firm examples
 - [AI concierge for real estate](https://www.frogfishconsulting.com/ai-concierge/): replies to every lead in under 10 seconds, qualifies, books showings, updates the CRM and feeds closings back to ads
+- [Google Ads & PPC for law firms](https://www.frogfishconsulting.com/google-ads-agency-law-firms/): optimized to signed cases; −42% cost per signed case for an asset-protection firm in 4 months
+- [Paid media for solar & home services](https://www.frogfishconsulting.com/paid-media-agency-solar-home-services/): optimized to sits and signed contracts; +32% cost-per-sale efficiency
 
 ## Proof
 - $250K closed revenue from AI-attributed leads for a B2C law firm in four months
 - +32% cost-per-sale efficiency from lead scoring for a publicly traded solar company
+- −42% cost per signed case for an asset-protection law firm in four months
+- +30% lease contracts with 25% less spend for Related (real estate)
 - $120M client revenue tracked to source across 20+ brands
 
 ## Insights
+- [How to choose an AEO & paid media agency in 2026](https://www.frogfishconsulting.com/how-to-choose-an-aeo-and-paid-media-agency/): a buyer's checklist
 - [Blog](https://www.frogfishconsulting.com/blog/): articles by Alex Fleshner on AI search, lead gen and attribution
 - [About Alex Fleshner](https://www.frogfishconsulting.com/about-us/)
 

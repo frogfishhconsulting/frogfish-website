@@ -21,7 +21,7 @@ const fmt = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { mont
 const headshot = '/wp-content/uploads/2026/05/headshot-avatar-1024.jpg';
 const lede = e.kind === 'landing' ? (body.match(/<p><strong>(.*?)<\/strong>/s)?.[1] ?? '') : '';
 const bodyOut = e.kind === 'landing' ? body.replace(/<h1>.*?<\/h1>/s, '') : body;
-const crumbs = e.kind === 'post' ? [['Insights', '/blog/']] : e.kind === 'landing' ? [['AI Search', '/aeo/']] : [];
+const crumbs = e.kind === 'post' ? [['Insights', '/blog/']] : e.kind === 'landing' ? [e.crumb ?? ['AI Search', '/aeo/']] : [];
 ---
 <Base title={e.title} description={e.description} path={e.path} noindex={e.noindex} schema={pageGraph(e)}
       ogImage={e.image} ogType={e.kind === 'post' ? 'article' : 'website'} bodyClass={e.kind === 'raw' ? `page-id-${e.id}` : `page-${e.kind}`}>

@@ -99,3 +99,7 @@ html body .ff-ind :is(.ff-ind-cta,.ff-ind-hero) :is(h1,h2) em { color: var(--lt-
 html body .ff-ind :is(.ff-ind-cta,.ff-ind-hero) p { color: var(--lt-text) !important; }
 html body .ff-ind :is(.ff-ind-cta,.ff-ind-hero) .btn-primary { background: var(--lt-red) !important; color: #fff !important; }
 html body .ff-ind :is(.ff-ind-cta,.ff-ind-hero) .eyebrow { color: var(--lt-red) !important; }
+
+/* Footer specialties row (internal links for AEO) */
+.ff-footer-spec { flex-basis: 100%; order: 3; font-size: 13px; line-height: 1.9; }
+.ff-footer-spec span { font-weight: 600; }
