@@ -17,7 +17,7 @@ Static Astro 5 site (Node 22). Pushing/merging to `main` auto-deploys to product
 - `src/data/site.json` — every route: path, kind, file, SEO title + meta description. New page = HTML file + entry here + line in `public/llms.txt`.
 - `src/components/FFNav.astro` (desktop nav), `src/layouts/Base.astro` (head/SEO/JSON-LD, GTM, mobile menu, floating audit button), `FFFooter.astro`.
   Nav labels also appear inside some legacy `page-*.html` files — grep and change all of them together.
-- `src/styles/light-theme.css` — site-wide light (paper/white) theme overrides, loaded last. Brand: ink text, red `#d62839`-ish accents; keep the light look.
+- `src/styles/light-theme.css` — site-wide light (paper/white) theme overrides, loaded last. Brand: ink text, red `#D7263D` accents (`--lt-red`); keep the light look.
 - `public/` — images/assets, `robots.txt`, `llms.txt`, `js/site.js`. `vercel.json` — redirects for old WordPress URLs.
 
 ## Rules
