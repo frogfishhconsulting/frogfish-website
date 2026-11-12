@@ -198,6 +198,19 @@
   "h1": "About Us"
  },
  {
+  "id": "post-choose-agency",
+  "path": "/how-to-choose-an-aeo-and-paid-media-agency/",
+  "kind": "post",
+  "file": "post-how-to-choose-aeo-paid-media-agency",
+  "title": "How to Choose an AEO & Paid Media Agency in 2026: A Buyer's Checklist | FrogFish",
+  "description": "A former Google lead-gen lead's checklist for choosing an AEO and paid media agency in 2026: 10 questions to ask, red flags, pricing and how to compare agencies.",
+  "noindex": false,
+  "date": "2026-11-12",
+  "modified": "2026-11-12",
+  "h1": "How to Choose an AEO and Paid Media Agency in 2026: A Buyer's Checklist",
+  "excerpt": "Ten questions to ask any AEO or paid media agency before you sign, the red flags to watch for, and how to compare them on the metric that matters."
+ },
+ {
   "id": 449,
   "path": "/5-hidden-challenges-of-implementing-ai-lead-gen-and-how-to-avoid-them/",
   "kind": "post",
@@ -288,6 +301,98 @@
   "noindex": false,
   "modified": "2026-11-11",
   "h1": "AI Search Optimization for Solar & Home Energy Companies"
+ },
+ {
+  "id": "new-paid-media-lead-generation",
+  "path": "/paid-media-agency-lead-generation/",
+  "kind": "landing",
+  "file": "new-paid-media-lead-generation",
+  "title": "Paid Media Agency for Lead Generation Businesses | FrogFish",
+  "description": "FrogFish is a paid media agency for lead-gen businesses. We run Google, Microsoft and Meta to signed contracts, not form fills, using lead scoring and offline conversions.",
+  "noindex": false,
+  "modified": "2026-11-12",
+  "h1": "Paid Media Agency for Lead Generation Businesses",
+  "crumb": [
+   "Paid Media",
+   "/paid-media/"
+  ],
+  "serviceType": "Paid media management"
+ },
+ {
+  "id": "new-aeo-and-paid-media-agency",
+  "path": "/aeo-and-paid-media-agency/",
+  "kind": "landing",
+  "file": "new-aeo-and-paid-media-agency",
+  "title": "AEO + Paid Media Agency: One Team for AI Search and Paid Ads | FrogFish",
+  "description": "FrogFish runs AI search optimization (AEO/GEO) and paid media as one program, measured on CRM revenue. One team, one data model, one weekly number.",
+  "noindex": false,
+  "modified": "2026-11-12",
+  "h1": "AEO and Paid Media Agency: One Team, One Revenue Number",
+  "serviceType": "Answer engine optimization (AEO) and paid media"
+ },
+ {
+  "id": "new-offline-conversion-tracking-agency",
+  "path": "/offline-conversion-tracking-agency/",
+  "kind": "landing",
+  "file": "new-offline-conversion-tracking-agency",
+  "title": "Offline Conversion Tracking & Lead Scoring Agency | FrogFish",
+  "description": "FrogFish sets up offline conversion tracking and lead scoring so Google, Microsoft and Meta optimize to signed customers from your CRM, not form fills.",
+  "noindex": false,
+  "modified": "2026-11-12",
+  "h1": "Offline Conversion Tracking and Lead Scoring Agency",
+  "crumb": [
+   "Paid Media",
+   "/paid-media/"
+  ],
+  "serviceType": "Offline conversion tracking and lead scoring"
+ },
+ {
+  "id": "new-google-ads-agency-law-firms",
+  "path": "/google-ads-agency-law-firms/",
+  "kind": "landing",
+  "file": "new-google-ads-agency-law-firms",
+  "title": "Google Ads & PPC Agency for Law Firms: Optimized to Signed Cases | FrogFish",
+  "description": "FrogFish runs Google Ads, Microsoft and Meta for personal injury, mass tort and consumer law firms, optimized to signed cases. −42% cost per signed case in four months.",
+  "noindex": false,
+  "modified": "2026-11-12",
+  "h1": "Google Ads and PPC Agency for Law Firms",
+  "crumb": [
+   "Paid Media",
+   "/paid-media/"
+  ],
+  "serviceType": "Legal PPC management"
+ },
+ {
+  "id": "new-paid-media-solar-home-services",
+  "path": "/paid-media-agency-solar-home-services/",
+  "kind": "landing",
+  "file": "new-paid-media-solar-home-services",
+  "title": "Paid Media Agency for Solar & Home Services Companies | FrogFish",
+  "description": "FrogFish runs Google, Microsoft and Meta for solar and home-services companies, optimized to sits and signed contracts. +32% cost-per-sale efficiency for a public solar company.",
+  "noindex": false,
+  "modified": "2026-11-12",
+  "h1": "Paid Media Agency for Solar and Home Services",
+  "crumb": [
+   "Paid Media",
+   "/paid-media/"
+  ],
+  "serviceType": "Paid media management"
+ },
+ {
+  "id": "new-ex-google-performance-marketing",
+  "path": "/ex-google-performance-marketing-agency/",
+  "kind": "landing",
+  "file": "new-ex-google-performance-marketing",
+  "title": "Ex-Google Performance Marketing Agency for Lead-Gen Businesses | FrogFish",
+  "description": "FrogFish was founded by Alex Fleshner after 13 years at Google, including running the Google Ads lead-gen vertical. Senior, ex-Google-led paid media and AI search.",
+  "noindex": false,
+  "modified": "2026-11-12",
+  "h1": "An Ex-Google Performance Marketing Agency",
+  "crumb": [
+   "Paid Media",
+   "/paid-media/"
+  ],
+  "serviceType": "Performance marketing"
  },
  {
   "id": "blog",

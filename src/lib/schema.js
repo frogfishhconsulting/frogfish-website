@@ -13,7 +13,7 @@ export function orgGraph() {
       logo: SITE + '/wp-content/uploads/2026/05/FrogFish-Logo-Transparent.png',
       image: SITE + '/wp-content/uploads/2026/05/frogfish-hero-square-1080.png',
       description:
-        "Growth consultancy specializing in answer engine optimization (AEO/GEO), SEO, paid media, lead scoring and analytics, measured on revenue in the client's CRM.",
+        "One-stop paid media and AI search (AEO/GEO) agency for lead-generation businesses: Google, Microsoft and Meta ads, answer engine optimization, offline conversion tracking, lead scoring and AI agents, measured on revenue in the client's CRM.",
       founder: { '@id': ALEX_ID },
       foundingDate: '2026',
       address: { '@type': 'PostalAddress', addressLocality: 'Los Angeles', addressRegion: 'CA', addressCountry: 'US' },
@@ -21,7 +21,7 @@ export function orgGraph() {
       email: 'alex@frogfishconsulting.com',
       knowsAbout: [
         'Answer engine optimization', 'Generative engine optimization', 'AI search optimization', 'SEO',
-        'Paid media', 'Google Ads', 'Microsoft Advertising', 'Meta Ads', 'Lead scoring', 'Marketing attribution',
+        'Paid media', 'Google Ads', 'Microsoft Advertising', 'Meta Ads', 'Lead scoring', 'Marketing attribution', 'Offline conversion tracking', 'Performance marketing', 'Lead generation', 'AI agents',
         'Clinical trial recruitment', 'Legal marketing', 'Solar marketing',
       ],
       sameAs: ['https://www.linkedin.com/company/frogfishconsulting'],
@@ -61,7 +61,7 @@ export function pageGraph(e) {
     datePublished: e.date, dateModified: e.modified, author: { '@id': ALEX_ID }, publisher: { '@id': ORG_ID }, mainEntityOfPage: url,
   });
   if (e.path === '/aeo/' || e.kind === 'landing') out.push({
-    '@type': 'Service', '@id': url + '#service', name: e.h1, serviceType: 'Answer engine optimization (AEO)', provider: { '@id': ORG_ID }, areaServed: 'US', url,
+    '@type': 'Service', '@id': url + '#service', name: e.h1, serviceType: e.serviceType ?? 'Answer engine optimization (AEO)', provider: { '@id': ORG_ID }, areaServed: 'US', url,
   });
   return out;
 }
