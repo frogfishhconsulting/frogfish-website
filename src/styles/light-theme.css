@@ -49,7 +49,10 @@ html body .ff-hero-tab.is-on { background: var(--lt-ink) !important; color: #fff
 /* ---------- nav: sticky paper bar, mark + wordmark ---------- */
 html body :is(.ff-nav-wrap,.re-nav-wrap) { position: sticky !important; top: 0; z-index: 50 !important; background: rgba(250,249,246,.94) !important; backdrop-filter: blur(8px); border-bottom: 1px solid var(--lt-line) !important; }
 html body :is(.ff-nav,.re-nav) { padding: 14px 0 !important; }
-html body :is(.ff-nav-links,.re-nav-links) a { color: var(--lt-text) !important; }
+html body :is(.ff-nav,.re-nav) { display: flex !important; align-items: center !important; }
+html body :is(.ff-nav-links,.re-nav-links) { align-items: center !important; gap: 36px !important; white-space: nowrap !important; }
+html body :is(.ff-nav-links,.re-nav-links) a { color: var(--lt-text) !important; white-space: nowrap !important; line-height: 1.2 !important; }
+@media (max-width: 1100px) { html body :is(.ff-nav-links,.re-nav-links) { gap: 24px !important; font-size: 15px !important; } }
 html body :is(.ff-nav-links,.re-nav-links) a:hover { color: var(--lt-red) !important; }
 html body :is(.ff-nav-cta,.re-nav-cta) { color: #fff !important; border-radius: 999px !important; }
 html body :is(.ff-logo,.re-logo,.ff-footer-logo,.re-footer-logo) {
