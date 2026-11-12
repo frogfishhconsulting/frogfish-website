@@ -65,6 +65,7 @@ html body .ff-dd:hover .ff-dd-menu, html body .ff-dd:focus-within .ff-dd-menu { 
 html body .ff-dd-menu a { display: block; padding: 10px 12px; border-radius: 10px; white-space: normal !important; }
 html body .ff-dd-menu a:hover { background: #FAF9F6; }
 html body .ff-dd-menu b { display: block; font-weight: 600; color: var(--lt-ink); font-size: 15px; }
+html body .ff-dd-menu .ff-dd-label { display: block; padding: 10px 12px 2px; margin-top: 4px; border-top: 1px solid var(--lt-line); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--lt-muted, #6E6E77); font-weight: 600; }
 html body .ff-dd-menu small { display: block; font-size: 12.5px; color: var(--lt-muted, #6E6E77); margin-top: 2px; line-height: 1.35; }
 html body :is(.ff-nav-cta,.re-nav-cta) { color: #fff !important; border-radius: 999px !important; }
 html body :is(.ff-logo,.re-logo,.ff-footer-logo,.re-footer-logo) {
