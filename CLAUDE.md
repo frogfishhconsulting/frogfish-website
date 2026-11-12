@@ -11,12 +11,12 @@ Static Astro 5 site (Node 22). Pushing/merging to `main` auto-deploys to product
 
 ## Where things live
 - `src/content-html/*.html` — page bodies. **This repo is the source of truth**; edit these files directly.
-  - `app-home.html` = homepage, `app-ai-concierge.html` = /ai-concierge/, `app-ind-<vertical>.html` = /industries/<vertical>/
+  - `app-home.html` = homepage, `app-ai-agents.html` = /ai-agents/, `app-ai-concierge.html` = /ai-concierge/, `app-ind-<vertical>.html` = /industries/<vertical>/
     (legal, lead-gen, real-estate, clinical-trials). `app` pages carry their own `<style>`/`<script>` inside the file.
   - `page-<wp id>.html` / `post-<wp id>.html` = pages ported from the old WordPress site.
 - `src/data/site.json` — every route: path, kind, file, SEO title + meta description. New page = HTML file + entry here + line in `public/llms.txt`.
 - `src/components/FFNav.astro` (desktop nav), `src/layouts/Base.astro` (head/SEO/JSON-LD, GTM, mobile menu, floating audit button), `FFFooter.astro`.
-  Nav labels also appear inside some legacy `page-*.html` files — grep and change all of them together.
+  Nav labels (incl. the Capabilities dropdown `.ff-dd`, styled in light-theme.css) also appear inside some legacy `page-*.html` files — grep and change all of them together.
 - `src/styles/light-theme.css` — site-wide light (paper/white) theme overrides, loaded last. Brand: ink text, red `#D7263D` accents (`--lt-red`); keep the light look.
 - `public/` — images/assets, `robots.txt`, `llms.txt`, `js/site.js`. `vercel.json` — redirects for old WordPress URLs.
 

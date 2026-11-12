@@ -33,6 +33,17 @@
   "h1": "Real Estate"
  },
  {
+  "id": "ai-agents",
+  "path": "/ai-agents/",
+  "kind": "app",
+  "file": "app-ai-agents",
+  "title": "AI Agents & Agentic Workflows for Law Firms and Lead-Gen Businesses | FrogFish",
+  "description": "We learn your business and bottlenecks, then build end-to-end AI agent workflows (intake, qualification, scheduling, documents, ads and reporting) that run profitably, smoothly and efficiently.",
+  "noindex": false,
+  "modified": "2026-11-12",
+  "h1": "AI Agents"
+ },
+ {
   "id": "ai-concierge",
   "path": "/ai-concierge/",
   "kind": "app",
