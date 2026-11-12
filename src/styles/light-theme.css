@@ -54,6 +54,8 @@ html body :is(.ff-nav-links,.re-nav-links) { align-items: center !important; gap
 html body :is(.ff-nav-links,.re-nav-links) a { color: var(--lt-text) !important; white-space: nowrap !important; line-height: 1.2 !important; }
 @media (max-width: 1100px) { html body :is(.ff-nav-links,.re-nav-links) { gap: 24px !important; font-size: 15px !important; } }
 html body :is(.ff-nav-links,.re-nav-links) a:hover { color: var(--lt-red) !important; }
+/* app pages wrap the nav in its own .ff-frame, so make that frame the sticky element */
+html body.page-app .ff-frame:has(> .ff-nav-wrap) { position: sticky !important; top: 0; left: auto !important; right: auto !important; margin-left: calc(50% - 50vw) !important; margin-right: calc(50% - 50vw) !important; z-index: 50 !important; }
 /* Capabilities dropdown */
 html body .ff-dd { position: relative; display: inline-flex; align-items: center; }
 html body .ff-dd-top::after { content: ""; display: inline-block; width: 6px; height: 6px; margin-left: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-3px) rotate(45deg); }
